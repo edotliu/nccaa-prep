@@ -20678,6 +20678,25 @@ const safeStorageSet = async (key, value) => {
   }
 };
 
+const safeStorageDelete = async (key) => {
+  // 1) Inside Claude: use Claude's storage system
+  try {
+    if (typeof window !== 'undefined' && window.storage && window.storage.delete) {
+      await window.storage.delete(getKey(key));
+    }
+  } catch (e) {
+    // fall through to browser storage
+  }
+  // 2) On a deployed website: use the browser's localStorage
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.removeItem(getKey(key));
+    }
+  } catch (e) {
+    // Silent fail
+  }
+};
+
 const formatDate = (timestamp) => {
   if (!timestamp) return '';
   const d = new Date(timestamp);
@@ -22194,7 +22213,8 @@ const DonutRing = ({ pct, color, size = 80, stroke = 8, children }) => {
   );
 };
 
-const DashboardScreen = ({ setView, stats, startSession }) => {
+const DashboardScreen = ({ setView, stats, startSession, resetStats }) => {
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   const history = stats.history || {};
   const allIds = Object.keys(history);
 
@@ -22335,11 +22355,55 @@ const DashboardScreen = ({ setView, stats, startSession }) => {
           ))}
         </div>
       </div>
+
+      {/* Reset stats */}
+      <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+        <div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600, color: 'var(--ink)', marginBottom: '2px' }}>Reset all progress</div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: 'var(--muted)' }}>Clears quiz history, accuracy, streak, and marked questions. Cannot be undone.</div>
+        </div>
+        <button
+          onClick={() => setShowResetConfirm(true)}
+          style={{ fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600, color: 'var(--warn)', background: 'transparent', border: '1.5px solid var(--warn)', borderRadius: '10px', padding: '9px 18px', cursor: 'pointer', whiteSpace: 'nowrap' }}
+        >
+          Reset stats
+        </button>
+      </div>
+
+      {/* Reset confirmation modal */}
+      {showResetConfirm && (
+        <div
+          onClick={() => setShowResetConfirm(false)}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px', zIndex: 1000 }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ background: 'var(--surface)', borderRadius: '16px', border: '1px solid var(--border)', padding: '28px', maxWidth: '420px', width: '100%' }}
+          >
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 600, margin: '0 0 12px', color: 'var(--ink)' }}>Reset all progress?</h3>
+            <p style={{ fontFamily: 'var(--font-body)', color: 'var(--muted)', lineHeight: 1.5, margin: '0 0 24px' }}>
+              This permanently clears your quiz history, accuracy, study streak, and marked questions. This cannot be undone.
+            </p>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
+              <button
+                onClick={() => setShowResetConfirm(false)}
+                style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 500, color: 'var(--ink)', background: 'transparent', border: '1px solid var(--border)', borderRadius: '10px', padding: '10px 18px', cursor: 'pointer' }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => { resetStats(); setShowResetConfirm(false); }}
+                style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#fff', background: 'var(--warn)', border: 'none', borderRadius: '10px', padding: '10px 18px', cursor: 'pointer' }}
+              >
+                Yes, reset everything
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
-// =====================================================================
 // CALENDAR
 // =====================================================================
 const CalendarScreen = ({ setView, stats }) => {
@@ -22818,6 +22882,20 @@ export default function App() {
 
   const getNote = useCallback((qid) => notes[qid] || '', [notes]);
 
+  const resetStats = useCallback(() => {
+    // Clear all saved progress from state and storage
+    setHistory({});
+    setMarked([]);
+    setNotes({});
+    setStudyDays({});
+    setStreak(0);
+    setExamFlagged([]);
+    safeStorageDelete('history');
+    safeStorageDelete('marked');
+    safeStorageDelete('notes');
+    safeStorageDelete('studyDays');
+  }, []);
+
   const startSession = useCallback((opts) => {
     const selected = selectQuestions(opts.pool, history, opts.limit);
     setSession({
@@ -23022,7 +23100,7 @@ export default function App() {
       {view === 'results' && sessionResults && (
         <ResultsScreen results={sessionResults.results} sessionMeta={sessionResults.meta} setView={setView} startSession={startSession} />
       )}
-      {view === 'dashboard' && <DashboardScreen setView={setView} stats={stats} startSession={startSession} />}
+      {view === 'dashboard' && <DashboardScreen setView={setView} stats={stats} startSession={startSession} resetStats={resetStats} />}
       {view === 'calendar' && <CalendarScreen setView={setView} stats={stats} />}
       {view === 'export' && <ExportScreen setView={setView} stats={stats} />}
       {view === 'review-wrong' && <ReviewWrongScreen setView={setView} stats={stats} startSession={startSession} />}
