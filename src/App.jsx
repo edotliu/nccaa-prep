@@ -20748,9 +20748,18 @@ const selectQuestions = (pool, history, limit) => {
 // =====================================================================
 
 const Logo = () => (
-  <div className="flex items-center gap-3">
-    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'var(--accent)' }}>
-      <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--bg)', fontSize: '20px' }}>N</span>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+    <div style={{
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'var(--accent)',
+      flexShrink: 0,
+    }}>
+      <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--bg)', fontSize: '20px', lineHeight: 1 }}>N</span>
     </div>
     <div>
       <div style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1 }}>NCCAA Prep</div>
@@ -22823,12 +22832,28 @@ export default function App() {
 
   // Build a proportional pool of n questions for the exam
   const buildExamPool = useCallback((n) => {
+    const usedIds = new Set();
     const pool = [];
     for (const [topicId, topic] of Object.entries(TOPICS)) {
       const topicQs = QUESTION_BANK.filter(q => q.topic === topicId);
       const want = Math.round((topic.weight / 100) * n);
       const shuffled = [...topicQs].sort(() => Math.random() - 0.5);
-      pool.push(...shuffled.slice(0, want));
+      for (const q of shuffled.slice(0, want)) {
+        pool.push(q);
+        usedIds.add(q.id);
+      }
+    }
+    // Rounding each topic separately may not sum to exactly n.
+    // Top up (or trim) so the pool is exactly n questions.
+    if (pool.length < n) {
+      const remaining = QUESTION_BANK.filter(q => !usedIds.has(q.id)).sort(() => Math.random() - 0.5);
+      for (const q of remaining) {
+        if (pool.length >= n) break;
+        pool.push(q);
+        usedIds.add(q.id);
+      }
+    } else if (pool.length > n) {
+      pool.length = n;
     }
     return [...pool].sort(() => Math.random() - 0.5);
   }, []);
@@ -22839,7 +22864,7 @@ export default function App() {
 
   const startExam = useCallback(() => {
     const all = buildExamPool(180);
-    const mid = Math.ceil(all.length / 2);
+    const mid = Math.floor(all.length / 2); // 90 when pool is 180
     const block1 = all.slice(0, mid);
     const block2 = all.slice(mid);
     setExamBlocks({ block1, block2 });
