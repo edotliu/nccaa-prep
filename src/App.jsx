@@ -114,26 +114,26 @@ const TOPICS = {
 // =====================================================================
 const QUESTION_BANK = [
   // ---------- PRINCIPLES OF ANESTHESIA (170 questions) ----------
-  {
-    id: "p_001",
-    topic: "principles",
-    subtopic: "preop",
-    difficulty: "medium",
-    reference: "Morgan & Mikhail, Ch. 18",
-    question: "A 62-year-old man with a BMI of 38 kg/m² is scheduled for elective inguinal hernia repair. He snores loudly, his wife reports witnessed apneas, he is hypertensive, and his neck circumference is 44 cm. He denies daytime sleepiness. What is his STOP-BANG score and risk classification?",
-    choices: [
-      "Score of 3 — low risk for OSA",
-      "Score of 4 — intermediate risk for OSA",
-      "Score of 5 — high risk for OSA",
-      "Score of 6 — high risk for OSA"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. The patient meets at least five STOP-BANG criteria, placing him above the low-risk threshold.",
-      "Incorrect. An intermediate score would be 3 on STOP-BANG; this patient scores higher.",
-      "Correct. STOP-BANG criteria met: Snoring, Observed apnea, Pressure (HTN), BMI >35, Neck >40 cm — totaling 5. A score ≥5 indicates high risk for moderate-to-severe OSA. Tiredness, Age >50, and Gender (male) would push the score higher if added.",
-      "Incorrect. The patient is 62 (Age >50 = +1) and male (+1), which would bring him to 7, but the question lists only the criteria stated. Re-counting strictly from the stem: Snoring, Observed apnea, Pressure, BMI, Neck = 5. The patient denies tiredness."
-    ]
+    {
+      id: "p_001",
+      topic: "principles",
+      subtopic: "preop",
+      difficulty: "easy",
+      reference: "Morgan & Mikhail, Ch. 18",
+      question: "A 62-year-old man (BMI 38) reports loud snoring, witnessed apneas, and daytime tiredness, and has treated hypertension. Neck circumference is normal. Using STOP-BANG (Snoring, Tiredness, Observed apnea, Pressure; BMI>35, Age>50, Neck>40cm, male Gender), what is his score and risk category?",
+      choices: [
+        "Score 5 — high risk for obstructive sleep apnea",
+        "Score 7 — high risk for obstructive sleep apnea",
+        "Score 4 — intermediate risk for obstructive sleep apnea",
+        "Score 3 — intermediate risk for obstructive sleep apnea"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. A score of 5 would still fall in the high-risk band (STOP-BANG ≥5), but this patient actually has seven positive criteria. Undercounting by two typically comes from missing that treated hypertension and male sex both count.",
+        "Correct. Seven of the eight criteria are positive: Snoring, Tiredness, Observed apnea, Pressure (treated hypertension), BMI >35, Age >50, and male Gender; only neck circumference is negative. A score of 7 (≥5) indicates high risk for obstructive sleep apnea.",
+        "Incorrect. A score of 4 falls in the intermediate band (3–4) and undercounts this patient; treated hypertension and male sex are easily overlooked positives that both count.",
+        "Incorrect. A score of 3 is intermediate risk and substantially undercounts the seven positive criteria present here."
+      ]
   },
   {
     id: "p_002",
@@ -177,26 +177,26 @@ const QUESTION_BANK = [
       "Incorrect. Stage IV reflects respiratory and cardiovascular collapse from overdose."
     ]
   },
-  {
-    id: "p_004",
-    topic: "principles",
-    subtopic: "admin_temperature",
-    difficulty: "medium",
-    reference: "Morgan & Mikhail, Ch. 52",
-    question: "A 70-year-old patient undergoing a 4-hour abdominal surgery has a core temperature drop to 35.2°C despite a forced-air warming blanket. Which physiologic mechanism is the LEAST likely contributor to her intraoperative hypothermia?",
-    choices: [
-      "Redistribution of heat from core to periphery in the first hour",
-      "Radiation losses from exposed skin",
-      "Evaporation from open peritoneal surfaces",
-      "Shivering-induced sympathetic activation"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. Redistribution is the dominant mechanism in the first hour of general anesthesia and accounts for the majority of the initial temperature drop.",
-      "Incorrect. Radiation is the largest source of ongoing heat loss in the OR (approximately 60% of losses).",
-      "Incorrect. Evaporation from open body cavities and surgical fields contributes meaningfully to heat loss during long abdominal cases.",
-      "Correct. General anesthesia abolishes shivering until emergence, so shivering does not contribute intraoperatively. Sympathetic activation from shivering would actually generate heat, not lose it. All other mechanisms listed are active contributors."
-    ]
+    {
+      id: "p_004",
+      topic: "principles",
+      subtopic: "admin_temperature",
+      difficulty: "hard",
+      reference: "Morgan & Mikhail, Ch. 52",
+      question: "A 70-year-old under general anesthesia for a 4-hour open abdominal case reaches a core temperature of 35.2°C despite a forced-air warming blanket over the legs. Which mechanism accounts for the LARGEST share of the core temperature drop in the FIRST hour?",
+      choices: [
+        "Radiation and convection losses from the exposed skin surface",
+        "Redistribution of heat from the warm core to the vasodilated periphery",
+        "Evaporative loss from the open peritoneal cavity and surgical field",
+        "Conductive loss into the cool operating-room table and drapes"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. Radiation/convection from skin are significant contributors to ongoing heat LOSS over the case, but they are not the dominant cause of the early, rapid first-hour fall — that is redistribution.",
+        "Correct. In the FIRST hour of general anesthesia, the dominant cause of core cooling is internal REDISTRIBUTION: anesthetic-induced vasodilation lets heat flow from the warm central compartment to the cooler periphery, dropping core temperature ~1–1.5°C even before net heat loss dominates. This is why a leg warmer poorly prevents the early drop — it cannot stop internal redistribution — and why prewarming (warming the periphery before induction) is the most effective preventive strategy.",
+        "Incorrect. Evaporative loss from the open abdomen adds to later cooling but is not the principal mechanism of the first-hour drop.",
+        "Incorrect. Conductive loss to the table is relatively minor and is not the main driver of the early redistribution-dominated fall."
+      ]
   },
   {
     id: "p_005",
@@ -225,41 +225,41 @@ const QUESTION_BANK = [
     subtopic: "admin_ventilation",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Ch. 44 (Respiratory Physiology and Pathophysiology)",
-    question: "A 45-year-old woman with a BMI of 45 kg/m² is under general anesthesia for laparoscopic sleeve gastrectomy. After pneumoperitoneum is established, SpO₂ drifts from 99% to 91% on FiO₂ 0.6 with Vt 6 mL/kg predicted body weight (PBW), RR 14, and PEEP 5 cm H₂O. Auscultation is symmetric and ETT position is confirmed. What is the most appropriate next step?",
+    question: "A patient with BMI 45 under GA for laparoscopic sleeve gastrectomy desaturates to 90% after pneumoperitoneum, on Vt 6 mL/kg PBW, PEEP 5, FiO₂ 0.6, with symmetric breath sounds and confirmed tube position. What is the BEST next step?",
     choices: [
-      "Increase FiO₂ to 1.0 and continue current ventilator settings",
-      "Switch to pressure support ventilation",
-      "Reduce tidal volume to 4 mL/kg PBW to lower plateau pressure",
-      "Apply a recruitment maneuver followed by PEEP titration to 10–15 cm H₂O"
-    ],
-    correct: 3,
+            "Increase FiO₂ to 1.0 and keep the current ventilator settings unchanged",
+            "Reduce tidal volume to 4 mL/kg PBW to lower plateau pressure",
+            "Perform a recruitment maneuver and titrate PEEP upward to about 10–15 cm H₂O",
+            "Switch to pressure-support ventilation to improve patient-ventilator synchrony"
+        ],
+    correct: 2,
     explanations: [
-      "Incorrect. Raising FiO₂ may transiently improve saturation but does not address the underlying mechanism in obese patients — reduced FRC and atelectasis from cephalad diaphragmatic displacement (worsened by pneumoperitoneum and supine/Trendelenburg position). High FiO₂ alone can also promote absorption atelectasis.",
-      "Incorrect. Pressure support requires a spontaneously breathing patient and is inappropriate during paralysis/controlled ventilation for laparoscopy.",
-      "Incorrect. Lower Vt does not treat atelectasis and may worsen hypoventilation. 6 mL/kg PBW is already lung-protective; the issue is end-expiratory lung volume, addressed by PEEP, not Vt reduction.",
-      "Correct. The pathophysiology here is atelectasis from reduced FRC, supine position, and abdominal insufflation. A recruitment maneuver (e.g., sustained inflation 30–40 cm H₂O × 30 sec, or stepwise PEEP) followed by adequate PEEP (typically 10–15 cm H₂O in class III obesity) reopens collapsed alveoli and prevents derecruitment. The PROBESE trial and bariatric ventilation literature support this open-lung approach in obesity."
-    ]
+            "Incorrect. Raising FiO₂ may transiently improve SpO₂ but does not treat the underlying problem — atelectasis and reduced FRC from obesity plus pneumoperitoneum. It masks the cause rather than correcting it.",
+            "Incorrect. Dropping tidal volume to 4 mL/kg reduces alveolar ventilation and does nothing to reopen collapsed lung; it would tend to worsen atelectasis and hypercapnia.",
+            "Correct. In an obese patient after pneumoperitoneum, desaturation is typically due to ATELECTASIS and reduced functional residual capacity. A RECRUITMENT MANEUVER to reopen collapsed alveoli followed by higher PEEP (about 10–15 cm H₂O) to keep them open is the physiologically targeted response, improving oxygenation by restoring lung volume.",
+            "Incorrect. Pressure-support relies on spontaneous effort and does not address atelectasis in a paralyzed/controlled patient; it is not the appropriate maneuver to correct this desaturation."
+        ]
   },
-  {
-    id: "p_007",
-    topic: "principles",
-    subtopic: "admin_ventilation",
-    difficulty: "hard",
-    reference: "Amato et al., NEJM 2015 (Driving pressure and survival in ARDS); ARDSnet",
-    question: "A 58-year-old man develops moderate ARDS after aspiration. He is on volume-control ventilation with Vt 6 mL/kg PBW, PEEP 12 cm H₂O, plateau pressure 32 cm H₂O, FiO₂ 0.6, and PaO₂/FiO₂ ratio 140. Which adjustment most directly targets the variable best correlated with mortality?",
-    choices: [
-      "Decrease tidal volume to 4 mL/kg PBW",
-      "Increase PEEP to 16 cm H₂O",
-      "Decrease PEEP to 8 cm H₂O",
-      "Increase tidal volume to 8 mL/kg PBW to improve oxygenation"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Driving pressure (ΔP = Pplat − PEEP) is the ventilator variable most strongly associated with mortality in ARDS (Amato 2015). Here ΔP = 32 − 12 = 20 cm H₂O; goal is <15. Lowering Vt directly reduces plateau and thus driving pressure. Permissive hypercapnia is acceptable.",
-      "Incorrect. Raising PEEP only lowers ΔP if it recruits enough lung that plateau falls more than PEEP rises. Without bedside compliance data showing recruitment, increasing PEEP often raises plateau equally and may overdistend already-open units.",
-      "Incorrect. Dropping PEEP risks derecruitment and worsened oxygenation, increasing FiO₂ requirements and shear injury.",
-      "Incorrect. Higher Vt raises plateau and driving pressure — the strongest known modifiable driver of VILI mortality. ARDSnet established 6 mL/kg PBW as standard."
-    ]
+    {
+      id: "p_007",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "hard",
+      reference: "Amato et al., NEJM 2015 (Driving pressure and survival in ARDS); ARDSnet",
+      question: "A patient with moderate ARDS is on volume-control ventilation at Vt 6 mL/kg PBW, PEEP 12, with a plateau pressure of 32 cm H₂O. The latest gas shows pH 7.28 / PaCO₂ 55 / SpO₂ 91% on FiO₂ 0.6, and the patient is hemodynamically stable. Which ventilator change is MOST appropriate?",
+      choices: [
+        "Increase tidal volume to 8 mL/kg PBW",
+        "Reduce tidal volume toward 4–5 mL/kg PBW",
+        "Lower PEEP to 8 cm H₂O",
+        "Increase the respiratory rate to 35 breaths/min"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. Raising tidal volume to blunt the acidosis would INCREASE plateau and driving pressure and worsen lung injury. The mildly low pH (7.28) is acceptable and should be tolerated, not chased.",
+        "Correct. The key abnormality to act on is the PLATEAU PRESSURE of 32 cm H₂O, which exceeds the ≤30 target that limits ventilator-induced lung injury. Lowering TIDAL VOLUME toward 4–5 mL/kg PBW reduces plateau and driving pressure. The respiratory acidosis (pH 7.28) should be TOLERATED — permissive hypercapnia is accepted down to about pH 7.20 — rather than 'corrected,' because protecting the lung takes priority over normalizing the gas.",
+        "Incorrect. Dropping PEEP does lower plateau pressure, but in ARDS it causes alveolar derecruitment and worsens oxygenation (SpO₂ is already only 91%). Plateau should be reduced by lowering tidal volume, not by removing needed PEEP.",
+        "Incorrect. Pushing the rate to 35/min to normalize pH risks air-trapping/auto-PEEP and does not address the elevated plateau pressure; the acidosis is acceptable and does not need full correction."
+      ]
   },
   {
     id: "p_008",
@@ -267,62 +267,62 @@ const QUESTION_BANK = [
     subtopic: "admin_ventilation",
     difficulty: "medium",
     reference: "Morgan & Mikhail's Clinical Anesthesiology, Ch. 9 (Breathing Systems & Ventilators)",
-    question: "During laparoscopic colectomy, the surgeon increases insufflation pressure. Peak inspiratory pressure on volume-control ventilation rises from 26 to 42 cm H₂O. You switch to pressure-control ventilation. Which statement most accurately describes the consequence?",
+    question: "During laparoscopic colectomy, insufflation raises peak inspiratory pressure on volume-control ventilation from 26 to 42 cm H₂O. You switch to pressure-control ventilation at a set inspiratory pressure. Which consequence is MOST accurate?",
     choices: [
-      "Tidal volume stays constant regardless of compliance changes",
-      "End-tidal CO₂ is unaffected by the mode change",
-      "Barotrauma risk is completely eliminated by PCV",
-      "Tidal volume becomes dependent on compliance and may decrease"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. That describes volume control. In pressure control the pressure is fixed; Vt varies with compliance and resistance.",
-      "Incorrect. If compliance changes and Vt drops, minute ventilation falls and ETCO₂ rises — this is the chief monitoring concern when switching to PCV.",
-      "Incorrect. Barotrauma is reduced (capped pressure) but not eliminated; alveolar overdistension can still occur, particularly with high PEEP plus driving pressure.",
-      "Correct. PCV delivers a decelerating flow at a set inspiratory pressure. Peak pressure is capped, often lowering it for the same minute ventilation, but Vt is no longer guaranteed — if compliance worsens (deeper Trendelenburg, more CO₂ insufflation), Vt drops and hypoventilation can occur. Monitor exhaled Vt and ETCO₂."
-    ]
-  },
-  {
-    id: "p_009",
-    topic: "principles",
-    subtopic: "admin_ventilation",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 44; Hess DR, Respir Care 2015",
-    question: "During a sustained-inflation recruitment maneuver (40 cm H₂O × 30 seconds) for intraoperative atelectasis, MAP drops from 78 to 52 mmHg. What is the most likely mechanism and best immediate action?",
-    choices: [
-      "Tension pneumothorax — perform needle decompression",
-      "Decreased venous return from elevated intrathoracic pressure",
-      "Acute pulmonary embolism — initiate heparin therapy",
-      "Anaphylaxis — administer epinephrine and fluids"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. Pneumothorax during recruitment is rare and would also typically show desaturation, asymmetric breath sounds, and rising peak pressures — not just hypotension.",
-      "Correct. Sustained high intrathoracic pressure compresses the SVC/IVC and right atrium, reducing preload. This is the most common adverse effect of recruitment maneuvers and is usually self-limited once the maneuver ends. Pre-bolus volume and pause the maneuver if hypotension occurs. Recruitment is generally avoided in hypovolemic or hemodynamically unstable patients.",
-      "Incorrect. PE is unlikely to occur acutely at the moment of a recruitment maneuver and would not resolve by stopping it.",
-      "Incorrect. Anaphylaxis presents with bronchospasm, rash, and prolonged hypotension unrelated to airway pressure changes."
-    ]
-  },
-  {
-    id: "p_010",
-    topic: "principles",
-    subtopic: "admin_ventilation",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Ch. 53 (Thoracic Anesthesia); Campos JH, Anesth Analg 2009",
-    question: "A 68-year-old man is undergoing right thoracotomy with one-lung ventilation via left-sided DLT. SpO₂ falls to 86% on FiO₂ 1.0. The DLT position is confirmed by fiberoptic bronchoscopy, and PEEP 5 cm H₂O is already applied to the dependent (left) lung. What is the next most effective maneuver?",
-    choices: [
-      "Resume two-lung ventilation immediately",
-      "Increase PEEP on the dependent lung to 15 cm H₂O",
-      "Apply 5–10 cm H₂O CPAP to the non-dependent (operative) lung",
-      "Suction the dependent lung"
-    ],
+            "Delivered tidal volume will remain fixed regardless of the reduced compliance",
+            "Peak airway pressure will continue to climb as compliance worsens further",
+            "Delivered tidal volume now varies with compliance and may fall as compliance drops",
+            "Minute ventilation is guaranteed because the ventilator compensates automatically"
+        ],
     correct: 2,
     explanations: [
-      "Incorrect. Resuming two-lung ventilation works but interrupts surgery; it is reserved for refractory hypoxemia after other measures fail.",
-      "Incorrect. Excessive PEEP on the dependent lung can overdistend alveoli, raise PVR, and divert blood flow to the non-ventilated lung — paradoxically worsening shunt and hypoxemia. Optimal dependent-lung PEEP is usually 5–10 cm H₂O.",
-      "Correct. CPAP 5–10 cm H₂O to the non-dependent lung with 100% O₂ recruits collapsed alveoli on the operative side and allows oxygen uptake from this small recruited volume, dramatically reducing shunt. It is the most effective and commonly recommended intervention after FiO₂, tube position, and dependent-lung PEEP are optimized.",
-      "Incorrect. Suctioning helps if secretions are present, but routine suctioning is not the answer when DLT position is confirmed and no secretions are described."
-    ]
+            "Incorrect. In pressure-control ventilation the PRESSURE is fixed and the volume is variable — so tidal volume is not held constant when compliance changes.",
+            "Incorrect. In pressure-control the set inspiratory pressure caps the applied pressure; peak pressure does not keep climbing. (It is in volume-control that pressure rises when compliance falls.)",
+            "Correct. Pressure-control ventilation delivers a set inspiratory pressure, so the resulting TIDAL VOLUME depends on respiratory system compliance and resistance. As pneumoperitoneum reduces compliance, the delivered tidal volume can DECREASE, risking hypoventilation unless the pressure or rate is adjusted and volumes are monitored.",
+            "Incorrect. Minute ventilation is not guaranteed; because tidal volume varies with compliance, minute ventilation can fall and must be watched and adjusted."
+        ]
+  },
+    {
+      id: "p_009",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 44; Hess DR, Respir Care 2015",
+      question: "During a sustained-inflation recruitment maneuver (40 cm H₂O for 30 seconds) for atelectasis, a patient's MAP falls from 78 to 52 mmHg. Which mechanism BEST explains this drop?",
+      choices: [
+        "A vagally mediated bradycardic reflex triggered by sustained lung stretch",
+        "Reduced venous return as high intrathoracic pressure impedes ventricular filling",
+        "Increased left ventricular afterload from compression of the thoracic aorta",
+        "Acute left ventricular failure precipitated by the rise in airway pressure"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. Lung inflation can evoke reflexes, but a vagal bradycardic reflex is not the principal cause of the hypotension seen with sustained-inflation recruitment; the dominant mechanism is impaired venous return from raised intrathoracic pressure.",
+        "Correct. A sustained high airway pressure raises INTRATHORACIC PRESSURE, which reduces the pressure gradient for systemic venous return to the right heart. The fall in preload lowers stroke volume and therefore MAP. This is the expected, usually transient, hemodynamic effect of a recruitment maneuver and is why it is done briefly and with hemodynamic monitoring; it typically resolves when the maneuver ends.",
+        "Incorrect. Sustained inflation does not meaningfully increase LV afterload by aortic compression; if anything, raised intrathoracic pressure tends to REDUCE LV afterload. The hypotension is preload-related.",
+        "Incorrect. Acute LV failure is not the usual explanation in a patient without cardiac disease; the transient hypotension reflects reduced venous return, not new pump failure."
+      ]
+  },
+    {
+      id: "p_010",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Ch. 53 (Thoracic Anesthesia); Campos JH, Anesth Analg 2009",
+      question: "A 68-year-old undergoes right thoracotomy with one-lung ventilation via a correctly positioned left-sided double-lumen tube. SpO₂ falls to 86% on FiO₂ 1.0. After confirming tube position, which intervention is the MOST appropriate next step?",
+      choices: [
+        "Add 15 cm H₂O PEEP to the dependent (ventilated) lung to recruit it further",
+        "Apply 5–10 cm H₂O CPAP to the non-dependent (operative, non-ventilated) lung",
+        "Increase the tidal volume to the dependent lung to raise minute ventilation",
+        "Ask the surgeon to clamp the operative-side pulmonary artery to reduce shunt"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. High PEEP to the dependent lung can help if it is atelectatic, but excessive PEEP raises its vascular resistance and can DIVERT blood to the non-ventilated lung, worsening shunt; it is not the best first step and must be titrated cautiously.",
+        "Correct. With the tube confirmed and FiO₂ already 1.0, the most effective next step for OLV hypoxemia is usually CPAP (5–10 cm H₂O) to the NON-DEPENDENT (operative) lung. A little oxygen in that lung's alveoli allows some uptake despite minimal ventilation, reducing the shunt with minimal hemodynamic cost. (It does require the surgeon to tolerate slight lung inflation.)",
+        "Incorrect. Simply increasing tidal volume raises airway pressure and can worsen V/Q matching and barotrauma without correcting the shunt through the non-ventilated lung.",
+        "Incorrect. Surgical clamping of the operative pulmonary artery eliminates shunt but is an invasive last-resort maneuver, not the appropriate step before trying CPAP to the operative lung."
+      ]
   },
   {
     id: "p_011",
@@ -345,47 +345,47 @@ const QUESTION_BANK = [
       "Incorrect. 4 mL/kg is used only if plateau exceeds 30 on 6 mL/kg. APRV is an alternative mode under investigation, not first-line ARDSnet."
     ]
   },
-  {
-    id: "p_012",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "medium",
-    reference: "ASA Practice Advisory for the Prevention of Perioperative Peripheral Neuropathies (Anesthesiology 2018)",
-    question: "A 64-year-old man (BMI 31) undergoes a 5-hour supine abdominal case with both arms tucked at his sides. Postoperatively he reports numbness and weakness in the 4th and 5th digits of his right hand with weak interossei. What is the most likely mechanism?",
-    choices: [
-      "Ulnar nerve compression at the cubital tunnel from elbow extension and forearm pronation",
-      "Median nerve compression at the carpal tunnel from prolonged supine arm tucking",
-      "Lower trunk brachial plexus stretch from intraoperative arm abduction above 90 degrees",
-      "Radial nerve compression along the spiral groove of the humerus from positioning"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. The ulnar nerve is most vulnerable at the cubital tunnel (medial epicondyle). With the forearm pronated, the nerve is compressed against the bed; supination places it in a more protected position. Risk factors include male sex, high BMI, and prolonged surgery. The ASA practice advisory recommends arm position with forearm supinated or neutral when tucked, and padded elbows. Sensory deficit in the 4th–5th digits plus interosseous weakness is the classic ulnar pattern.",
-      "Incorrect. Median nerve injury produces thumb-side sensory loss (thumb, index, middle, half of ring) and thenar weakness — different distribution.",
-      "Incorrect. Brachial plexus stretch is associated with arm abduction >90°, head rotation, or shoulder bracing — not arms tucked at sides.",
-      "Incorrect. Radial nerve injury produces wrist drop and dorsal hand/forearm sensory loss, not the described digit-5 ulnar pattern."
-    ]
+    {
+      id: "p_012",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "hard",
+      reference: "ASA Practice Advisory for the Prevention of Perioperative Peripheral Neuropathies (Anesthesiology 2018)",
+      question: "After a 5-hour supine case with both arms tucked, a patient reports numbness of the little and ring fingers and weak finger abduction. Which positioning detail MOST specifically increased the risk of this injury?",
+      choices: [
+        "Abduction of the arm beyond 90 degrees on an arm board during the case",
+        "Forearm pronation with the elbow on the table edge, compressing the ulnar groove",
+        "Wrist hyperextension over a rigid pad, loading the carpal tunnel for hours at a time",
+        "External rotation of the shoulder stretching the upper trunk of the plexus"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. Arm abduction beyond 90° threatens the BRACHIAL PLEXUS (stretch), producing a different, more diffuse pattern — not an isolated ulnar deficit.",
+        "Correct. The deficit (little/ring finger numbness, weak finger abduction) is an ULNAR neuropathy. Ulnar risk is specifically increased by FOREARM PRONATION and elbow pressure, because pronation rotates the vulnerable cubital tunnel toward the table where it is compressed. Tucking arms in a SUPINATED or neutral position with padding at the elbow reduces this risk — a key reason the ulnar nerve is the most commonly injured perioperative nerve.",
+        "Incorrect. Wrist hyperextension loads the MEDIAN nerve at the carpal tunnel (thumb/index/middle symptoms), not the ulnar distribution described.",
+        "Incorrect. Shoulder external rotation stretches the plexus; it does not specifically explain a focal ulnar neuropathy from arm tucking."
+      ]
   },
-  {
-    id: "p_013",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Ch. 34 (Patient Positioning); Murphy GS et al., Anesth Analg 2010",
-    question: "A 72-year-old woman is in the beach chair position for shoulder arthroscopy under general anesthesia. NIBP measured at the upper arm (heart level) reads 110/70 mmHg (MAP 83). The circle of Willis is approximately 30 cm above the heart. Using a hydrostatic gradient of 0.74 mmHg per cm vertical distance, what is the approximate MAP at the circle of Willis?",
-    choices: [
-      "Approximately 83 mmHg — gradient does not affect intracranial perfusion",
-      "Approximately 61 mmHg",
-      "Approximately 38 mmHg",
-      "Approximately 105 mmHg — siphon effect augments cerebral flow"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. The hydrostatic gradient unequivocally lowers BP measured above the heart in upright/beach chair position. NIBP at the arm overestimates cerebral perfusion pressure.",
-      "Correct. 30 cm × 0.74 mmHg/cm = ~22 mmHg gradient. Cerebral MAP = 83 − 22 ≈ 61 mmHg. With normal ICP ~10, CPP ≈ 51 mmHg — at the threshold for cerebral ischemia. Reports of catastrophic stroke in beach chair position prompted recommendations to measure or estimate BP at brain level, maintain arm MAP ~20% above baseline, and avoid hypocapnia. Some recommend an arterial line transducer zeroed at the external auditory meatus.",
-      "Incorrect. This overestimates the gradient. 30 cm produces ~22 mmHg drop, not 45.",
-      "Incorrect. There is no siphon effect in the cerebral circulation — cerebral veins are collapsible and venous pressure follows atmospheric, eliminating the hydraulic siphon."
-    ]
+    {
+      id: "p_013",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Ch. 34 (Patient Positioning); Murphy GS et al., Anesth Analg 2010",
+      question: "A 72-year-old is in the beach-chair position for shoulder surgery. Arm-cuff MAP is kept at 65 mmHg (brain-level MAP ≈ 43 mmHg after height correction). The surgeon requests deliberate hypotension to improve the surgical field. What is the MOST appropriate response?",
+      choices: [
+        "Provide the requested hypotension but re-zero the arterial transducer at the external auditory meatus",
+        "Decline deliberate hypotension and target pressure to keep brain-level MAP around 70 mmHg or higher",
+        "Agree, since a brain-level MAP in the low 40s is acceptable under general anesthesia when seated",
+        "Agree, and add mild hypocapnia to shrink cerebral blood volume and offset the perfusion risk"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect (the trap). Zeroing the transducer at the external auditory meatus is genuinely good practice for MEASURING brain-level pressure — but it does not make it safe to then deliberately LOWER pressure into a hypoperfusion range. Accurate measurement plus a dangerous target is still dangerous.",
+        "Correct. In the beach-chair position the brain sits well above the cuff, so a seemingly adequate arm MAP corresponds to a much lower cerebral perfusion pressure. With brain-level MAP already ~43 mmHg, DELIBERATE hypotension would push cerebral perfusion into a dangerous range (beach-chair positioning has been associated with catastrophic watershed strokes). The correct response is to DECLINE deliberate hypotension and maintain adequate cerebral perfusion (commonly targeting brain-level MAP ≈70 mmHg), using positioning and surgical measures for the field instead.",
+        "Incorrect. A brain-level MAP in the low 40s is NOT reliably safe in the seated position; this is precisely the reasoning implicated in beach-chair ischemic injuries.",
+        "Incorrect. Hypocapnia further REDUCES cerebral blood flow, compounding the hypoperfusion risk — the opposite of protective in this setting."
+      ]
   },
   {
     id: "p_014",
@@ -408,89 +408,89 @@ const QUESTION_BANK = [
       "Incorrect. Angle-closure glaucoma is rare perioperatively and presents with a painful red eye, fixed mid-dilated pupil — not bilateral painless vision loss."
     ]
   },
-  {
-    id: "p_015",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "medium",
-    reference: "ASA Practice Advisory for Perioperative Peripheral Neuropathies (2018); Warner MA, Anesthesiology 2000",
-    question: "A 48-year-old woman undergoes a 6-hour robotic urologic case in lithotomy position. Postoperatively she reports foot drop with loss of dorsiflexion and sensory loss over the lateral leg and dorsum of the foot. What is the mechanism?",
-    choices: [
-      "Common peroneal nerve compression at the fibular head from leg-holder or stirrup pressure",
-      "Sciatic nerve stretch from extreme hip flexion during prolonged lithotomy positioning",
-      "Saphenous nerve compression at the medial knee against the lithotomy leg holder padding",
-      "Posterior tibial nerve compression deep in the popliteal fossa from prolonged flexion"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. The common peroneal nerve wraps around the fibular head superficially and is highly vulnerable to compression by lithotomy stirrups or leg-holders. Injury causes foot drop (loss of dorsiflexion and eversion) and sensory loss over the lateral leg and dorsum of the foot. Risk factors: low BMI (less protective tissue), prolonged lithotomy (>2–4 hours), and inadequate padding. Prevention: padded stirrups, lateral knee padding, and limiting lithotomy duration.",
-      "Incorrect. Sciatic stretch causes a more proximal sensorimotor pattern (hamstrings, all distal motor and sensory below knee), not isolated peroneal distribution.",
-      "Incorrect. The saphenous is a pure sensory branch of the femoral nerve supplying the medial leg — not the lateral foot.",
-      "Incorrect. Tibial nerve injury causes loss of plantar flexion and inversion (calcaneal gait) and plantar sensory loss — not foot drop."
-    ]
+    {
+      id: "p_015",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "medium",
+      reference: "ASA Practice Advisory for Perioperative Peripheral Neuropathies (2018); Warner MA, Anesthesiology 2000",
+      question: "A 48-year-old woman undergoes a 6-hour robotic urologic case in lithotomy position. Postoperatively she reports foot drop with loss of dorsiflexion and sensory loss over the lateral leg and dorsum of the foot. What is the mechanism?",
+      choices: [
+        "Saphenous nerve compression at the medial knee against the lithotomy leg holder padding",
+        "Sciatic nerve stretch from extreme hip flexion during prolonged lithotomy positioning",
+        "Common peroneal nerve compression at the fibular head from leg-holder or stirrup pressure",
+        "Posterior tibial nerve compression deep in the popliteal fossa from prolonged flexion"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. The saphenous is a pure sensory branch of the femoral nerve supplying the medial leg — not the lateral foot.",
+        "Incorrect. Sciatic stretch causes a more proximal sensorimotor pattern (hamstrings, all distal motor and sensory below knee), not isolated peroneal distribution.",
+        "Correct. The common peroneal nerve wraps around the fibular head superficially and is highly vulnerable to compression by lithotomy stirrups or leg-holders. Injury causes foot drop (loss of dorsiflexion and eversion) and sensory loss over the lateral leg and dorsum of the foot. Risk factors: low BMI (less protective tissue), prolonged lithotomy (>2–4 hours), and inadequate padding. Prevention: padded stirrups, lateral knee padding, and limiting lithotomy duration.",
+        "Incorrect. Tibial nerve injury causes loss of plantar flexion and inversion (calcaneal gait) and plantar sensory loss — not foot drop."
+      ]
   },
-  {
-    id: "p_016",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 34 (Patient Positioning)",
-    question: "A patient is being positioned in lateral decubitus for right thoracotomy. The team asks about the purpose and correct placement of the axillary roll. Which of the following is most accurate?",
-    choices: [
-      "In the axilla itself to elevate the shoulder",
-      "Caudal to the axilla under the upper ribs",
-      "Under the head to prevent cervical strain",
-      "Between the legs to prevent femoral compression"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. An axillary roll placed in the axilla itself directly compresses the brachial plexus and axillary artery — the opposite of its intended purpose. This is a common misnomer that leads to harm.",
-      "Correct. The 'axillary roll' (sometimes called chest roll) is placed just caudal to the axilla, under the upper ribs of the dependent side. It lifts the thorax off the bed, offloading pressure on the dependent shoulder's neurovascular bundle (brachial plexus, axillary artery/vein). Check the radial pulse on the downside arm after placement to confirm vessel patency.",
-      "Incorrect. Head support is separate from the axillary roll.",
-      "Incorrect. The interleg pillow prevents peroneal and saphenous nerve compression, not the same as the axillary roll."
-    ]
+    {
+      id: "p_016",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 34 (Patient Positioning)",
+      question: "For a patient in the lateral decubitus position, where should the 'axillary roll' be placed, and what is its purpose?",
+      choices: [
+        "Under the head and neck to keep the cervical spine in a neutral, well-supported alignment",
+        "Directly in the axilla to lift the dependent shoulder up toward the head",
+        "Just caudal to the axilla under the upper chest wall, to offload the dependent shoulder",
+        "Between the knees to prevent compression of the dependent peroneal nerve during the case"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Head/neck support is a separate consideration; the axillary roll's job is to offload the dependent shoulder/axilla.",
+        "Incorrect. Placing the roll IN the axilla is the classic error — it compresses the very neurovascular structures it is meant to protect.",
+        "Correct. Despite its name, the axillary roll is placed JUST CAUDAL to the axilla, under the upper rib cage/chest wall — NOT in the axilla itself. Its purpose is to lift the thorax so the dependent shoulder and the axillary neurovascular bundle are OFFLOADED, preventing compression of the brachial plexus and axillary vessels against the table.",
+        "Incorrect. Padding between the knees protects lower-limb nerves but is unrelated to the axillary roll's purpose."
+      ]
   },
-  {
-    id: "p_017",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Ch. 34; Phong SV et al., Anaesth Intensive Care 2007",
-    question: "A 65-year-old man completes a 5-hour robotic-assisted prostatectomy in steep Trendelenburg (30°). At end of case, his face, eyelids, and tongue appear markedly edematous. The surgical team requests extubation. What is the most appropriate course of action?",
-    choices: [
-      "Extubate immediately — facial edema is purely cosmetic",
-      "Perform cuff-leak test and delay extubation if needed",
-      "Administer IV furosemide 40 mg before extubation",
-      "Reverse paralysis with sugammadex and extubate to HFNC"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. Steep prolonged Trendelenburg with pneumoperitoneum causes substantial upper-airway and tongue edema. Stridor and post-extubation airway obstruction are well-described complications. Premature extubation without assessing airway risk can be catastrophic.",
-      "Correct. After prolonged steep Trendelenburg, examine the oropharynx, place the patient head-up before extubation to allow edema to redistribute, and perform a cuff-leak test (cuff down, listen for audible leak around ETT) — absent leak suggests significant laryngeal edema and high reintubation risk. Consider deliberate delay, leak-test-guided extubation, or airway exchange catheter on standby. Steroids may be considered but have limited acute benefit.",
-      "Incorrect. Furosemide does not acutely reverse interstitial airway edema in a euvolemic patient; aggressive diuresis can cause hypotension on emergence.",
-      "Incorrect. Reversing paralysis is appropriate but does not address the edema; HFNC will not rescue an obstructed upper airway."
-    ]
+    {
+      id: "p_017",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Ch. 34; Phong SV et al., Anaesth Intensive Care 2007",
+      question: "A 65-year-old has marked facial and tongue edema after a 5-hour robotic prostatectomy in steep Trendelenburg. He meets other extubation criteria, but the airway is floridly edematous and there is no urgency to extubate. What is the MOST appropriate airway management?",
+      choices: [
+        "Perform an elective awake tracheostomy to secure the airway before emergence",
+        "Extubate now over an airway exchange catheter, with reintubation equipment ready",
+        "Keep intubated with head elevation and delay extubation until the edema resolves",
+        "Extubate awake, observing in PACU with reintubation equipment kept at the bedside"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Elective tracheostomy is far too invasive for airway edema that is expected to resolve over hours and introduces its own significant morbidity; it is not appropriate when simple delay will suffice.",
+        "Incorrect (and the key trap). Extubation over an airway exchange catheter is a legitimate technique WHEN you have decided you must extubate a difficult airway — but here it needlessly commits to extubating a floridly swollen airway when waiting is safer. An AEC can also be poorly tolerated or fail to permit reintubation through a markedly edematous glottis.",
+        "Correct. With FLORID but reversible airway edema after prolonged steep Trendelenburg, and no urgency to extubate, the safest course is to keep the patient intubated with head elevation and DELAY extubation until the edema subsides and a cuff leak returns. No extubation technique is as safe as simply allowing time for reversible edema to resolve; the airway is only getting safer with waiting.",
+        "Incorrect. Awake extubation lowers laryngospasm/aspiration risk, but it still exposes the patient to obstruction from the edematous airway and provides no reintubation conduit. Delaying extubation is preferable while the edema persists."
+      ]
   },
-  {
-    id: "p_018",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "medium",
-    reference: "ASA Continuum of Depth of Sedation (Committee Approved 2019)",
-    question: "A 65-year-old undergoes screening colonoscopy with propofol sedation. He does not respond to verbal commands; sternal rub produces purposeful withdrawal. Spontaneous ventilation is adequate but the jaw requires occasional support. Per the ASA continuum, this depth is best classified as:",
-    choices: [
-      "Minimal sedation (anxiolysis)",
-      "Moderate sedation (conscious sedation)",
-      "Deep sedation",
-      "General anesthesia"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Minimal sedation: normal response to verbal command, no airway/ventilation/CV effects.",
-      "Incorrect. Moderate sedation: purposeful response to verbal or light tactile stimulation; no airway intervention required; spontaneous ventilation adequate.",
-      "Correct. Deep sedation: cannot be easily aroused but responds purposefully to repeated or painful stimulation; airway intervention may be required; spontaneous ventilation may be inadequate. The need for jaw support and response only to sternal rub places this patient in deep sedation. Practitioners administering deep sedation must be qualified to rescue from general anesthesia.",
-      "Incorrect. General anesthesia: unarousable even to painful stimulus; airway intervention often required; CV function may be impaired."
-    ]
+    {
+      id: "p_018",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "hard",
+      reference: "ASA Continuum of Depth of Sedation (Committee Approved 2019)",
+      question: "During propofol sedation for colonoscopy, a patient does not respond to loud verbal commands; a sternal rub produces purposeful pushing-away of the examiner's hand. Spontaneous ventilation is adequate. Which sedation level does this BEST represent?",
+      choices: [
+        "General anesthesia — unarousable even with painful stimulation",
+        "Moderate sedation — purposeful response to verbal or light tactile stimulation",
+        "Deep sedation — purposeful response only after repeated or painful stimulation",
+        "Minimal sedation — normal response to verbal commands"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Under general anesthesia there is NO purposeful response even to painful stimulation; a purposeful push-away to sternal rub means he is not generally anesthetized.",
+        "Incorrect. Moderate sedation requires a purposeful response to VERBAL or light TACTILE stimulation; this patient does not respond to voice, so he is deeper than moderate.",
+        "Correct. The defining feature of DEEP sedation is a PURPOSEFUL response elicited only after REPEATED or PAINFUL stimulation (here, purposeful pushing-away to a sternal rub, with no response to voice). Spontaneous ventilation may be adequate but can require support. The key discriminators: it is NOT moderate sedation (that responds to voice/light touch) and NOT general anesthesia (which would show NO purposeful response even to pain).",
+        "Incorrect. Minimal sedation responds normally to verbal commands, which this patient clearly does not."
+      ]
   },
   {
     id: "p_019",
@@ -498,20 +498,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "medium",
     reference: "ASA Standards for Basic Anesthetic Monitoring (amended 2010, effective 2011)",
-    question: "A 70-year-old receives fentanyl and midazolam for ERCP. End-tidal CO₂ is sampled via nasal cannula. Which monitoring change is most likely to be the EARLIEST indicator of opioid-induced respiratory depression?",
+    question: "A 70-year-old receives fentanyl and midazolam for ERCP with capnography sampled via nasal cannula. Which change is MOST likely to be the EARLIEST sign of opioid-induced respiratory depression, and why?",
     choices: [
-      "Pulse oximetry falling below 90% saturation",
-      "Capnography attenuation with decreased respiratory rate",
-      "Bradycardia below 50 beats per minute",
-      "Hypertension above the patient's baseline"
-    ],
+            "A fall in SpO₂, because oxygenation drops as soon as ventilation declines",
+            "A change in the capnogram, because it detects hypoventilation before desaturation",
+            "A rise in blood pressure, because hypercapnia triggers a sympathetic response",
+            "A fall in heart rate, because rising CO₂ directly slows the sinoatrial node"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Pulse oximetry lags ventilation by 30–60 seconds or more, especially in patients on supplemental oxygen, where saturation is maintained despite hypoventilation. Desaturation is a late sign.",
-      "Correct. Capnography detects hypoventilation in real time — bradypnea, low-amplitude or absent waveform, and apnea appear before SpO₂ falls, particularly with supplemental oxygen. The 2011 ASA standards added capnography as a required monitor during moderate and deep sedation specifically because oximetry alone fails to detect impending respiratory failure in oxygenated patients.",
-      "Incorrect. Bradycardia is a late sign of severe hypoxia, not a primary indicator of respiratory depression.",
-      "Incorrect. Hypoventilation typically produces hypertension only late, from hypercarbia and sympathetic discharge; not an early or reliable sign."
-    ]
+            "Incorrect. On supplemental oxygen especially, SpO₂ can stay normal for a while after ventilation falls, because oxygen reserves buffer the saturation — so desaturation is a LATE sign, not the earliest.",
+            "Correct. Capnography reflects VENTILATION breath-by-breath, so a falling respiratory rate and a changing (attenuated or lost) capnogram appear BEFORE oxygen saturation drops — particularly when the patient is receiving supplemental oxygen, which delays desaturation. This is precisely why capnography is recommended for monitoring sedation: it gives the earliest warning of hypoventilation/apnea.",
+            "Incorrect. A sympathetic blood-pressure rise from hypercapnia is variable and occurs later than the ventilatory change captured by capnography; it is not a reliable early indicator.",
+            "Incorrect. Bradycardia is neither an early nor a reliable indicator of opioid-induced hypoventilation, and rising CO₂ does not directly and predictably slow the sinus node in this setting."
+        ]
   },
   {
     id: "p_020",
@@ -540,83 +540,83 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "hard",
     reference: "Miller's Anesthesia, Ch. 25 (Intravenous Anesthetics); Flumazenil package insert",
-    question: "A 58-year-old man on chronic high-dose alprazolam for panic disorder receives 4 mg midazolam during a procedure and becomes apneic with SpO₂ 82%. The team considers flumazenil. What is the most concerning specific risk?",
+    question: "A 58-year-old man on chronic high-dose alprazolam becomes apneic (SpO₂ 82%) after 4 mg of midazolam during a procedure. What is the MOST appropriate management?",
     choices: [
-      "Precipitation of benzodiazepine withdrawal seizures",
-      "Hypertensive crisis from catecholamine surge",
-      "Acute hepatotoxicity",
-      "Malignant hyperthermia trigger"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. In chronic benzodiazepine users, flumazenil can abruptly reverse GABA-A modulation, precipitating withdrawal seizures, agitation, and arrhythmias. It is also short-acting (half-life ~1 hour vs midazolam ~2–4 hours, longer with renal/hepatic impairment), so resedation is common. In a chronic user with respiratory depression from over-sedation, the safer course is airway support and ventilation, with flumazenil reserved as a last resort and given in small titrated doses (0.1–0.2 mg) with seizure precautions.",
-      "Incorrect. Hypertension can occur with reversal but is not the dominant or most-feared concern.",
-      "Incorrect. Flumazenil does not cause acute hepatotoxicity.",
-      "Incorrect. Flumazenil is not an MH trigger; MH triggers are volatile anesthetics and succinylcholine."
-    ]
-  },
-  {
-    id: "p_022",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Ch. 25; Andolfatto G et al., Ann Emerg Med 2012 (Ketofol)",
-    question: "A 34-year-old opioid-tolerant patient with severe COPD requires sedation for incision and drainage of a forearm abscess in the ED. The goals are analgesia, preserved respiratory drive, and stable hemodynamics. Which regimen best meets these goals?",
-    choices: [
-      "Propofol 1.5 mg/kg bolus followed by a continuous infusion for the procedure",
-      "Midazolam 0.05 mg/kg combined with fentanyl 1.5 mcg/kg for procedural sedation",
-      "Ketamine 0.5 mg/kg combined with low-dose propofol as \"ketofol\" sedation",
-      "Dexmedetomidine 2 mcg/kg given as a loading bolus over ten minutes total"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Propofol bolus causes apnea and hypotension, particularly in COPD with air-trapping; no analgesia is provided.",
-      "Incorrect. Midazolam plus fentanyl produces synergistic respiratory depression with no preservation of respiratory drive — high-risk in COPD.",
-      "Correct. Ketamine provides analgesia and dissociation while preserving airway reflexes, respiratory drive, and hemodynamic stability (sympathomimetic effect helpful in opioid-tolerant patients). Combining with low-dose propofol smooths emergence and reduces hypertension/emergence reactions while keeping propofol dose below the apnea threshold. This combination (ketofol) is well-studied for procedural sedation in challenging airway/respiratory populations.",
-      "Incorrect. A 2 mcg/kg bolus of dexmedetomidine over 10 minutes commonly causes profound hypotension and bradycardia, and dex alone provides inadequate analgesia and amnesia for an incisional procedure."
-    ]
-  },
-  {
-    id: "p_023",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "medium",
-    reference: "SCIP-Inf-1; CMS Surgical Care Improvement Project; Bratzler DW, Clin Infect Dis 2013",
-    question: "A patient is scheduled for primary total knee arthroplasty. Cefazolin 2 g IV is selected for surgical prophylaxis. To meet SCIP infection-prevention measures, the antibiotic should be administered:",
-    choices: [
-      "Within 60 minutes before surgical incision",
-      "At the time of skin incision",
-      "Within 60 minutes after surgical incision",
-      "At anesthetic induction regardless of incision time"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. SCIP-Inf-1 specifies that prophylactic antibiotics be administered within 60 minutes before incision. For agents requiring longer infusion (vancomycin, fluoroquinolones), the window is 120 minutes. Tourniquet inflation in extremity surgery should also occur after the antibiotic is fully infused. Redosing during long cases is based on agent half-life and blood loss (cefazolin every 4 hours, or sooner with EBL >1.5 L).",
-      "Incorrect. At-incision dosing risks subtherapeutic tissue levels at the time of contamination.",
-      "Incorrect. Post-incision dosing fails the SCIP measure and is associated with increased SSI rates.",
-      "Incorrect. Induction timing is not always within 60 minutes of incision (e.g., regional placement delays). The measure is tied to incision time, not induction."
-    ]
-  },
-  {
-    id: "p_024",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "medium",
-    reference: "2014 ACC/AHA Guideline on Perioperative Cardiovascular Evaluation; POISE trial (Lancet 2008)",
-    question: "A 68-year-old man on chronic metoprolol succinate 100 mg daily for stable CAD presents for elective hemicolectomy. Regarding his beta-blocker:",
-    choices: [
-      "Hold the morning dose to reduce intraoperative bradycardia and hypotension",
-      "Continue his chronic regimen throughout the perioperative period",
-      "Double the dose the night before to ensure adequate beta-blockade",
-      "Substitute an esmolol infusion intraoperatively"
-    ],
+            "Give flumazenil 0.2 mg IV, titrated slowly to avoid an abrupt reversal effect",
+            "Support ventilation with 100% oxygen and do not administer flumazenil",
+            "Give flumazenil with a benzodiazepine drawn up and ready to treat any seizure",
+            "Give low-dose flumazenil after starting a prophylactic antiepileptic infusion"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Abrupt discontinuation of chronic beta-blockers is associated with rebound tachycardia, hypertension, ischemia, and increased mortality. Class I recommendation: continue beta-blockers in patients who are chronically on them.",
-      "Correct. Per the 2014 ACC/AHA guideline (Class I), patients on chronic beta-blockers should continue them perioperatively. The POISE trial showed that initiating high-dose beta-blocker (metoprolol succinate 100 mg) within 24 hours of surgery reduced MI but increased stroke and death — so prophylactic de novo high-dose initiation is harmful. Long-standing therapy, in contrast, should not be interrupted.",
-      "Incorrect. Up-titrating just before surgery mimics the POISE harm signal.",
-      "Incorrect. Substituting an esmolol infusion is unnecessary; oral chronic therapy is preferred when feasible."
-    ]
+            "Incorrect (the tempting trap). Slow titration does NOT make flumazenil safe in a chronically dependent patient — even gradual antagonism of the benzodiazepine receptor can precipitate acute withdrawal and seizures. The hazard is the drug itself in this population, not the rate of administration.",
+            "Correct. The strong instinct here is to 'reverse the benzodiazepine,' and that is the trap. In a CHRONIC high-dose benzodiazepine user, flumazenil can precipitate refractory withdrawal SEIZURES — and because it blocks the very GABA-A/benzodiazepine receptor you would use to treat them, those seizures can be extremely difficult to control. Midazolam-induced respiratory depression is self-limited and readily managed with airway support and ventilation, so the safest course is to SUPPORT VENTILATION and AVOID flumazenil altogether.",
+            "Incorrect. Having a benzodiazepine ready 'to treat seizures' is self-defeating: flumazenil occupies the receptor those benzodiazepines need to work, so flumazenil-induced withdrawal seizures are often refractory to benzodiazepine treatment. This does not make administration safe.",
+            "Incorrect. A prophylactic antiepileptic neither reliably prevents flumazenil-precipitated withdrawal seizures nor justifies giving a drug best avoided in this patient, and it delays the definitive step — supportive ventilation."
+        ]
+  },
+    {
+      id: "p_022",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Ch. 25; Andolfatto G et al., Ann Emerg Med 2012 (Ketofol)",
+      question: "A 34-year-old opioid-tolerant man with severe COPD needs sedation for incision and drainage of a forearm abscess in the ED. He must keep spontaneous ventilation, and effective analgesia is needed given his tolerance. Which approach is MOST appropriate?",
+      choices: [
+        "A propofol bolus followed by a propofol infusion",
+        "Titrated midazolam plus fentanyl for procedural sedation",
+        "Ketamine 0.5 mg/kg with low-dose propofol ('ketofol')",
+        "A dexmedetomidine loading bolus over 10 minutes"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect, though reasonable. Propofol provides excellent sedation and is commonly used, but it provides NO ANALGESIA (a problem for a painful I&D in an opioid-tolerant patient) and dose-dependently depresses ventilation and blood pressure — less ideal when spontaneous breathing must be preserved in severe COPD.",
+        "Incorrect, though reasonable. Midazolam + fentanyl is a standard, defensible procedural-sedation combination — but in an OPIOID-TOLERANT patient the fentanyl dose needed for analgesia may be high, and the benzodiazepine-opioid combination carries a greater risk of respiratory depression in someone with severe COPD. It can work, but it is a less favorable profile than ketofol here.",
+        "Correct (best of three reasonable options). 'KETOFOL' pairs ketamine's analgesia, preserved respiratory drive, and bronchodilation — valuable in severe COPD and opioid tolerance — with a small dose of propofol that smooths ketamine's psychomimetic effects, while the two agents' opposing hemodynamic effects tend to balance. For a painful I&D in an opioid-tolerant patient who must keep breathing, this offers the best analgesia-plus-stability profile.",
+        "Incorrect (the weaker option). Dexmedetomidine preserves respiratory drive but provides limited analgesia for a painful incision, has a slow onset unsuited to a brief procedure, and a loading bolus commonly causes bradycardia/hypotension — making it the least suitable choice here."
+      ]
+  },
+    {
+      id: "p_023",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "easy",
+      reference: "SCIP-Inf-1; CMS Surgical Care Improvement Project; Bratzler DW, Clin Infect Dis 2013",
+      question: "For total knee arthroplasty with cefazolin prophylaxis, within what window before skin incision should the antibiotic be administered to meet SCIP guidance?",
+      choices: [
+        "Within 60 minutes after incision",
+        "At the moment of skin incision",
+        "Within 60 minutes before incision",
+        "At induction, independent of incision timing"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Dosing after incision misses the window when tissue levels must already be therapeutic.",
+        "Incorrect. Giving it exactly at incision does not allow time to reach adequate tissue levels beforehand.",
+        "Correct. For most agents (including cefazolin), prophylactic antibiotics should be infused within 60 MINUTES BEFORE skin incision so that adequate tissue concentrations are present at the time of incision.",
+        "Incorrect. Timing is referenced to incision, not simply to induction; induction may be well before or after the 60-minute window."
+      ]
+  },
+    {
+      id: "p_024",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "medium",
+      reference: "2014 ACC/AHA Guideline on Perioperative Cardiovascular Evaluation; POISE trial (Lancet 2008)",
+      question: "A 68-year-old man on chronic metoprolol succinate for stable CAD presents for elective hemicolectomy. Regarding his beta-blocker, which plan is MOST appropriate?",
+      choices: [
+        "Substitute an intraoperative esmolol infusion for his oral beta-blocker",
+        "Hold the morning dose to reduce the chance of intraoperative bradycardia and hypotension",
+        "Continue his chronic beta-blocker regimen throughout the perioperative period",
+        "Double the dose the night before to ensure dense perioperative beta-blockade"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect, though it maintains some beta-blockade. Substituting an esmolol infusion is unnecessary for a patient who can continue their usual oral regimen and adds complexity without benefit here.",
+        "Incorrect, though superficially cautious. Holding the dose to avoid bradycardia/hypotension seems prudent, but abrupt withdrawal of a chronic beta-blocker is itself harmful (rebound ischemia); dose is adjusted for hemodynamics rather than simply held.",
+        "Correct. Patients already on CHRONIC beta-blockers should CONTINUE them through the perioperative period; abrupt withdrawal risks rebound tachycardia, hypertension, ischemia, and arrhythmia. Continuation (with attention to heart rate and blood pressure) is the guideline-consistent plan.",
+        "Incorrect (the weaker option). Acutely doubling the dose is exactly the kind of new/high-dose perioperative beta-blockade shown to increase stroke and mortality (POISE); it should be avoided."
+      ]
   },
   {
     id: "p_025",
@@ -681,26 +681,26 @@ const QUESTION_BANK = [
       "Incorrect. RCRI 4 requires four of the six criteria; this patient has three."
     ]
   },
-  {
-    id: "p_028",
-    topic: "principles",
-    subtopic: "preop",
-    difficulty: "medium",
-    reference: "2014 ACC/AHA Perioperative Guideline; Roshanov PS et al., Anesthesiology 2017",
-    question: "A 62-year-old woman with well-controlled hypertension on lisinopril 20 mg daily is scheduled for elective laparoscopic cholecystectomy. Regarding her ACE inhibitor on the morning of surgery:",
-    choices: [
-      "Continue the usual morning dose to prevent any rebound hypertension intraoperatively",
-      "Continue and double the morning dose preoperatively to ensure optimal blood pressure control",
-      "Switch the patient from lisinopril to intravenous enalaprilat at the time of anesthetic induction",
-      "Hold the morning dose to reduce the risk of refractory intraoperative hypotension"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. ACE inhibitors do not cause rebound hypertension when a single dose is omitted; they have prolonged renin-angiotensin effects.",
-      "Incorrect. Doubling preoperatively exacerbates intraoperative hypotension risk.",
-      "Incorrect. There is no role for routine IV ACE inhibition perioperatively.",
-      "Correct. Holding ACE inhibitors and ARBs on the morning of surgery is widely recommended to reduce the incidence and severity of intraoperative hypotension, which can be refractory to standard vasopressors (ephedrine, phenylephrine) and may require vasopressin. Observational data (Roshanov 2017) link continuation to higher rates of intraoperative hypotension; the evidence for hard outcomes is less definitive but most institutions hold ACE/ARB on the day of major surgery, particularly in patients with euvolemic baseline BP. Resume postoperatively when hemodynamically stable."
-    ]
+    {
+      id: "p_028",
+      topic: "principles",
+      subtopic: "preop",
+      difficulty: "medium",
+      reference: "2014 ACC/AHA Perioperative Guideline; Roshanov PS et al., Anesthesiology 2017",
+      question: "A 62-year-old woman with well-controlled hypertension on lisinopril is scheduled for elective laparoscopic cholecystectomy. Regarding her ACE inhibitor on the morning of surgery, which plan is MOST appropriate?",
+      choices: [
+        "Continue but reduce the morning dose by half to balance the competing risks",
+        "Continue the usual morning dose to avoid any perioperative blood-pressure rebound",
+        "Hold the morning dose to reduce the risk of refractory intraoperative hypotension",
+        "Switch to IV enalaprilat at induction to maintain steady ACE inhibition"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Halving the dose is an ad hoc compromise without a strong evidence base; the usual decision is a clear hold-or-continue, guided by the indication, not an arbitrary dose reduction.",
+        "Incorrect, though defensible in some settings. Continuing ACE inhibitors is reasonable when they treat heart failure or when tight BP control is paramount — but for routine elective surgery in a hypertensive patient, continuing raises the refractory-hypotension risk, so it is not the best general answer.",
+        "Correct. ACE inhibitors (and ARBs) taken on the morning of surgery are associated with intraoperative HYPOTENSION that can be REFRACTORY to standard vasopressors (requiring vasopressin). For elective non-cardiac surgery, a common approach is to HOLD the morning dose (especially when given primarily for hypertension), restarting it postoperatively once euvolemic. This is the most widely recommended plan.",
+        "Incorrect. Switching to IV enalaprilat would perpetuate (or worsen) the very ACE-inhibition-related hypotension risk being avoided; it is not indicated here."
+      ]
   },
   {
     id: "p_029",
@@ -729,62 +729,62 @@ const QUESTION_BANK = [
     subtopic: "admin_general",
     difficulty: "hard",
     reference: "ASA Practice Advisory for Intraoperative Awareness and Brain Function Monitoring (Anesthesiology 2006); B-Aware/B-Unaware trials",
-    question: "A trauma patient with hemorrhagic shock requires emergency exploratory laparotomy. Severe hemodynamic instability limits the use of inhalational and many IV anesthetics, increasing the risk of intraoperative awareness. Which statement best reflects current evidence on brain-function monitoring (e.g., BIS) in this scenario?",
+    question: "A trauma patient in hemorrhagic shock needs emergency laparotomy; instability limits anesthetic dosing and raises the risk of intraoperative awareness. Which statement best reflects current evidence on processed-EEG (e.g., BIS) monitoring here?",
     choices: [
-      "BIS monitoring eliminates awareness when MAC is unavailable",
-      "BIS monitoring is contraindicated in trauma patients",
-      "BIS is useful when end-tidal anesthetic monitoring is unreliable",
-      "BIS values <40 are mandatory for all general anesthetics"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. No monitor eliminates awareness. The B-Unaware (NEJM 2008) and BAG-RECALL trials showed BIS-guided care is not clearly superior to MAC-guided protocols in inhalational anesthesia. The B-Aware trial showed benefit in a high-risk population.",
-      "Incorrect. BIS is not contraindicated in trauma — in fact, this is a setting where it is most likely to add value.",
-      "Correct. The ASA practice advisory states processed EEG (BIS, PSI, etc.) is not standard for every case but should be considered case-by-case for high-risk patients (TIVA, paralyzed patients receiving low-dose anesthetic, prior awareness history, hemodynamic limitation precluding standard MAC). Target BIS 40–60 corresponds to general anesthesia depth. The monitor is an adjunct — clinical signs and balanced anesthetic technique remain essential.",
-      "Incorrect. There is no mandatory BIS target across all anesthetics; 40–60 is typical for general anesthesia, but values outside this range may be acceptable depending on context (deep hypothermic circulatory arrest, burst suppression for neuroprotection)."
-    ]
-  },
-  {
-    id: "p_031",
-    topic: "principles",
-    subtopic: "admin_general",
-    difficulty: "medium",
-    reference: "Boyer EW, Shannon M, NEJM 2005 (Serotonin Syndrome); Miller's Anesthesia, Ch. 24",
-    question: "A 45-year-old woman on chronic fluoxetine for major depression is shivering in the PACU after thyroidectomy under general anesthesia. The PACU team is considering treatment. Which of the following options should be AVOIDED in this patient?",
-    choices: [
-      "Meperidine 25 mg IV",
-      "Dexmedetomidine 0.5 mcg/kg",
-      "Tramadol 50 mg IV",
-      "Both meperidine and tramadol"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect (individually true). Meperidine should be avoided, but tramadol carries the same risk — see option D.",
-      "Incorrect. Dexmedetomidine is safe and effective for shivering and does not interact with serotonergic mechanisms.",
-      "Incorrect (individually true). Tramadol should be avoided, but the most complete answer is D.",
-      "Correct. Both meperidine and tramadol have serotonergic activity (meperidine inhibits serotonin reuptake; tramadol is an SNRI with weak opioid activity) and can precipitate serotonin syndrome in patients on SSRIs, SNRIs, or MAOIs. Features include autonomic instability, hyperreflexia, clonus, hyperthermia, and altered mental status. Safer antishivering options in SSRI users: dexmedetomidine, low-dose ketamine, clonidine, and physical warming. Treatment of serotonin syndrome: discontinue offending agents, supportive care, benzodiazepines, and cyproheptadine in severe cases."
-    ]
-  },
-  {
-    id: "p_032",
-    topic: "principles",
-    subtopic: "admin_general",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 44 (Airway Management); El-Orbany M, Anesth Analg 2010",
-    question: "A 45-year-old man with a small bowel obstruction requires emergency surgery. Rapid sequence induction and intubation is planned. Which combination is most appropriate?",
-    choices: [
-      "Propofol 1 mg/kg combined with rocuronium 0.6 mg/kg at the standard intubating dose",
-      "Etomidate 0.3 mg/kg with succinylcholine 1.5 mg/kg or high-dose rocuronium 1.2 mg/kg",
-      "Propofol 2.5 mg/kg combined with cisatracurium 0.15 mg/kg at the intubating dose",
-      "Ketamine 0.5 mg/kg followed by vecuronium 0.1 mg/kg as the neuromuscular blocker"
-    ],
+            "It reliably excludes intraoperative awareness whenever the displayed index reads below 60",
+            "It is most useful when end-tidal anesthetic monitoring is unreliable, as in TIVA or low-dose techniques",
+            "Processed-EEG values track opioid analgesia well and can be used to titrate fentanyl to effect",
+            "Processed-EEG monitoring performs equally well across ketamine-, N₂O-, and volatile-based anesthetics"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Standard intubating-dose rocuronium (0.6 mg/kg) has a 90-second onset — too slow for RSI. RSI dose is 1.0–1.2 mg/kg.",
-      "Correct. RSI requires rapid-acting NMB at higher dose to achieve intubating conditions within ~60 seconds. Succinylcholine 1.0–1.5 mg/kg or high-dose rocuronium 1.2 mg/kg are appropriate (with sugammadex available for roc reversal). Etomidate provides hemodynamic stability — a reasonable choice in an unstable bowel obstruction patient with potential hypovolemia. Cricoid pressure (Sellick maneuver) is traditionally applied, though its efficacy is debated.",
-      "Incorrect. Cisatracurium has a 3- to 5-minute onset — too slow for RSI.",
-      "Incorrect. Vecuronium has a 2- to 4-minute onset and is also too slow for RSI."
-    ]
+            "Incorrect. A processed-EEG index reduces but does not eliminate the risk of awareness, and a single threshold value does not reliably exclude awareness in an individual patient.",
+            "Correct. Processed-EEG (e.g., BIS) monitoring adds the most value in situations where the usual surrogate for anesthetic depth — end-tidal volatile concentration — is UNRELIABLE or unavailable, such as during total intravenous anesthesia or the deliberately low anesthetic doses forced by hemodynamic instability. In a shocked trauma patient at elevated risk of awareness, it can help guide depth when MAC-based monitoring cannot.",
+            "Incorrect. Processed-EEG indices reflect hypnosis/cortical activity, not analgesia; they do not track opioid effect and should not be used to titrate opioids.",
+            "Incorrect. Processed-EEG indices are confounded by certain agents — notably ketamine and nitrous oxide (which can raise the number) and EMG artifact — so performance is not uniform across anesthetic techniques."
+        ]
+  },
+    {
+      id: "p_031",
+      topic: "principles",
+      subtopic: "admin_general",
+      difficulty: "hard",
+      reference: "Boyer EW, Shannon M, NEJM 2005 (Serotonin Syndrome); Miller's Anesthesia, Ch. 24",
+      question: "A 45-year-old woman on chronic fluoxetine is shivering in the PACU after thyroidectomy. You want to treat the shivering. Which agent is the MOST appropriate choice given her medication?",
+      choices: [
+        "Tramadol",
+        "Meperidine",
+        "Dexmedetomidine",
+        "Ondansetron"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect, though it reduces shivering. TRAMADOL has anti-shivering efficacy, but it too is serotonergic (reuptake inhibition) and combined with an SSRI raises serotonin-syndrome risk — so, like meperidine, it is a reasonable-looking but unsafe pick here.",
+        "Incorrect, though a classic anti-shivering drug. MEPERIDINE is one of the most effective agents for shivering (kappa/anti-shivering action), which makes it tempting — but it also inhibits serotonin reuptake and, combined with an SSRI, can precipitate SEROTONIN SYNDROME. Effective, but the wrong choice in a patient on fluoxetine.",
+        "Correct (best, given the SSRI). Shivering has several effective treatments, but this patient takes FLUOXETINE, a potent SSRI. DEXMEDETOMIDINE is an effective anti-shivering agent that does NOT act on serotonin, so it avoids the serotonin-toxicity risk — making it the safest effective choice here.",
+        "Incorrect (the weaker option). Ondansetron has only modest, inconsistent anti-shivering effect and is not a primary treatment; while it is serotonergic at the receptor level, its main problem here is simply that it is not an effective shivering treatment."
+      ]
+  },
+    {
+      id: "p_032",
+      topic: "principles",
+      subtopic: "admin_general",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Ch. 44 (Airway Management); El-Orbany M, Anesth Analg 2010",
+      question: "A 45-year-old man with a small-bowel obstruction needs emergency surgery with rapid-sequence induction. He is mildly hypovolemic. Which induction/neuromuscular-blocker combination is MOST appropriate?",
+      choices: [
+        "Propofol 2 mg/kg with succinylcholine 1.5 mg/kg",
+        "Ketamine 1.5 mg/kg with rocuronium 1.2 mg/kg for a rapid dense block",
+        "Etomidate 0.3 mg/kg with succinylcholine 1.5 mg/kg",
+        "Propofol 2.5 mg/kg with cisatracurium 0.15 mg/kg"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect, though it uses a proper RSI relaxant. Succinylcholine gives rapid conditions, but PROPOFOL 2 mg/kg can cause significant hypotension in a hypovolemic bowel-obstruction patient — the induction agent is the weak link, making this less appropriate than an etomidate-based plan.",
+        "Incorrect, though reasonable. KETAMINE + high-dose rocuronium is a legitimate RSI choice and also supports blood pressure — a strong option. It is edged out mainly because ketamine's sympathomimetic/secretory effects and dosing make etomidate the cleaner choice for pure hemodynamic stability here; this remains a defensible pick.",
+        "Correct (best for a full stomach + hypovolemia). RSI needs a rapid, dense block to secure the airway fast and minimize aspiration risk; ETOMIDATE provides hemodynamic stability in a hypovolemic patient, and SUCCINYLCHOLINE 1.5 mg/kg (or high-dose rocuronium 1.2 mg/kg) gives rapid intubating conditions. This pairing best matches the two priorities: fast onset and cardiovascular stability.",
+        "Incorrect (the weaker option). CISATRACURIUM has too slow an onset for rapid-sequence intubation, so this combination fails the core RSI requirement of rapidly securing the airway — the least appropriate choice."
+      ]
   },
   {
     id: "p_033",
@@ -807,68 +807,68 @@ const QUESTION_BANK = [
       "Correct. Axillary temperature underestimates core by 0.5–1.5°C and is influenced by skin perfusion, sweating, and probe placement. It is unreliable in anesthetized patients. Other reliable core sites: tympanic membrane (with proper technique), bladder (when urine flow is adequate), and rectum (slow to track changes, soiled by feces)."
     ]
   },
-  {
-    id: "p_034",
-    topic: "principles",
-    subtopic: "admin_temperature",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 54; Kranke P et al., Anesth Analg 2002 (Postanesthetic shivering meta-analysis)",
-    question: "A 50-year-old man is shivering vigorously in the PACU after a 3-hour orthopedic case. He is not on any SSRIs or MAOIs. Which agent has the most robust evidence as first-line pharmacologic treatment for postanesthetic shivering?",
-    choices: [
-      "Meperidine 12.5–25 mg IV",
-      "Acetaminophen 1 g IV",
-      "Dantrolene 2.5 mg/kg IV",
-      "Ondansetron 4 mg IV"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Meperidine has the strongest evidence base for postanesthetic shivering, with a unique mechanism beyond μ-opioid activity — kappa-opioid agonism and partial α₂-adrenergic activity lower the shivering threshold more than equianalgesic doses of other opioids. Low doses (12.5–25 mg IV) are typically effective. Alternatives with supportive evidence: clonidine, dexmedetomidine, tramadol, and ondansetron. Active rewarming with forced-air remains the foundation.",
-      "Incorrect. Acetaminophen treats fever/pain but is not effective for shivering.",
-      "Incorrect. Dantrolene treats malignant hyperthermia (and rarely, severe shivering), not standard postoperative shivering — and carries significant adverse effects.",
-      "Incorrect. Ondansetron has some evidence for shivering reduction but is less established than meperidine; it is more commonly used for shivering prophylaxis with neuraxial opioids."
-    ]
+    {
+      id: "p_034",
+      topic: "principles",
+      subtopic: "admin_temperature",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 54; Kranke P et al., Anesth Analg 2002 (Postanesthetic shivering meta-analysis)",
+      question: "A 50-year-old man is shivering vigorously in the PACU after a 3-hour orthopedic case. He is not on any SSRIs or MAOIs. Which agent has the most robust evidence as first-line pharmacologic treatment for postanesthetic shivering?",
+      choices: [
+        "Dantrolene 2.5 mg/kg IV",
+        "Acetaminophen 1 g IV",
+        "Meperidine 12.5–25 mg IV",
+        "Ondansetron 4 mg IV"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Dantrolene treats malignant hyperthermia (and rarely, severe shivering), not standard postoperative shivering — and carries significant adverse effects.",
+        "Incorrect. Acetaminophen treats fever/pain but is not effective for shivering.",
+        "Correct. Meperidine has the strongest evidence base for postanesthetic shivering, with a unique mechanism beyond μ-opioid activity — kappa-opioid agonism and partial α₂-adrenergic activity lower the shivering threshold more than equianalgesic doses of other opioids. Low doses (12.5–25 mg IV) are typically effective. Alternatives with supportive evidence: clonidine, dexmedetomidine, tramadol, and ondansetron. Active rewarming with forced-air remains the foundation.",
+        "Incorrect. Ondansetron has some evidence for shivering reduction but is less established than meperidine; it is more commonly used for shivering prophylaxis with neuraxial opioids."
+      ]
   },
-  {
-    id: "p_035",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "hard",
-    reference: "Cannesson M et al., Crit Care 2011 (Dynamic indices); Pearse RM et al., JAMA 2014 (OPTIMISE)",
-    question: "A 60-year-old woman is undergoing major open abdominal surgery. An arterial line is connected to a pulse-contour cardiac output monitor. She is in sinus rhythm and ventilated with Vt 8 mL/kg PBW, PEEP 5. SVV reads 16% and MAP is 62 mmHg. What is the best interpretation and action?",
-    choices: [
-      "SVV >12% predicts fluid responsiveness — give 250–500 mL bolus",
-      "Start norepinephrine — high SVV indicates fluid overload",
-      "Administer furosemide to reduce preload congestion",
-      "Ignore SVV — it is unreliable in surgical patients"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Dynamic indices like stroke volume variation (SVV) and pulse pressure variation (PPV) predict fluid responsiveness because positive-pressure ventilation cyclically alters preload — large variation implies the patient is on the steep portion of the Frank-Starling curve. Thresholds commonly cited: SVV >12–13% predicts a 10–15% rise in stroke volume after a fluid bolus. Goal-directed fluid therapy guided by such indices has been associated with reduced complications in some trials (Pearse OPTIMISE was negative for primary outcome but consistent with prior meta-analyses showing benefit).",
-      "Incorrect. Vasopressor without addressing preload deficit treats the symptom but not the cause — and patients with high SVV typically have inadequate preload, not overload.",
-      "Incorrect. Diuresis in a fluid-responsive patient worsens hypoperfusion.",
-      "Incorrect. SVV/PPV require sinus rhythm and Vt ≥8 mL/kg PBW (both met here); they become unreliable with arrhythmia, low Vt, spontaneous breathing, right heart failure, open chest, or very high PEEP. Otherwise they are validated predictors."
-    ]
+    {
+      id: "p_035",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "hard",
+      reference: "Cannesson M et al., Crit Care 2011 (Dynamic indices); Pearse RM et al., JAMA 2014 (OPTIMISE)",
+      question: "A 60-year-old woman is undergoing major open abdominal surgery. An arterial line is connected to a pulse-contour cardiac output monitor. She is in sinus rhythm and ventilated with Vt 8 mL/kg PBW, PEEP 5. SVV reads 16% and MAP is 62 mmHg. What is the best interpretation and action?",
+      choices: [
+        "Administer furosemide to reduce preload congestion",
+        "Start norepinephrine — high SVV indicates fluid overload",
+        "SVV >12% predicts fluid responsiveness — give 250–500 mL bolus",
+        "Ignore SVV — it is unreliable in surgical patients"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Diuresis in a fluid-responsive patient worsens hypoperfusion.",
+        "Incorrect. Vasopressor without addressing preload deficit treats the symptom but not the cause — and patients with high SVV typically have inadequate preload, not overload.",
+        "Correct. Dynamic indices like stroke volume variation (SVV) and pulse pressure variation (PPV) predict fluid responsiveness because positive-pressure ventilation cyclically alters preload — large variation implies the patient is on the steep portion of the Frank-Starling curve. Thresholds commonly cited: SVV >12–13% predicts a 10–15% rise in stroke volume after a fluid bolus. Goal-directed fluid therapy guided by such indices has been associated with reduced complications in some trials (Pearse OPTIMISE was negative for primary outcome but consistent with prior meta-analyses showing benefit).",
+        "Incorrect. SVV/PPV require sinus rhythm and Vt ≥8 mL/kg PBW (both met here); they become unreliable with arrhythmia, low Vt, spontaneous breathing, right heart failure, open chest, or very high PEEP. Otherwise they are validated predictors."
+      ]
   },
-  {
-    id: "p_036",
-    topic: "principles",
-    subtopic: "preop",
-    difficulty: "medium",
-    reference: "Lee et al., Circulation 1999 (RCRI); ACC/AHA Perioperative Guidelines",
-    question: "A 68-year-old man with diabetes on insulin, a creatinine of 2.4 mg/dL, prior stroke 3 years ago, and a history of CABG in 2018 is scheduled for an open right hemicolectomy for cancer. He has no chest pain and walks two flights of stairs slowly. What is his Revised Cardiac Risk Index (RCRI) score, and what is his estimated risk of major cardiac complications?",
-    choices: [
-      "RCRI 2 — approximately 1% risk of major cardiac complications perioperatively",
-      "RCRI 3 — approximately 5% risk of major cardiac complications perioperatively",
-      "RCRI 4 — approximately 9% risk of major cardiac complications perioperatively",
-      "RCRI 5 — approximately 15% risk of major cardiac complications perioperatively"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. RCRI 2 corresponds to about 1% risk and would apply to a patient with only two of the six criteria, not four.",
-      "Incorrect. RCRI 3 (about 5% risk) would apply if only three criteria were met; this patient meets four.",
-      "Correct. RCRI assigns 1 point each for: high-risk surgery (intraperitoneal, intrathoracic, suprainguinal vascular); ischemic heart disease (history of MI, positive stress test, current chest pain attributable to ischemia, nitrate use, or pathologic Q waves); congestive heart failure; cerebrovascular disease (stroke or TIA); insulin-dependent diabetes; and creatinine >2.0 mg/dL. This patient scores: open colectomy (1) + prior CABG/IHD (1) + stroke (1) + insulin DM (1) + Cr 2.4 (1) = 5 — but classically RCRI tops out at ≥3 as the highest stratum with ~9% major cardiac event rate. Re-counting strictly: he has 5 risk factors, which puts him in the highest RCRI category (≥3 factors = ~9-11% event risk). The score correlates with major cardiac events including MI, pulmonary edema, VF, cardiac arrest, and complete heart block.",
-      "Incorrect. RCRI does not stratify above the ≥3 category for risk percentage in the original derivation; 15% is not a published estimate."
-    ]
+    {
+      id: "p_036",
+      topic: "principles",
+      subtopic: "preop",
+      difficulty: "medium",
+      reference: "Lee et al., Circulation 1999 (RCRI); ACC/AHA Perioperative Guidelines",
+      question: "A 68-year-old man with diabetes on insulin, a creatinine of 2.4 mg/dL, prior stroke 3 years ago, and a history of CABG in 2018 is scheduled for an open right hemicolectomy for cancer. He has no chest pain and walks two flights of stairs slowly. What is his Revised Cardiac Risk Index (RCRI) score, and what is his estimated risk of major cardiac complications?",
+      choices: [
+        "RCRI 3 — approximately 11% risk of major cardiac complications perioperatively",
+        "RCRI 4 — approximately 11% risk of major cardiac complications perioperatively",
+        "RCRI 5 — approximately 11% or greater risk of major cardiac complications perioperatively",
+        "RCRI 6 — approximately 15% risk of major cardiac complications perioperatively"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Three undercounts by two. A common error is to overlook that creatinine 2.4 mg/dL exceeds the >2.0 threshold, or that prior CABG counts as ischemic heart disease.",
+        "Incorrect. Four undercounts by one. All five of these predictors are present: insulin-treated diabetes, creatinine >2.0 mg/dL, prior stroke (cerebrovascular disease), prior CABG (ischemic heart disease), and intraperitoneal (high-risk) surgery.",
+        "Correct. Five RCRI predictors are present: insulin-treated diabetes, creatinine 2.4 mg/dL (>2.0), prior stroke, prior CABG (ischemic heart disease), and open hemicolectomy (intraperitoneal high-risk surgery). Three or more predictors place him in the highest risk class (≈11% or greater major adverse cardiac events).",
+        "Incorrect. Six would require a sixth predictor. Heart failure is absent and no additional criterion applies, so the maximum here is five."
+      ]
   },
   {
     id: "p_037",
@@ -891,68 +891,68 @@ const QUESTION_BANK = [
       "Incorrect. Holding aspirin while continuing ticagrelor inverts the appropriate strategy — aspirin is the agent with the strongest evidence for stent protection and should be maintained."
     ]
   },
-  {
-    id: "p_038",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "medium",
-    reference: "ASA Continuum of Depth of Sedation (2019)",
-    question: "A 55-year-old undergoing ERCP under sedation responds only after repeated painful stimulation by the proceduralist. Her airway is patent without intervention, spontaneous ventilation is adequate, and her blood pressure is stable. According to the ASA continuum of sedation, what level of sedation is this patient experiencing?",
-    choices: [
-      "Minimal sedation — normal response to verbal stimulation, no airway support needed",
-      "Moderate sedation — purposeful response to verbal or light tactile stimulation",
-      "Deep sedation — purposeful response only after repeated or painful stimulation",
-      "General anesthesia — unarousable even with painful stimulus, airway support required"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Minimal sedation (anxiolysis) preserves a normal response to verbal commands; cognitive function and coordination may be impaired but airway, ventilation, and cardiovascular function are unaffected.",
-      "Incorrect. Moderate sedation (conscious sedation) is defined as purposeful response to verbal or light tactile stimulation; no airway intervention is typically needed and spontaneous ventilation is adequate. This patient required repeated painful stimulation, exceeding moderate.",
-      "Correct. Deep sedation/analgesia is defined by purposeful response only after repeated or painful stimulation. Airway intervention may be required, spontaneous ventilation may be inadequate, and cardiovascular function is usually maintained. Reflex withdrawal from a painful stimulus is NOT considered a purposeful response. Because depth of sedation is a continuum, providers must be qualified to rescue from one level deeper than intended — for deep sedation, that means being able to manage general anesthesia.",
-      "Incorrect. General anesthesia is characterized by unarousability even to painful stimulus, frequent need for airway intervention, often inadequate spontaneous ventilation, and possible cardiovascular impairment. This patient is still responding."
-    ]
+    {
+      id: "p_038",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "medium",
+      reference: "ASA Continuum of Depth of Sedation (2019)",
+      question: "During planned moderate sedation for an ERCP, the patient no longer responds even to a vigorous sternal rub and now requires a jaw thrust and assisted breaths to maintain oxygenation. What level of sedation has been reached, and what does it require of the provider?",
+      choices: [
+        "Deep sedation — no capability beyond the current sedation plan is required",
+        "Moderate sedation — the patient simply needs a louder verbal stimulus",
+        "General anesthesia — the provider must be able to manage the airway and support ventilation",
+        "Minimal sedation — the findings reflect normal anxiolysis"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Deep sedation retains a purposeful response to repeated or painful stimulation and usually adequate spontaneous ventilation; unresponsiveness to a sternal rub with a need for airway support has gone beyond deep sedation.",
+        "Incorrect. Moderate sedation is defined by a purposeful response to verbal or light tactile stimulation with no airway intervention needed — clearly exceeded here.",
+        "Correct. Unarousability even to painful stimulation, with a need for airway support and assisted ventilation, defines general anesthesia on the ASA continuum. Because sedation is a continuum, the provider must be qualified to rescue and manage a patient who reaches this depth.",
+        "Incorrect. Minimal sedation (anxiolysis) leaves the patient responding normally to verbal commands with unaffected ventilation — the opposite of this picture."
+      ]
   },
   {
     id: "p_039",
     topic: "principles",
     subtopic: "admin_sedation",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Ch. 31 (MAC); ASA Practice Guidelines for Sedation",
-    question: "An 82-year-old woman with COPD is undergoing cataract surgery under MAC with a propofol infusion at 25 mcg/kg/min plus 50 mcg of fentanyl. Twenty minutes in, the SpO₂ drifts from 96% to 88% on 2 L/min nasal cannula, her respiratory rate falls to 6, and the capnograph trace becomes irregular and low-amplitude. The surgeon is in a critical part of the case. What is the MOST appropriate immediate action?",
-    choices: [
-      "Increase nasal cannula flow to 6 L/min and continue current sedation depth",
-      "Stop propofol entirely and bag-mask ventilate over the surgical field",
-      "Reduce propofol infusion, apply chin lift/jaw thrust, and increase supplemental O₂",
-      "Administer naloxone 0.4 mg IV and hold further fentanyl administration"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Increasing nasal cannula flow alone does not address the underlying respiratory depression and airway compromise. SpO₂ may improve transiently but hypoventilation and CO₂ retention will continue. In a COPD patient, high-flow O₂ also risks worsening hypercapnia.",
-      "Incorrect. Bag-mask ventilation over an open eye during cataract surgery is impractical and contaminates the surgical field. It is a last-resort move if titration and airway maneuvers fail. Stopping propofol abruptly also risks intraop awareness/movement at a critical surgical moment.",
-      "Correct. The patient is too deeply sedated — propofol at 25 mcg/kg/min in an 82-year-old with COPD has produced upper airway obstruction (irregular low-amplitude capnogram suggests partial obstruction + hypoventilation) and respiratory depression. The right move is to reduce (not stop) the propofol infusion, perform a chin lift or jaw thrust to relieve airway obstruction, and increase supplemental O₂. This addresses both airway and ventilation while preserving sedation for the ongoing surgery. The eye surgery cannot be paused for full airway intervention. Capnography is the key monitor that revealed the problem — ASA guidelines require capnography for moderate and deep sedation.",
-      "Incorrect. Naloxone reverses opioid effect but is not the first-line response to mild respiratory depression and is excessive after only 50 mcg of fentanyl. It also risks acute pain, hypertension, and tachycardia in this elderly patient."
-    ]
-  },
-  {
-    id: "p_040",
-    topic: "principles",
-    subtopic: "admin_ventilation",
     difficulty: "medium",
-    reference: "Futier et al., NEJM 2013 (IMPROVE trial); Miller's Anesthesia, Ch. 50",
-    question: "A 72 kg, 170 cm woman (IBW approximately 60 kg) with no pulmonary disease is undergoing a 4-hour open abdominal hysterectomy. You are setting up volume-control ventilation. Which combination of settings BEST reflects current evidence-based intraoperative lung-protective ventilation?",
+    reference: "Miller's Anesthesia, Ch. 31 (MAC); ASA Practice Guidelines for Sedation",
+    question: "An 82-year-old woman with COPD under MAC (propofol 25 mcg/kg/min plus fentanyl) desaturates from 96% to 88% on 2 L/min nasal cannula, with a respiratory rate of 6 and a low, irregular capnograph. The surgeon is at a critical part of a cataract case. What is the MOST appropriate immediate action?",
     choices: [
-      "Vt 720 mL, RR 10, PEEP 0 cmH₂O, recruitment maneuvers as needed",
-      "Vt 420 mL, RR 12, PEEP 6-8 cmH₂O, periodic recruitment maneuvers",
-      "Vt 600 mL, RR 8, PEEP 12 cmH₂O, no recruitment maneuvers",
-      "Vt 300 mL, RR 20, PEEP 15 cmH₂O, continuous recruitment maneuvers"
-    ],
+            "Keep the sedation depth and simply increase nasal cannula flow to 6 L/min",
+            "Reduce the propofol infusion, open the airway with a jaw thrust, and add oxygen",
+            "Give naloxone 0.4 mg IV to reverse the fentanyl and continue the propofol infusion",
+            "Convert to general anesthesia with an LMA to secure ventilation for the remainder"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Vt 720 mL (10 mL/kg actual body weight) with zero PEEP reflects historical practice. Large Vt with no PEEP causes atelectotrauma and volutrauma even in patients without lung disease, and is associated with more postoperative pulmonary complications.",
-      "Correct. Modern intraoperative protective ventilation uses Vt 6-8 mL/kg of PREDICTED (ideal) body weight — here, 60 kg × 7 mL/kg ≈ 420 mL — plus PEEP 5-8 cmH₂O and periodic recruitment maneuvers. The IMPROVE trial (Futier 2013) demonstrated fewer major pulmonary and extrapulmonary complications and shorter hospital stays in abdominal surgery patients ventilated with low Vt + moderate PEEP + recruitment vs. high Vt + ZEEP. Plateau pressure should remain ≤16-18 cmH₂O in healthy lungs; driving pressure (Pplat - PEEP) ≤13 cmH₂O is also linked to better outcomes (Neto 2016 meta-analysis). Tidal volume is calculated from IBW, not actual weight, because lung size scales with height, not adiposity.",
-      "Incorrect. Vt 10 mL/kg IBW is too high; PEEP 12 may be excessive for healthy lungs at induction and risks hemodynamic compromise during open abdominal cases.",
-      "Incorrect. Vt 5 mL/kg IBW is at the lower bound of acceptable but PEEP 15 with continuous recruitment in a healthy patient is overkill and risks hypotension and barotrauma. RR 20 also produces clinically meaningful auto-PEEP risk."
-    ]
+            "Incorrect. Raising oxygen flow alone does not address the cause — oversedation-related hypoventilation and airway obstruction. Oxygen may raise SpO₂ transiently while CO₂ continues to rise.",
+            "Correct. The picture is sedation-induced hypoventilation with likely partial airway obstruction. The first, least-disruptive corrective steps are to LIGHTEN the anesthetic (reduce/pause propofol), restore airway patency with a chin lift/jaw thrust (± an airway adjunct), and increase supplemental oxygen — a graded response that treats the cause while minimizing interruption of a delicate eye procedure.",
+            "Incorrect. Full opioid reversal with naloxone is an overreaction here: it can cause abrupt pain, agitation, hypertension, and movement — dangerous during intraocular surgery — and does not address the propofol contribution. Titrated airway/sedation adjustment is preferred first.",
+            "Incorrect. Converting to general anesthesia with airway instrumentation is a large, disruptive escalation that is not the immediate first step when simpler measures (lighten sedation, open airway, add oxygen) will likely correct the problem."
+        ]
+  },
+    {
+      id: "p_040",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "medium",
+      reference: "Futier et al., NEJM 2013 (IMPROVE trial); Miller's Anesthesia, Ch. 50",
+      question: "A 72 kg, 170 cm woman (IBW approximately 60 kg) with no pulmonary disease is undergoing a 4-hour open abdominal hysterectomy. You are setting up volume-control ventilation for the case. Which combination of initial settings is MOST appropriate?",
+      choices: [
+        "Vt 720 mL, RR 10, PEEP 0 cmH₂O, recruitment maneuvers as needed",
+        "Vt 420 mL, RR 12, PEEP 6-8 cmH₂O, periodic recruitment maneuvers",
+        "Vt 600 mL, RR 8, PEEP 12 cmH₂O, no recruitment maneuvers",
+        "Vt 300 mL, RR 20, PEEP 15 cmH₂O, continuous recruitment maneuvers"
+      ],
+      correct: 1,
+      explanations: [
+        "Incorrect. Vt 720 mL (10 mL/kg actual body weight) with zero PEEP reflects historical practice. Large Vt with no PEEP causes atelectotrauma and volutrauma even in patients without lung disease, and is associated with more postoperative pulmonary complications.",
+        "Correct. Modern intraoperative protective ventilation uses Vt 6-8 mL/kg of PREDICTED (ideal) body weight — here, 60 kg × 7 mL/kg ≈ 420 mL — plus PEEP 5-8 cmH₂O and periodic recruitment maneuvers. The IMPROVE trial (Futier 2013) demonstrated fewer major pulmonary and extrapulmonary complications and shorter hospital stays in abdominal surgery patients ventilated with low Vt + moderate PEEP + recruitment vs. high Vt + ZEEP. Plateau pressure should remain ≤16-18 cmH₂O in healthy lungs; driving pressure (Pplat - PEEP) ≤13 cmH₂O is also linked to better outcomes (Neto 2016 meta-analysis). Tidal volume is calculated from IBW, not actual weight, because lung size scales with height, not adiposity.",
+        "Incorrect. Vt 10 mL/kg IBW is too high; PEEP 12 may be excessive for healthy lungs at induction and risks hemodynamic compromise during open abdominal cases.",
+        "Incorrect. Vt 5 mL/kg IBW is at the lower bound of acceptable but PEEP 15 with continuous recruitment in a healthy patient is overkill and risks hypotension and barotrauma. RR 20 also produces clinically meaningful auto-PEEP risk."
+      ]
   },
   {
     id: "p_041",
@@ -1002,104 +1002,104 @@ const QUESTION_BANK = [
     subtopic: "admin_positioning",
     difficulty: "hard",
     reference: "ASA Practice Advisory on Perioperative Peripheral Nerve Injury",
-    question: "A 45-year-old man undergoes a prolonged robotic prostatectomy in the lithotomy position with steep Trendelenburg. Total time in lithotomy is 6 hours. In PACU he complains of severe lower-leg pain, paresthesias, and weakness of foot dorsiflexion on the left. The calf is tense and exquisitely tender to palpation. What is the MOST appropriate next step?",
+    question: "After a 6-hour robotic prostatectomy in lithotomy with steep Trendelenburg, a patient has a tense, painful calf with pain on passive stretch and diminished sensation. What is the MOST appropriate management?",
     choices: [
-      "Order serum CK and urinalysis for myoglobin; observe and reassess in 4 hours",
-      "Apply ice, elevate the leg, give IV ketorolac, and order EMG/NCS as outpatient",
-      "Administer gabapentin and obtain MRI of the lumbar spine to evaluate for radiculopathy",
-      "Obtain emergent surgical consultation for compartment pressure measurement and possible fasciotomy"
-    ],
-    correct: 3,
+            "Send serum CK and urine myoglobin, elevate the leg, and reassess in 4 hours",
+            "Elevate the leg above heart level and apply ice to reduce the swelling and pain",
+            "Obtain urgent surgical evaluation for compartment pressures and possible fasciotomy",
+            "Order gabapentin and an urgent lumbar MRI to evaluate for a compressive radiculopathy"
+        ],
+    correct: 2,
     explanations: [
-      "Incorrect. While CK and myoglobin (with urinalysis for blood without RBCs) ARE indicated in suspected rhabdomyolysis, waiting 4 hours is dangerous in suspected compartment syndrome. The window for limb salvage is roughly 6-8 hours of ischemia; 'observe and reassess' loses limb-preserving time.",
-      "Incorrect. Ice, elevation, and NSAIDs treat soft-tissue contusion, not compartment syndrome. Elevation may further reduce already-compromised perfusion. Outpatient EMG is far too slow.",
-      "Incorrect. MRI and gabapentin for presumed radiculopathy miss the diagnosis. Lumbar radiculopathy does not produce a tense, tender calf. Delay in diagnosis costs the limb.",
-      "Correct. The combination of prolonged lithotomy (especially >4-5 hours) with steep Trendelenburg, severe calf pain out of proportion to exam, tense compartment, and neurologic deficit is classic well-leg compartment syndrome. Mechanism: leg elevation reduces perfusion pressure, lithotomy stirrups compress the calf, Trendelenburg may raise central venous pressure, and surgical duration compounds ischemia. Foot drop reflects deep peroneal nerve dysfunction. This is a surgical emergency — compartment pressures (>30 mmHg or within 30 of diastolic) confirm the diagnosis and mandate emergent four-compartment fasciotomy. Delay risks irreversible muscle necrosis, nerve damage, contracture, and amputation. Prevention: position changes every 2 hours when feasible, avoid hyperflexion of hips and knees, and minimize Trendelenburg when prolonged lithotomy is required."
-    ]
+            "Incorrect. Checking CK/myoglobin is reasonable for associated rhabdomyolysis, but ELEVATING the leg and merely 'reassessing in 4 hours' is dangerous — elevation lowers perfusion pressure to already-ischemic muscle, and delay risks irreversible damage. This does not address a limb-threatening emergency.",
+            "Incorrect. Elevation and ice reduce the arteriovenous perfusion gradient and can WORSEN ischemia in a compartment syndrome; the limb should be kept at heart level, not elevated, and this delays definitive care.",
+            "Correct. A tense, painful compartment with pain on passive stretch and sensory changes after prolonged lithotomy is WELL-LEG COMPARTMENT SYNDROME — a surgical emergency. Management is urgent surgical evaluation, compartment pressure measurement, and FASCIOTOMY if confirmed; the limb is kept at heart level (not elevated) and perfusion supported. Time to decompression determines outcome.",
+            "Incorrect. This presentation is a vascular/compartment emergency, not a radiculopathy; obtaining an MRI and starting gabapentin dangerously delays limb-saving fasciotomy."
+        ]
   },
-  {
-    id: "p_044",
-    topic: "principles",
-    subtopic: "admin_temperature",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 54 (Perioperative Temperature Monitoring)",
-    question: "During a long thoracotomy, the forced-air warming blanket is being used over the legs while the surgical field occupies the chest. Twenty minutes after warming begins, the patient's core temperature has not changed but the skin under the blanket appears mottled and develops a circular thermal burn. Which mechanism MOST likely explains this complication?",
-    choices: [
-      "Hose-only application of forced air without the blanket attached, directing hot air at a single skin area",
-      "Set point inadvertently raised to 'high' (43°C) instead of the routine 'medium' (38°C) setting",
-      "Pooling of skin-prep alcohol under the blanket, igniting from electrocautery during draping",
-      "Direct contact between the warming blanket fabric and the patient's skin without a sheet"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. This is the classic 'hosing' injury: the disposable forced-air blanket comes detached or is not attached at all, and the hose directs hot air (often 43°C or higher) onto a localized patch of skin. The air, intended to be diffused through hundreds of micro-perforations in the blanket, instead concentrates on one spot and produces a circular full-thickness burn. The manufacturer (Bair Hugger and others) explicitly warns against 'free-hosing' — the hose must always be attached to a properly inflated blanket. This is one of the most-reported anesthesia-related thermal injuries.",
-      "Incorrect. Most forced-air warmers cap output around 43°C and the setting itself, when used with a properly attached blanket, should not burn intact skin in this time frame. The injury pattern (circular, localized) points to focal hot-air delivery.",
-      "Incorrect. Alcohol fire would produce a flame burn pattern with charring and surrounding tissue damage, not a discrete circular lesion under an air warmer, and would have produced a visible fire.",
-      "Incorrect. Direct contact between the blanket and skin is permitted by most manufacturers when used as designed. Burns from this mechanism are rare and would not produce a discrete circular lesion."
-    ]
+    {
+      id: "p_044",
+      topic: "principles",
+      subtopic: "admin_temperature",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 54 (Perioperative Temperature Monitoring)",
+      question: "During a long thoracotomy, the forced-air warming blanket is being used over the legs while the surgical field occupies the chest. Twenty minutes after warming begins, the patient's core temperature has not changed but the skin under the blanket appears mottled and develops a circular thermal burn. Which mechanism MOST likely explains this complication?",
+      choices: [
+        "Pooling of skin-prep alcohol under the blanket, igniting from electrocautery during draping",
+        "Set point inadvertently raised to 'high' (43°C) instead of the routine 'medium' (38°C) setting",
+        "Hose-only application of forced air without the blanket attached, directing hot air at a single skin area",
+        "Direct contact between the warming blanket fabric and the patient's skin without a sheet"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. Alcohol fire would produce a flame burn pattern with charring and surrounding tissue damage, not a discrete circular lesion under an air warmer, and would have produced a visible fire.",
+        "Incorrect. Most forced-air warmers cap output around 43°C and the setting itself, when used with a properly attached blanket, should not burn intact skin in this time frame. The injury pattern (circular, localized) points to focal hot-air delivery.",
+        "Correct. This is the classic 'hosing' injury: the disposable forced-air blanket comes detached or is not attached at all, and the hose directs hot air (often 43°C or higher) onto a localized patch of skin. The air, intended to be diffused through hundreds of micro-perforations in the blanket, instead concentrates on one spot and produces a circular full-thickness burn. The manufacturer (Bair Hugger and others) explicitly warns against 'free-hosing' — the hose must always be attached to a properly inflated blanket. This is one of the most-reported anesthesia-related thermal injuries.",
+        "Incorrect. Direct contact between the blanket and skin is permitted by most manufacturers when used as designed. Burns from this mechanism are rare and would not produce a discrete circular lesion."
+      ]
   },
   {
     id: "p_045",
     topic: "principles",
     subtopic: "admin_qi",
-    difficulty: "medium",
+    difficulty: "hard",
     reference: "Surgical Care Improvement Project (SCIP) Measures; ASHP/IDSA Guidelines",
-    question: "A 60-year-old man weighing 110 kg with a documented severe anaphylactic reaction to penicillin (laryngeal edema and hypotension) is scheduled for elective open colectomy. The case starts at 08:00. According to SCIP and current surgical antimicrobial prophylaxis guidelines, which prophylactic antibiotic regimen and timing is MOST appropriate?",
+    question: "A 110 kg man with documented severe penicillin anaphylaxis (laryngeal edema, hypotension) needs prophylaxis for elective colorectal surgery scheduled at 08:00. Which antibiotic plan is MOST appropriate?",
     choices: [
-      "Cefazolin 2 g IV at 07:55, redosed every 4 hours intraoperatively while case is ongoing",
-      "Vancomycin 1.75 g IV starting at 06:00, completed by 08:00, plus metronidazole 500 mg IV",
-      "Clindamycin 900 mg IV at 07:30 with gentamicin 5 mg/kg IV given concurrently before incision",
-      "Ciprofloxacin 400 mg IV at 07:55 plus metronidazole 500 mg IV at 07:55 before skin incision"
-    ],
+            "Cefazolin 2 g IV at 07:55, since cephalosporin cross-reactivity with penicillin is negligible",
+            "Vancomycin 1.75 g IV infused 06:00–08:00, plus metronidazole, avoiding beta-lactams entirely",
+            "Clindamycin 900 mg IV at 07:55 with gentamicin, giving both immediately before incision",
+            "Ciprofloxacin 400 mg IV at 07:55 plus metronidazole given right before skin incision"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Cefazolin is the first-line agent for colorectal prophylaxis, but in a patient with documented severe anaphylaxis to penicillin, cross-reactivity with first-generation cephalosporins (though clinically <2-3%) is the rationale to avoid it. Severe IgE-mediated reaction is the standard exclusion.",
-      "Correct. For colorectal surgery in a patient with severe penicillin allergy, the standard alternative regimen is vancomycin (15 mg/kg, max 2 g) PLUS coverage for anaerobes/gram-negatives — typically metronidazole or aminoglycoside. Vancomycin requires infusion over 60 minutes per 1 g (to avoid red-man syndrome) and SCIP/SIP guidelines specify it must be COMPLETED within 120 minutes of incision (vs. cefazolin within 60 minutes of incision). At 110 kg × 15 mg/kg = 1650 mg, round to 1.75 g. Start at 06:00 to finish by 08:00 incision. Cefazolin is dosed 2 g for patients <120 kg and 3 g for ≥120 kg; redose every 4 hours intraoperatively (or after >1500 mL blood loss).",
-      "Incorrect. Clindamycin + gentamicin covers gram-positives and gram-negatives but is not first-line for colon surgery. Anaerobic coverage is suboptimal compared to metronidazole-based regimens, and increasing C. difficile concern with clindamycin makes this a poor choice for colorectal surgery.",
-      "Incorrect. Fluoroquinolone-based regimens are not first-line for colorectal prophylaxis and ciprofloxacin given as a single 30-min preop dose carries QT risk and resistance concerns; alternative regimens are preferred."
-    ]
-  },
-  {
-    id: "p_046",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "hard",
-    reference: "POISE-1 Trial (Lancet 2008); ACC/AHA Perioperative Beta-Blocker Guidelines",
-    question: "A 71-year-old man with hypertension, coronary artery disease, and chronic stable angina has been taking metoprolol succinate 50 mg daily for 5 years. He is scheduled for elective open AAA repair. According to current evidence and SCIP guidance on perioperative beta-blocker management, what is the MOST appropriate plan?",
-    choices: [
-      "Discontinue metoprolol the morning of surgery to avoid intraoperative bradycardia and hypotension",
-      "Switch metoprolol to atenolol 50 mg the morning of surgery for longer half-life coverage",
-      "Initiate high-dose metoprolol 100 mg the morning of surgery for additional cardioprotection",
-      "Continue the metoprolol dose on the morning of surgery and throughout the perioperative period"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. Abrupt discontinuation of chronic beta-blocker therapy produces rebound tachycardia, hypertension, and increased ischemic risk — the worst possible perioperative action in a chronically beta-blocked patient.",
-      "Incorrect. Switching between beta-blockers preoperatively introduces unnecessary pharmacokinetic variability and is not supported by evidence. Continue the patient's chronic regimen.",
-      "Incorrect. This is the POISE-1 regimen that increased mortality. Initiating high-dose beta-blockade on the day of surgery is contraindicated by current guidelines.",
-      "Correct. Chronic beta-blocker therapy should be CONTINUED perioperatively. SCIP-Card-2 specifically tracks whether patients on beta-blockers preoperatively received them perioperatively. The POISE-1 trial (Lancet 2008) tested high-dose metoprolol succinate initiated on the day of surgery in beta-blocker-naïve patients and found fewer MIs but MORE deaths and strokes — driven by hypotension and bradycardia. The take-home: do NOT start beta-blockers acutely on the morning of surgery, but DO continue them in patients chronically on them. The 2014 ACC/AHA perioperative guidelines reflect this — class I to continue, class IIb-III to initiate (and only ≥1 day before surgery, ideally 2-7 days, titrated to HR and BP)."
-    ]
-  },
-  {
-    id: "p_047",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 47 (Perioperative Fluid Therapy); Cannesson et al.",
-    question: "Stroke volume variation (SVV) and pulse pressure variation (PPV) are used as dynamic predictors of fluid responsiveness. In which situation are these dynamic indices UNRELIABLE?",
-    choices: [
-            "A patient with cardiac arrhythmia (e.g., atrial fibrillation) or breathing spontaneously",
-            "A deeply anesthetized patient in normal sinus rhythm on fixed-volume ventilation",
-            "A patient receiving a tidal volume of 8 mL/kg with the chest closed",
-            "A patient with a normal heart rhythm and no spontaneous respiratory effort"
-        ],
-    correct: 0,
-    explanations: [
-            "Correct. SVV and PPV rely on the cyclic changes in preload produced by POSITIVE-PRESSURE ventilation in a patient with a REGULAR rhythm. They become UNRELIABLE with CARDIAC ARRHYTHMIAS (e.g., atrial fibrillation, frequent ectopy — beat-to-beat stroke volume varies for non-preload reasons) and with SPONTANEOUS BREATHING (irregular, variable intrathoracic pressure swings). Other conditions that invalidate them include low tidal volumes (<8 mL/kg), an open chest/open abdomen, very high or low heart-rate-to-respiratory-rate ratios, right heart failure, and high PEEP. In these settings a passive leg raise or a fluid challenge with direct reassessment is more reliable.",
-            "Incorrect. This is the ideal condition FOR using SVV/PPV — controlled ventilation with a regular rhythm makes them reliable.",
-            "Incorrect. An adequate tidal volume (~8 mL/kg) with a closed chest is a condition where the indices are VALID.",
-            "Incorrect. A regular rhythm without spontaneous effort is exactly when SVV/PPV are reliable."
+            "Incorrect. With a documented SEVERE (anaphylactic) penicillin reaction, a cephalosporin such as cefazolin is generally avoided; even though cross-reactivity is low, an anaphylactic history is the situation where beta-lactams are most prudently avoided.",
+            "Correct. For severe penicillin allergy needing colorectal coverage, a beta-lactam–free regimen is appropriate: VANCOMYCIN (dosed by weight, ~15 mg/kg) PLUS an agent for anaerobes/gram-negatives (e.g., metronidazole ± an aminoglycoside/aztreonam). Vancomycin must be started early and infused SLOWLY (begun ~60–120 min before incision, completed by incision) to avoid infusion reactions — so a 06:00–08:00 infusion for an 08:00 case is correctly timed.",
+            "Incorrect. Clindamycin + gentamicin can be a beta-lactam–free option, but giving them 'at 07:55' (right at incision) is poorly timed for adequate tissue levels; the timing here is wrong even though the drugs avoid penicillin.",
+            "Incorrect. A fluoroquinolone must be infused over ~60 minutes and started well before incision; giving ciprofloxacin at 07:55 for an 08:00 case does not achieve adequate pre-incision tissue levels."
         ]
+  },
+    {
+      id: "p_046",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "hard",
+      reference: "POISE-1 Trial (Lancet 2008); ACC/AHA Perioperative Beta-Blocker Guidelines",
+      question: "A 71-year-old man with hypertension and diabetes but no prior cardiac history, who is NOT currently taking a beta-blocker, is scheduled for elective open AAA repair. A colleague suggests starting high-dose metoprolol on the morning of surgery for cardioprotection. What is the MOST appropriate plan?",
+      choices: [
+        "Begin high-dose metoprolol this morning to blunt the surgical stress response",
+        "Start metoprolol today at a low dose titrated to heart rate before incision",
+        "Do not initiate a beta-blocker de novo on the day of surgery",
+        "Give a single IV metoprolol bolus at induction as one-time cardioprotection"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. The POISE trial showed that high-dose beta-blockade started just before surgery reduced nonfatal MI but significantly increased stroke and overall mortality. Acute high-dose de novo initiation is specifically discouraged.",
+        "Incorrect. Even low-dose initiation on the day of surgery is not supported: there is no time to assess tolerability, benefit is unproven, and the risks of bradycardia, hypotension, and stroke are real.",
+        "Correct. Guidelines advise continuing beta-blockers in chronic users but NOT initiating them de novo on the day of surgery. Acute perioperative initiation (especially high-dose) increased stroke and death in POISE, so a beta-blocker-naive patient should not be started this morning.",
+        "Incorrect. A single IV bolus at induction is still de novo acute beta-blockade in a naive patient, risking intraoperative bradycardia and hypotension without demonstrated benefit."
+      ]
+  },
+    {
+      id: "p_047",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 47 (Perioperative Fluid Therapy); Cannesson et al.",
+      question: "Stroke volume variation (SVV) is used as a dynamic predictor of fluid responsiveness. In which single situation is SVV LEAST reliable?",
+      choices: [
+        "Deep general anesthesia with the chest closed and sinus rhythm",
+        "Controlled mechanical ventilation with a tidal volume of 8 mL/kg",
+        "Atrial fibrillation with an irregular ventricular response",
+        "A passive, fully mechanically ventilated patient in normal sinus rhythm"
+      ],
+      correct: 2,
+      explanations: [
+        "Incorrect. A closed chest with deep anesthesia and sinus rhythm is exactly a setting where SVV performs reliably.",
+        "Incorrect. Controlled ventilation at ~8 mL/kg is a condition in which SVV is VALID — an adequate tidal volume is required for reliable readings.",
+        "Correct. SVV relies on a regular, ventilation-induced cyclic change in stroke volume in a patient with a REGULAR rhythm on positive-pressure ventilation. ATRIAL FIBRILLATION makes stroke volume vary beat-to-beat for reasons unrelated to preload, so SVV becomes unreliable. (Spontaneous breathing, tidal volumes <8 mL/kg, an open chest/abdomen, and right heart failure similarly invalidate it.)",
+        "Incorrect. A passive, fully ventilated patient in sinus rhythm is the ideal condition for reliable SVV."
+      ]
   },
   {
     id: "p_048",
@@ -1170,20 +1170,20 @@ const QUESTION_BANK = [
     subtopic: "preop",
     difficulty: "medium",
     reference: "ASA Physical Status Classification System",
-    question: "A 58-year-old man with type 2 diabetes that is well controlled on metformin and mild, well-controlled hypertension presents for an elective hernia repair. He has no functional limitation. Which ASA physical status classification best applies?",
+    question: "A 58-year-old man with type 2 diabetes well controlled on metformin and mild, well-controlled hypertension presents for elective hernia repair. He has no functional limitation. What is his ASA Physical Status, with the correct rationale?",
     choices: [
-      "ASA II, reflecting mild systemic disease without substantive functional limitation",
-      "ASA I, because his conditions are well controlled and he has no symptoms today",
-      "ASA III, because the presence of diabetes always denotes severe systemic disease",
-      "ASA IV, because the combination of two chronic diseases constitutes a constant threat to life"
-    ],
-    correct: 0,
+            "ASA I, because both conditions are well controlled and he is asymptomatic today",
+            "ASA II, because he has mild systemic disease without substantive functional limitation",
+            "ASA III, because he has two coexisting chronic diseases requiring daily medication",
+            "ASA III, because diabetes with any end-organ potential is classified as severe disease"
+        ],
+    correct: 1,
     explanations: [
-      "Correct. ASA II describes a patient with mild systemic disease without substantive functional limitation. Well-controlled diabetes and well-controlled hypertension are the standard examples of mild systemic disease, so this patient is ASA II.",
-      "Incorrect. ASA I is reserved for a normal healthy patient with no systemic disease; the presence of diabetes and hypertension, even if controlled, moves the patient beyond ASA I.",
-      "Incorrect. ASA III denotes severe systemic disease with substantive functional limitation, such as poorly controlled diabetes with complications; well-controlled diabetes alone does not qualify.",
-      "Incorrect. ASA IV describes severe systemic disease that is a constant threat to life; two well-controlled mild conditions do not meet that threshold."
-    ]
+            "Incorrect. ASA I denotes a normal, healthy patient with NO systemic disease. Well-controlled diabetes and hypertension are still systemic diseases, so he is not ASA I even though they are controlled.",
+            "Correct. ASA II is defined as a patient with MILD systemic disease WITHOUT substantive functional limitation — for example, well-controlled diabetes or hypertension, a current smoker, social alcohol use, pregnancy, or obesity with BMI <40. This patient fits precisely: mild, controlled disease and no functional limitation.",
+            "Incorrect. The NUMBER of conditions does not by itself raise the class; ASA III requires SEVERE systemic disease with substantive functional limitation. Two mild, well-controlled conditions without limitation remain ASA II.",
+            "Incorrect. Diabetes is not automatically 'severe.' ASA III would require severe/poorly controlled disease with functional limitation (e.g., poorly controlled diabetes, or end-organ damage). Controlled diabetes without limitation is ASA II."
+        ]
   },
   {
     id: "p_052",
@@ -1210,22 +1210,22 @@ const QUESTION_BANK = [
     id: "p_053",
     topic: "principles",
     subtopic: "preop",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "Miller's Anesthesia, Ch. 31",
-    question: "A 60-year-old undergoing preoperative evaluation reports being able to climb two flights of stairs without stopping and to do heavy housework. Approximately how many metabolic equivalents does this functional capacity represent, and what is its significance?",
+    question: "A 60-year-old at preoperative evaluation reports climbing two flights of stairs without stopping and doing heavy housework. Approximately what functional capacity does this represent, and what is its significance?",
     choices: [
-      "Less than 1 MET, indicating the patient is bedbound and at prohibitive perioperative risk",
-      "Exactly 2 METs, indicating poor capacity that mandates cardiac stress testing before surgery",
-      "Around 20 METs, a level achieved only by elite endurance athletes during heavy competition",
-      "At least 4 METs, generally considered adequate functional capacity for most surgery"
-    ],
-    correct: 3,
+            "About 2 METs — poor capacity that generally mandates cardiac stress testing before surgery",
+            "About 4 METs or more — generally adequate capacity, so further cardiac testing is often unnecessary",
+            "About 4 METs — borderline capacity that requires echocardiography before any elective surgery",
+            "About 10 METs — an athletic level rarely reached by a 60-year-old with routine daily activity"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. A patient who climbs two flights of stairs is clearly not bedbound; less than 1 MET describes a patient unable to perform basic self-care.",
-      "Incorrect. Two METs describes very limited capacity such as slow walking; climbing two flights of stairs reflects a substantially higher capacity.",
-      "Incorrect. About 20 METs reflects strenuous competitive athletic activity, far beyond climbing two flights of stairs.",
-      "Correct. Climbing two flights of stairs or doing heavy housework corresponds to roughly 4 or more metabolic equivalents. A functional capacity of 4 METs or greater is generally regarded as adequate and is associated with lower perioperative cardiac risk, often allowing surgery to proceed without further cardiac testing."
-    ]
+            "Incorrect. Climbing two flights of stairs corresponds to roughly 4 METs, not 2; and this level does NOT mandate stress testing — it is generally the threshold above which further cardiac testing is often unnecessary.",
+            "Correct. Climbing two flights of stairs or doing heavy housework reflects approximately 4 METs of functional capacity. Reaching ≥4 METs without symptoms is generally considered ADEQUATE capacity, and in stable patients it usually means additional noninvasive cardiac testing can be avoided before non-cardiac surgery. Below 4 METs (or unknown capacity) is where further evaluation is considered if it would change management.",
+            "Incorrect. Two flights of stairs is about 4 METs, but this is considered adequate — it does not by itself require echocardiography before elective surgery.",
+            "Incorrect. Two flights of stairs is roughly 4 METs, not 10; 10 METs reflects strenuous activity (e.g., vigorous sports), well above ordinary stair climbing."
+        ]
   },
   {
     id: "p_054",
@@ -1275,62 +1275,62 @@ const QUESTION_BANK = [
     subtopic: "preop",
     difficulty: "hard",
     reference: "ACC/AHA Perioperative Guidelines",
-    question: "A patient received a drug-eluting coronary stent 8 months ago and is on dual antiplatelet therapy. An elective, non-urgent procedure is being planned. Which approach is most consistent with current guidance?",
+    question: "A patient received a drug-eluting coronary stent 8 months ago and is on dual antiplatelet therapy (DAPT). A purely elective, non-urgent procedure with meaningful bleeding risk is being planned. What is the MOST appropriate plan?",
     choices: [
-      "Proceed immediately, stopping both antiplatelet agents the night before the procedure",
-      "Proceed only after stopping aspirin permanently and continuing the P2Y12 inhibitor alone",
-      "Cancel the procedure permanently, since elective surgery is contraindicated after any stent",
-      "Delay elective surgery until the recommended duration of dual antiplatelet therapy is complete"
-    ],
-    correct: 3,
+            "Proceed now, stopping the P2Y12 inhibitor 5–7 days before and continuing aspirin",
+            "Delay the elective procedure until the recommended minimum DAPT duration is complete",
+            "Proceed now, briefly holding both agents perioperatively and bridging with heparin",
+            "Proceed now on aspirin alone, stopping the P2Y12 inhibitor permanently"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. Stopping both antiplatelet agents prematurely before the recommended duration markedly increases the risk of stent thrombosis, a catastrophic event.",
-      "Incorrect. For most patients, aspirin is the agent continued through surgery when possible, and stopping it permanently while continuing only the P2Y12 inhibitor is not the standard approach.",
-      "Incorrect. Elective surgery is not permanently contraindicated after a stent; it is deferred until the recommended antiplatelet duration is complete.",
-      "Correct. For elective, non-urgent surgery after a drug-eluting stent, guidelines recommend delaying surgery until the recommended duration of dual antiplatelet therapy has been completed (often around 6 months, individualized by stent and patient factors). This balances the bleeding risk of surgery against the thrombotic risk of interrupting therapy too early."
-    ]
+            "Incorrect. Interrupting the P2Y12 inhibitor at 8 months for a purely ELECTIVE case unnecessarily exposes the patient to stent-thrombosis risk when the procedure can simply be deferred until DAPT is complete.",
+            "Correct. For a DRUG-ELUTING stent, elective non-urgent surgery is ideally DEFERRED until the recommended minimum duration of DAPT is finished (commonly ~6–12 months depending on stent and clinical factors, with newer stents and lower-risk situations allowing shorter). Because this procedure is purely elective, the safest plan is to WAIT rather than interrupt antiplatelet therapy and risk stent thrombosis.",
+            "Incorrect. Heparin does not prevent stent thrombosis and is not an effective 'bridge' for antiplatelet therapy; interrupting DAPT for an avoidable elective case is not justified.",
+            "Incorrect. Permanently stopping the P2Y12 inhibitor before the recommended DAPT duration markedly raises stent-thrombosis risk and is inappropriate for an elective, deferrable procedure."
+        ]
   },
-  {
-    id: "p_057",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 47",
-    question: "An anesthesiologist is comparing crystalloid and colloid solutions for intraoperative volume replacement. Which statement about their distribution is most accurate?",
-    choices: [
-      "Crystalloids distribute throughout the extracellular space, so only a fraction stays intravascular",
-      "Colloids distribute freely into the interstitial space as readily as crystalloid solutions do",
-      "Crystalloids remain almost entirely within the intravascular compartment after infusion",
-      "Colloids and crystalloids expand the intravascular volume by an identical amount per liter"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Isotonic crystalloids distribute across the entire extracellular fluid space, so only roughly one quarter to one third of the infused volume remains intravascular shortly after infusion. Colloids contain large molecules that are retained in the vascular space longer, producing greater intravascular expansion per unit volume.",
-      "Incorrect. Colloids do not distribute into the interstitium as readily as crystalloids; their larger molecules are retained intravascularly, which is the basis of their volume-expanding effect.",
-      "Incorrect. Crystalloids do not stay intravascular; most of an infused isotonic crystalloid load redistributes into the interstitial space.",
-      "Incorrect. Per liter infused, colloids expand intravascular volume more than crystalloids because they are retained in the vascular compartment."
-    ]
+    {
+      id: "p_057",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 47",
+      question: "Which statement about the distribution of crystalloid versus colloid solutions after IV infusion is MOST accurate?",
+      choices: [
+        "Colloid and crystalloid produce essentially the same intravascular volume expansion per liter infused",
+        "Colloid leaves the vasculature into the interstitium about as quickly as crystalloid does after infusion",
+        "Crystalloid stays within the vascular compartment and so expands plasma volume nearly liter-for-liter",
+        "Crystalloid spreads across the extracellular space, so only about a third stays intravascular"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Per liter, colloid produces GREATER intravascular expansion than crystalloid (with an intact barrier), so their effects are not identical.",
+        "Incorrect. COLLOIDS contain large molecules that are retained in the vasculature longer (with an intact endothelial barrier), so they do NOT leave into the interstitium as readily as crystalloid.",
+        "Incorrect. Crystalloid does NOT stay in the vascular compartment; because it distributes across the extracellular space, its plasma-expanding effect per liter is substantially less than 1:1.",
+        "Correct. Isotonic CRYSTALLOID distributes throughout the extracellular fluid (both intravascular and interstitial compartments), so only roughly one-quarter to one-third of an infused volume remains in the intravascular space shortly after infusion — which is why larger crystalloid volumes are needed to achieve a given plasma-volume expansion."
+      ]
   },
-  {
-    id: "p_058",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "hard",
-    reference: "Morgan & Mikhail, Ch. 51",
-    question: "A patient receives a large volume of 0.9 percent sodium chloride during a long operation and the arterial blood gas later shows a hyperchloremic metabolic acidosis. Which property of normal saline best explains this finding?",
-    choices: [
-      "Its chloride concentration is much higher than plasma, lowering the strong ion difference",
-      "It contains lactate that is converted to acid when hepatic perfusion is reduced during surgery",
-      "Its high potassium content drives hydrogen ions out of cells into the plasma compartment",
-      "It is markedly hypotonic, causing red cell lysis that releases acidic intracellular contents"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Normal saline has a chloride concentration of about 154 mEq/L, well above the roughly 100 mEq/L of plasma. Large-volume infusion raises plasma chloride and reduces the strong ion difference, which by physicochemical principles produces a metabolic acidosis. Balanced crystalloids with lower chloride content reduce this effect.",
-      "Incorrect. Normal saline contains no lactate; lactate is found in balanced solutions such as lactated Ringer's, and lactate-containing fluids do not characteristically cause hyperchloremic acidosis.",
-      "Incorrect. Normal saline contains no potassium, so a potassium-driven transcellular shift is not the mechanism.",
-      "Incorrect. Normal saline is approximately isotonic with plasma, not hypotonic, and does not cause hemolysis."
-    ]
+    {
+      id: "p_058",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "hard",
+      reference: "Morgan & Mikhail, Ch. 51",
+      question: "A patient receives a large volume of 0.9 percent sodium chloride during a long operation and the arterial blood gas later shows a hyperchloremic metabolic acidosis. Which property of normal saline best explains this finding?",
+      choices: [
+        "It is markedly hypotonic, causing red cell lysis that releases acidic intracellular contents",
+        "It contains lactate that is converted to acid when hepatic perfusion is reduced during surgery",
+        "Its high potassium content drives hydrogen ions out of cells into the plasma compartment",
+        "Its chloride concentration is much higher than plasma, lowering the strong ion difference"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Normal saline is approximately isotonic with plasma, not hypotonic, and does not cause hemolysis.",
+        "Incorrect. Normal saline contains no lactate; lactate is found in balanced solutions such as lactated Ringer's, and lactate-containing fluids do not characteristically cause hyperchloremic acidosis.",
+        "Incorrect. Normal saline contains no potassium, so a potassium-driven transcellular shift is not the mechanism.",
+        "Correct. Normal saline has a chloride concentration of about 154 mEq/L, well above the roughly 100 mEq/L of plasma. Large-volume infusion raises plasma chloride and reduces the strong ion difference, which by physicochemical principles produces a metabolic acidosis. Balanced crystalloids with lower chloride content reduce this effect."
+      ]
   },
   {
     id: "p_059",
@@ -1359,41 +1359,41 @@ const QUESTION_BANK = [
     subtopic: "fluids",
     difficulty: "hard",
     reference: "Miller's Anesthesia, Ch. 47",
-    question: "An anesthesiologist is replacing intraoperative losses during a major open abdominal procedure. Which statement about so-called third-space loss and current fluid management is most accurate?",
+    question: "During a major open abdominal procedure, how should so-called 'third-space' loss be managed according to current evidence on fluid therapy?",
     choices: [
-      "The classic large third-space loss concept is now questioned, and goal-directed moderation is favored",
-      "Third-space loss should be replaced milliliter for milliliter with colloid in every abdominal case",
-      "Third-space loss must be replaced with hypertonic saline to draw fluid back into the vasculature",
-      "Aggressive fixed large-volume crystalloid loading is now recommended to fully replace third-space loss"
-    ],
-    correct: 0,
+            "Add a large fixed crystalloid allowance for third-space loss on top of measured losses",
+            "Replace presumed third-space loss milliliter-for-milliliter with colloid throughout the case",
+            "Give goal-directed, moderate fluid therapy, as the classical large third-space loss is now doubted",
+            "Use hypertonic saline to draw fluid back from the third space into the circulation"
+        ],
+    correct: 2,
     explanations: [
-      "Correct. The traditional concept of a large nonfunctional third-space fluid loss requiring generous replacement has been substantially questioned. Modern practice favors more moderate, goal-directed fluid administration guided by dynamic indicators of fluid responsiveness, which improves outcomes compared with both very liberal and overly restrictive strategies.",
-      "Incorrect. There is no basis for milliliter-for-milliliter colloid replacement of a third space, and colloids carry their own costs and risks.",
-      "Incorrect. Hypertonic saline is not the standard approach to intraoperative maintenance and loss replacement and is reserved for specific indications.",
-      "Incorrect. Routine aggressive fixed-volume crystalloid loading is no longer recommended; liberal fluid administration is associated with bowel edema, impaired healing, and pulmonary complications."
-    ]
+            "Incorrect. Adding a large fixed crystalloid allowance for 'third-space' loss reflects the older teaching and tends to cause fluid overload; current practice moves away from routine large fixed allowances.",
+            "Incorrect. Routinely replacing a presumed third-space loss with colloid milliliter-for-milliliter is not supported and risks over-resuscitation; it also misapplies colloid physiology.",
+            "Correct. The classical concept of a large, obligatory 'third-space' loss requiring generous fixed crystalloid replacement has been challenged and is now largely doubted. Current evidence favors GOAL-DIRECTED, moderate fluid therapy — replacing actual measured losses and using dynamic indices/hemodynamic targets rather than adding a large empiric third-space volume — which reduces complications from both over- and under-resuscitation.",
+            "Incorrect. Hypertonic saline is not a standard strategy for replacing third-space loss; the shift in practice is toward moderation and goal-directed therapy, not osmotic maneuvers."
+        ]
   },
-  {
-    id: "p_061",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 47",
-    question: "An anesthesiologist is choosing a maintenance fluid and notes the composition of lactated Ringer's solution. Which statement about lactated Ringer's is most accurate?",
-    choices: [
-      "It is a balanced crystalloid with electrolytes closer to plasma than normal saline provides",
-      "It is a colloid solution that expands intravascular volume far more than any crystalloid",
-      "It contains a chloride concentration substantially higher than that of normal saline",
-      "It is strongly hypertonic and is therefore used to treat acute symptomatic hyponatremia"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Lactated Ringer's is a balanced isotonic crystalloid whose electrolyte composition, including a lower chloride content and added lactate as a bicarbonate precursor, more closely resembles plasma than normal saline does. This reduces the risk of hyperchloremic metabolic acidosis with large-volume resuscitation.",
-      "Incorrect. Lactated Ringer's is a crystalloid, not a colloid; it does not produce the sustained intravascular expansion characteristic of colloids.",
-      "Incorrect. Lactated Ringer's has a lower chloride concentration than normal saline, which is one of its advantages, not a higher one.",
-      "Incorrect. Lactated Ringer's is approximately isotonic; hypertonic saline, not lactated Ringer's, is used for symptomatic hyponatremia."
-    ]
+    {
+      id: "p_061",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 47",
+      question: "An anesthesiologist is choosing a maintenance fluid and notes the composition of lactated Ringer's solution. Which statement about lactated Ringer's is most accurate?",
+      choices: [
+        "It is strongly hypertonic and is therefore used to treat acute symptomatic hyponatremia",
+        "It is a colloid solution that expands intravascular volume far more than any crystalloid",
+        "It contains a chloride concentration substantially higher than that of normal saline",
+        "It is a balanced crystalloid with electrolytes closer to plasma than normal saline provides"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Lactated Ringer's is approximately isotonic; hypertonic saline, not lactated Ringer's, is used for symptomatic hyponatremia.",
+        "Incorrect. Lactated Ringer's is a crystalloid, not a colloid; it does not produce the sustained intravascular expansion characteristic of colloids.",
+        "Incorrect. Lactated Ringer's has a lower chloride concentration than normal saline, which is one of its advantages, not a higher one.",
+        "Correct. Lactated Ringer's is a balanced isotonic crystalloid whose electrolyte composition, including a lower chloride content and added lactate as a bicarbonate precursor, more closely resembles plasma than normal saline does. This reduces the risk of hyperchloremic metabolic acidosis with large-volume resuscitation."
+      ]
   },
   {
     id: "p_062",
@@ -1464,20 +1464,20 @@ const QUESTION_BANK = [
     subtopic: "admin_temperature",
     difficulty: "hard",
     reference: "Miller's Anesthesia, Ch. 54",
-    question: "Midway through a long case, a patient under general anesthesia develops a rising core temperature, tachycardia, and a sharply increased end-tidal carbon dioxide despite unchanged ventilation. Which response is the most appropriate first consideration?",
+    question: "Midway through a long anesthetic a patient develops a rising core temperature, unexplained tachycardia, and a sharply rising end-tidal CO₂ that outpaces attempts to increase ventilation. Which response is MOST appropriate?",
     choices: [
-      "Assume the warming devices are simply too aggressive and turn them off as the sole action",
-      "Attribute the change to light anesthesia alone and treat only by deepening the anesthetic",
-      "Consider malignant hyperthermia, treat the cause, and prepare dantrolene while seeking help",
-      "Diagnose a febrile transfusion reaction and stop any blood products as the only step"
-    ],
-    correct: 2,
+            "Deepen the anesthetic and increase minute ventilation, treating the picture as light anesthesia",
+            "Treat as malignant hyperthermia: stop triggers, hyperventilate with 100% O₂, and give dantrolene",
+            "Turn off all warming devices and apply surface cooling as the primary intervention",
+            "Give an antipyretic and active cooling while continuing the current volatile anesthetic"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. Although overly aggressive warming can raise temperature, it does not explain a sharp unexplained rise in end-tidal carbon dioxide with tachycardia; assuming a benign cause risks missing malignant hyperthermia.",
-      "Incorrect. Light anesthesia can raise heart rate and metabolic activity, but a marked rise in end-tidal carbon dioxide and temperature together should not simply be attributed to anesthetic depth.",
-      "Correct. An unexplained rise in end-tidal carbon dioxide with tachycardia and increasing temperature is a classic early presentation of malignant hyperthermia. The appropriate response is to consider this diagnosis early, stop triggering agents, call for help and the malignant hyperthermia cart, prepare dantrolene, and begin supportive cooling and treatment while alternative causes are also evaluated.",
-      "Incorrect. A febrile transfusion reaction is a consideration only if blood is being given and does not by itself explain the rising end-tidal carbon dioxide of a hypermetabolic crisis."
-    ]
+            "Incorrect. Light anesthesia can cause tachycardia and hypertension, but it does not explain a rapidly rising end-tidal CO₂ that outstrips increased ventilation together with rising temperature — the hallmark of a hypermetabolic crisis. Deepening anesthesia alone misses malignant hyperthermia.",
+            "Correct. The combination of an unexplained, rising ETCO₂ that outpaces ventilation, tachycardia, and rising temperature is the classic presentation of MALIGNANT HYPERTHERMIA. Management is immediate: STOP the triggering volatile/succinylcholine, hyperventilate with 100% oxygen at high flows, give DANTROLENE, begin active cooling, treat hyperkalemia and acidosis, and call for help. Rising ETCO₂ is often the earliest sign, reflecting the hypermetabolic state.",
+            "Incorrect. Cooling is part of MH management, but treating temperature alone — without stopping the trigger and giving dantrolene — fails to address the underlying hypermetabolic process and is inadequate.",
+            "Incorrect. Continuing the volatile anesthetic would perpetuate the trigger; antipyretics are ineffective for MH (this is not a hypothalamic fever), so this approach worsens the crisis."
+        ]
   },
   {
     id: "p_066",
@@ -1521,26 +1521,26 @@ const QUESTION_BANK = [
       "Correct. Stage II is the stage of excitement or delirium. It is characterized by disconjugate eye movements, irregular and sometimes breath-holding respiration, dilated pupils, and hyperreactive airway reflexes with a risk of laryngospasm, vomiting, and coughing. The goal during induction is to move through this stage quickly."
     ]
   },
-  {
-    id: "p_068",
-    topic: "principles",
-    subtopic: "admin_general",
-    difficulty: "hard",
-    reference: "ASA Standards for Basic Anesthetic Monitoring",
-    question: "An anesthesiologist reviews the ASA standards for basic anesthetic monitoring. Which monitoring requirement is mandated by these standards during every general anesthetic?",
-    choices: [
-      "Continuous capnography to confirm adequate ventilation throughout the anesthetic",
-      "Invasive arterial blood pressure monitoring for every patient under general anesthesia",
-      "Continuous processed electroencephalographic depth-of-anesthesia monitoring in all cases",
-      "Pulmonary artery catheterization to monitor cardiac output during every general anesthetic"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. The ASA standards for basic anesthetic monitoring require continual evaluation of oxygenation, ventilation, circulation, and temperature. For ventilation under general anesthesia, continuous capnography (quantitative monitoring of expired carbon dioxide) is required to confirm correct airway placement and adequate ventilation.",
-      "Incorrect. Blood pressure must be measured at least every 5 minutes, but the basic standards do not require it to be invasive; noninvasive measurement satisfies the standard for most cases.",
-      "Incorrect. Processed EEG depth monitoring may be used selectively but is not a universally mandated component of the basic monitoring standards.",
-      "Incorrect. Pulmonary artery catheterization is an invasive monitor used only for selected high-risk cases and is not a basic monitoring requirement."
-    ]
+    {
+      id: "p_068",
+      topic: "principles",
+      subtopic: "admin_general",
+      difficulty: "medium",
+      reference: "ASA Standards for Basic Anesthetic Monitoring",
+      question: "Under the ASA Standards for Basic Anesthetic Monitoring, which capability is REQUIRED during every general anesthetic to confirm adequate ventilation?",
+      choices: [
+        "Continuous core temperature measurement obtained from a pulmonary artery catheter line",
+        "Invasive arterial pressure monitoring whenever a volatile anesthetic is being used",
+        "Processed-EEG depth-of-anesthesia monitoring to reduce the risk of awareness events",
+        "Continual quantitative capnography to verify ventilation and confirm airway placement"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. A pulmonary artery catheter is an invasive device for specific indications and is not required for temperature or any basic monitoring.",
+        "Incorrect. Invasive arterial monitoring is used when clinically indicated, not mandated for every anesthetic; noninvasive blood pressure at least every 5 minutes satisfies the circulation standard.",
+        "Incorrect. Processed-EEG monitoring is not a basic-standard requirement; it is used selectively, not mandated in all cases.",
+        "Correct. The ASA basic monitoring standards require continual monitoring of ventilation, and capnography (identifying CO₂ in expired gas) verifies adequate ventilation and confirms correct placement of a tracheal tube or supraglottic airway. Oxygenation, circulation (ECG + blood pressure at least every 5 minutes), and temperature (when significant changes are intended/anticipated) are also required."
+      ]
   },
   {
     id: "p_069",
@@ -1548,20 +1548,20 @@ const QUESTION_BANK = [
     subtopic: "admin_general",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Ch. 30",
-    question: "An anesthesiologist describes total intravenous anesthesia to a trainee. Which statement best characterizes this technique compared with a volatile-based anesthetic?",
+    question: "Which statement best characterizes total intravenous anesthesia (TIVA) compared with a volatile-based technique?",
     choices: [
-      "It maintains anesthesia with intravenous agents alone when volatile agents are undesirable",
-      "It cannot be used in patients at risk for postoperative nausea because it worsens emesis",
-      "It eliminates the need for any airway management because intravenous agents protect the airway",
-      "It requires that nitrous oxide always be coadministered to maintain an adequate anesthetic depth"
-    ],
-    correct: 0,
+            "It lowers postoperative nausea risk but gives less reliable depth measurement than end-tidal monitoring",
+            "It maintains anesthesia with IV agents alone and is useful when volatiles are undesirable, as in MH risk",
+            "It requires nitrous oxide coadministration to reach an adequate depth of anesthesia",
+            "It removes the need for airway management because IV agents preserve airway reflexes"
+        ],
+    correct: 1,
     explanations: [
-      "Correct. Total intravenous anesthesia maintains the anesthetic state using intravenous agents, commonly a propofol infusion with an opioid, without volatile anesthetics. It is valuable when volatile agents are undesirable, such as in malignant hyperthermia susceptibility, during neuromonitoring, or for reducing postoperative nausea and operating room pollution.",
-      "Incorrect. Total intravenous anesthesia with propofol tends to reduce, not worsen, postoperative nausea and vomiting, which is one of its advantages.",
-      "Incorrect. Airway management is still required during total intravenous anesthesia; intravenous agents do not protect the airway and can depress airway reflexes.",
-      "Incorrect. Total intravenous anesthesia does not require nitrous oxide; it is defined by reliance on intravenous agents and can be conducted with an air-oxygen mixture."
-    ]
+            "Incorrect. It is true that propofol-based TIVA reduces PONV and that depth is harder to measure than with end-tidal volatile concentration — but this frames those as the defining feature, when the core characteristic is simply that anesthesia is maintained by IV agents alone.",
+            "Correct. TIVA maintains the anesthetic state using INTRAVENOUS agents alone (commonly a propofol infusion ± an opioid such as remifentanil), without volatile agents. It is especially useful when volatiles are undesirable — MH susceptibility, severe PONV, some neuromonitoring, or tubeless airway surgery — and is often paired with processed-EEG monitoring since end-tidal depth monitoring is unavailable.",
+            "Incorrect. TIVA does not require nitrous oxide; it is delivered with IV agents and nitrous is not a necessary component.",
+            "Incorrect. TIVA does not obviate airway management — IV anesthesia still obtunds airway reflexes and ventilation, so airway management is required as with any general anesthetic."
+        ]
   },
   {
     id: "p_070",
@@ -1590,41 +1590,41 @@ const QUESTION_BANK = [
     subtopic: "admin_general",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Ch. 30",
-    question: "An anesthesiologist describes balanced anesthesia to a student. Which statement best captures the concept?",
+    question: "Which statement best captures the concept of 'balanced anesthesia'?",
     choices: [
-      "Using a single high-dose agent to provide all components of the anesthetic state at once",
-      "Combining several agents, each contributing a component, to limit the dose of any one agent",
-      "Maintaining anesthesia exclusively with regional techniques and avoiding all systemic drugs",
-      "Alternating between volatile and intravenous agents every fifteen minutes during a case"
-    ],
+            "Delivering the entire anesthetic with one agent titrated to provide every component at once",
+            "Combining several agents, each supplying one component, to limit the dose of any single agent",
+            "Providing anesthesia with regional techniques and avoiding all systemic agents",
+            "Alternating volatile and intravenous maintenance agents at fixed fifteen-minute intervals"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Relying on a single high-dose agent is the opposite of balanced anesthesia and maximizes that agent's side effects.",
-      "Correct. Balanced anesthesia combines several agents, such as a hypnotic, an opioid analgesic, and a neuromuscular blocker, each addressing a component of the anesthetic state (unconsciousness, analgesia, and immobility). This allows lower doses of each drug, reducing dose-related side effects while achieving the overall goals.",
-      "Incorrect. Balanced anesthesia is a general anesthetic concept involving systemic agents and is not defined by exclusive use of regional techniques.",
-      "Incorrect. Balanced anesthesia is not defined by alternating agents on a fixed schedule; it is about combining complementary agents concurrently."
-    ]
+            "Incorrect. Relying on a single agent to provide all components requires high doses and maximizes that agent's dose-related side effects — the opposite of the balanced approach.",
+            "Correct. BALANCED ANESTHESIA combines several agents — e.g., a hypnotic, an opioid analgesic, and a neuromuscular blocker (± volatile) — so each contributes one component of the anesthetic state. By sharing the work, the dose of any single agent (and thus its side effects) is minimized while achieving hypnosis, analgesia, and relaxation.",
+            "Incorrect. Using regional techniques alone is not what 'balanced anesthesia' means; the term refers to combining multiple systemic agents by effect.",
+            "Incorrect. Balanced anesthesia is not defined by alternating agents on a timed schedule; it is about combining agents that each supply a component."
+        ]
   },
-  {
-    id: "p_072",
-    topic: "principles",
-    subtopic: "admin_ventilation",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 50",
-    question: "An anesthesiologist applies positive end-expiratory pressure during general anesthesia for an abdominal case. Which statement best describes the primary intraoperative benefit of applying modest PEEP?",
-    choices: [
-      "It reliably increases venous return and cardiac output by raising intrathoracic pressure",
-      "It guarantees prevention of any postoperative pulmonary complication regardless of other factors",
-      "It helps keep alveoli open at end-expiration, reducing atelectasis and improving oxygenation",
-      "It directly lowers arterial carbon dioxide by increasing the delivered minute ventilation"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Positive end-expiratory pressure raises intrathoracic pressure, which tends to reduce venous return and can lower cardiac output, particularly in hypovolemic patients, rather than reliably increasing it.",
-      "Incorrect. PEEP reduces atelectasis but does not guarantee prevention of all postoperative pulmonary complications, which depend on many factors.",
-      "Correct. The primary intraoperative benefit of modest PEEP is to keep alveoli open at end-expiration, counteracting the atelectasis that develops under general anesthesia. This reduces shunt and improves oxygenation, and as part of a lung-protective strategy it is combined with appropriate tidal volumes and periodic recruitment maneuvers.",
-      "Incorrect. PEEP acts at end-expiration to maintain lung volume; it does not by itself increase minute ventilation or directly lower arterial carbon dioxide."
-    ]
+    {
+      id: "p_072",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 50",
+      question: "Which statement BEST describes the effect of applying PEEP during general anesthesia for an abdominal case?",
+      choices: [
+        "It prevents postoperative pulmonary complications in essentially every patient",
+        "It increases venous return and cardiac output by lowering intrathoracic pressure",
+        "It directly lowers arterial CO₂ by increasing the delivered minute ventilation",
+        "It keeps alveoli open at end-expiration, reducing atelectasis and improving oxygenation"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. PEEP helps oxygenation but does not guarantee prevention of all postoperative pulmonary complications in every patient.",
+        "Incorrect. PEEP RAISES intrathoracic pressure, which tends to REDUCE venous return and can lower cardiac output — the opposite of this statement.",
+        "Incorrect. PEEP mainly affects oxygenation/FRC; it does not directly lower CO₂, which depends on minute ventilation (rate × tidal volume).",
+        "Correct. PEEP maintains a positive airway pressure at END-EXPIRATION, which keeps recruitable alveoli open, reduces ATELECTASIS, increases functional residual capacity, and improves oxygenation (V/Q matching). It is a core lung-protective strategy, titrated to balance oxygenation against hemodynamic effects."
+      ]
   },
   {
     id: "p_073",
@@ -1647,47 +1647,47 @@ const QUESTION_BANK = [
       "Incorrect. A cuff leak typically causes a loss of delivered volume and a fall in measured pressures, not a selective rise in peak inspiratory pressure."
     ]
   },
-  {
-    id: "p_074",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Ch. 34",
-    question: "A patient is placed in steep Trendelenburg position for a robotic pelvic procedure. Which physiologic change is most expected as a direct result of this position?",
-    choices: [
-      "A fall in functional residual capacity with increased work of breathing and atelectasis risk",
-      "An increase in functional residual capacity that improves intraoperative oxygenation",
-      "A fall in central venous pressure as blood pools away from the thorax in this position",
-      "A reduction in intraocular and intracranial pressure during the head-down period"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Steep Trendelenburg shifts the abdominal contents cephalad against the diaphragm, reducing functional residual capacity and lung compliance, promoting atelectasis, and raising airway pressures. It also increases venous return, central venous pressure, intracranial pressure, and intraocular pressure, and can produce airway and facial edema during prolonged cases.",
-      "Incorrect. Functional residual capacity falls rather than rises in head-down positioning because of cephalad diaphragmatic displacement.",
-      "Incorrect. Central venous pressure rises in Trendelenburg because of increased venous return, not falls.",
-      "Incorrect. Intraocular and intracranial pressure tend to increase in steep Trendelenburg, not decrease."
-    ]
+    {
+      id: "p_074",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Ch. 34",
+      question: "A patient is placed in steep Trendelenburg position for a robotic pelvic procedure. Which physiologic change is most expected as a direct result of this position?",
+      choices: [
+        "A reduction in intraocular and intracranial pressure during the head-down period",
+        "An increase in functional residual capacity that improves intraoperative oxygenation",
+        "A fall in central venous pressure as blood pools away from the thorax in this position",
+        "A fall in functional residual capacity with increased work of breathing and atelectasis risk"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Intraocular and intracranial pressure tend to increase in steep Trendelenburg, not decrease.",
+        "Incorrect. Functional residual capacity falls rather than rises in head-down positioning because of cephalad diaphragmatic displacement.",
+        "Incorrect. Central venous pressure rises in Trendelenburg because of increased venous return, not falls.",
+        "Correct. Steep Trendelenburg shifts the abdominal contents cephalad against the diaphragm, reducing functional residual capacity and lung compliance, promoting atelectasis, and raising airway pressures. It also increases venous return, central venous pressure, intracranial pressure, and intraocular pressure, and can produce airway and facial edema during prolonged cases."
+      ]
   },
-  {
-    id: "p_075",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "hard",
-    reference: "ASA Practice Advisory for Perioperative Visual Loss",
-    question: "A patient is scheduled for a long spinal fusion in the prone position with anticipated significant blood loss. Which strategy is best supported for reducing the risk of perioperative ischemic optic neuropathy?",
-    choices: [
-      "Place the head below the level of the heart for the duration of the procedure to improve flow",
-      "Position the head in neutral alignment at or above heart level and avoid direct pressure on the eyes",
-      "Use exclusively crystalloid resuscitation and accept a very low hematocrit to limit transfusion",
-      "Maintain deliberate, sustained intraoperative hypotension throughout the entire case for hemostasis"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. Positioning the head below heart level promotes venous congestion and periorbital edema and is discouraged in prone spine surgery.",
-      "Correct. The ASA advisory on perioperative visual loss recommends keeping the head in neutral alignment at or above the level of the heart when possible, avoiding direct external pressure on the eyes, staged procedures for very long cases, and attention to blood pressure and adequate hematocrit. These measures aim to reduce the risk of ischemic optic neuropathy after prone spine surgery.",
-      "Incorrect. Accepting a very low hematocrit on crystalloid alone may worsen oxygen delivery to the optic nerve; balanced resuscitation that maintains adequate oxygen-carrying capacity is preferred.",
-      "Incorrect. Sustained deliberate hypotension is a risk factor for ischemic optic neuropathy and is not recommended as a routine strategy in long prone spine surgery."
-    ]
+    {
+      id: "p_075",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "hard",
+      reference: "ASA Practice Advisory for Perioperative Visual Loss",
+      question: "For a long prone spinal fusion with anticipated major blood loss, which strategy is BEST supported for reducing the risk of perioperative ischemic optic neuropathy (POION)?",
+      choices: [
+        "Resuscitate with crystalloid only and accept a very low hematocrit to avoid transfusion",
+        "Place the head below heart level throughout to improve cerebral and optic perfusion",
+        "Maintain deliberate sustained hypotension for the whole case to limit blood loss",
+        "Keep the head in neutral alignment at or above heart level and avoid direct globe pressure"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Accepting a very low hematocrit with crystalloid-only resuscitation (profound anemia + large crystalloid volumes/edema) is associated with higher POION risk, not lower.",
+        "Incorrect. Positioning the head BELOW heart level increases venous congestion and periorbital/optic edema, which raises — not lowers — POION risk.",
+        "Incorrect. Sustained deliberate hypotension is a suspected risk factor for POION and is discouraged in prolonged prone spine surgery; perfusion should be maintained.",
+        "Correct. POION risk after prolonged prone spine surgery is reduced by keeping the HEAD in NEUTRAL alignment at or ABOVE heart level (to limit venous congestion and periorbital edema) and scrupulously AVOIDING direct pressure on the globe/orbit. Staged procedures, limiting blood loss, avoiding prolonged deliberate hypotension, and appropriate use of colloid/blood in resuscitation are also recommended in high-risk cases."
+      ]
   },
   {
     id: "p_076",
@@ -1695,20 +1695,20 @@ const QUESTION_BANK = [
     subtopic: "admin_qi",
     difficulty: "medium",
     reference: "WHO Surgical Safety Checklist",
-    question: "An operating room team performs a structured time-out immediately before skin incision. Which set of items is the time-out specifically designed to confirm?",
+    question: "During the WHO Surgical Safety Checklist, which confirmation is performed specifically during the TIME-OUT (immediately before skin incision), as opposed to the sign-in or sign-out phases?",
     choices: [
-      "The anesthetic record is complete and all intraoperative medications have been charted",
-      "The final surgical counts of sponges and instruments at the conclusion of the procedure",
-      "The postoperative disposition and the planned recovery unit bed assignment for the patient",
-      "Patient identity, surgical site and procedure, and critical safety items before incision"
-    ],
-    correct: 3,
+            "Confirmation that the pulse oximeter is placed and functioning on the patient",
+            "Team confirms patient identity, surgical site/procedure, and antibiotic prophylaxis",
+            "Review of instrument, sponge, and needle counts being correct",
+            "Confirmation of specimen labeling and the key concerns for patient recovery"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. Completing the anesthetic record is an ongoing documentation task and is not the purpose of the pre-incision time-out.",
-      "Incorrect. Surgical counts of sponges and instruments are performed at other defined points, including before closure, not as the pre-incision time-out.",
-      "Incorrect. Postoperative disposition planning occurs during the sign-out phase, not during the pre-incision time-out.",
-      "Correct. The time-out, a core element of the WHO Surgical Safety Checklist, is a structured pause immediately before incision in which the team confirms correct patient identity, correct surgical site and side, correct procedure, and other critical safety items such as antibiotic prophylaxis and anticipated concerns. It is designed to prevent wrong-patient, wrong-site, and wrong-procedure errors."
-    ]
+            "Incorrect. Checking that the pulse oximeter is on and functioning is part of the SIGN-IN phase (before induction of anesthesia), not the time-out.",
+            "Correct. The TIME-OUT occurs immediately before skin incision and is when the entire team pauses to verbally confirm the patient's identity, the surgical site and procedure, and that antibiotic prophylaxis has been given within the appropriate window, along with anticipated critical events. It is the checklist step specifically designed to prevent wrong-patient, wrong-site, and wrong-procedure errors at the moment before incision.",
+            "Incorrect. Counts of instruments, sponges, and needles are confirmed during the SIGN-OUT phase (before the patient leaves the room), not the time-out.",
+            "Incorrect. Specimen labeling and key recovery concerns are addressed during the SIGN-OUT phase, not the time-out."
+        ]
   },
   {
     id: "p_077",
@@ -1731,47 +1731,47 @@ const QUESTION_BANK = [
       "Incorrect. A retained surgical item is a serious safety event, not a minor variance, and it specifically warrants a root cause analysis."
     ]
   },
-  {
-    id: "p_078",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "medium",
-    reference: "The Joint Commission; Anesthesia Patient Safety Foundation",
-    question: "An anesthesiologist transfers care of a patient to the recovery room nurse at the end of a case. Which practice best reflects a high-quality, safety-oriented handoff?",
-    choices: [
-      "Use a structured, standardized handoff that conveys key information and allows questions",
-      "Transfer care by written note alone, with no verbal exchange or opportunity for questions",
-      "Defer the handoff until the nurse independently reviews the full anesthetic record later",
-      "Keep the handoff as brief as possible by omitting intraoperative events to save the team time"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Care transitions are a well-recognized point of vulnerability for communication failures. A high-quality handoff uses a structured, standardized format that conveys the relevant history, intraoperative course, medications, and anticipated concerns, and explicitly allows the receiving clinician to ask questions and confirm understanding.",
-      "Incorrect. A written note alone, without a verbal exchange, does not allow clarification and is an incomplete handoff.",
-      "Incorrect. Deferring the handoff and relying on the nurse to later review the record leaves a dangerous gap in care during the immediate postoperative period.",
-      "Incorrect. Omitting intraoperative events to shorten the handoff removes exactly the information the receiving team needs and is a recognized source of preventable harm."
-    ]
+    {
+      id: "p_078",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "medium",
+      reference: "The Joint Commission; Anesthesia Patient Safety Foundation",
+      question: "An anesthesiologist transfers care of a patient to the recovery room nurse at the end of a case. Which practice best reflects a high-quality, safety-oriented handoff?",
+      choices: [
+        "Keep the handoff as brief as possible by omitting intraoperative events to save the team time",
+        "Transfer care by written note alone, with no verbal exchange or opportunity for questions",
+        "Defer the handoff until the nurse independently reviews the full anesthetic record later",
+        "Use a structured, standardized handoff that conveys key information and allows questions"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Omitting intraoperative events to shorten the handoff removes exactly the information the receiving team needs and is a recognized source of preventable harm.",
+        "Incorrect. A written note alone, without a verbal exchange, does not allow clarification and is an incomplete handoff.",
+        "Incorrect. Deferring the handoff and relying on the nurse to later review the record leaves a dangerous gap in care during the immediate postoperative period.",
+        "Correct. Care transitions are a well-recognized point of vulnerability for communication failures. A high-quality handoff uses a structured, standardized format that conveys the relevant history, intraoperative course, medications, and anticipated concerns, and explicitly allows the receiving clinician to ask questions and confirm understanding."
+      ]
   },
-  {
-    id: "p_079",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "medium",
-    reference: "ASA Continuum of Depth of Sedation",
-    question: "Using the ASA continuum of depth of sedation, which description best characterizes moderate sedation, often called conscious sedation?",
-    choices: [
-      "The patient cannot be aroused even with painful stimulation and often needs airway support",
-      "The patient responds purposefully to verbal or light tactile stimulation, ventilating adequately",
-      "The patient is fully awake and anxiolysis is provided without any effect on responsiveness",
-      "The patient responds only after repeated or painful stimulation and frequently needs an airway"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. A patient who cannot be aroused even with painful stimulation is under general anesthesia, not moderate sedation.",
-      "Correct. In moderate sedation, the patient responds purposefully to verbal commands, either alone or accompanied by light tactile stimulation. Spontaneous ventilation is adequate, the airway requires no intervention, and cardiovascular function is usually maintained. Withdrawal from a painful stimulus is not considered a purposeful response.",
-      "Incorrect. A fully awake patient with anxiolysis and normal responsiveness describes minimal sedation, not moderate sedation.",
-      "Incorrect. Responding only to repeated or painful stimulation, often with a need for airway intervention, describes deep sedation rather than moderate sedation."
-    ]
+    {
+      id: "p_079",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "medium",
+      reference: "ASA Continuum of Depth of Sedation",
+      question: "On the ASA continuum of depth of sedation, which description best characterizes MODERATE sedation ('conscious sedation')?",
+      choices: [
+        "Remains fully awake with anxiolysis only, responding normally with entirely unaffected ventilation",
+        "Responds only to repeated or painful stimulation and may need assistance maintaining the airway patent",
+        "Cannot be aroused even by painful stimulation and frequently requires assisted ventilation support",
+        "Responds purposefully to verbal or light tactile stimulation, ventilating adequately without intervention"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Being fully awake with anxiolysis and normal responses describes MINIMAL sedation (anxiolysis), which is lighter than moderate sedation.",
+        "Incorrect. Responding only to repeated or painful stimulation, with possible airway assistance, describes DEEP sedation — one level beyond moderate.",
+        "Incorrect. Being unarousable even to painful stimulation with assisted ventilation describes GENERAL ANESTHESIA, not moderate sedation.",
+        "Correct. In MODERATE sedation the patient responds PURPOSEFULLY to verbal or light tactile stimulation. Spontaneous ventilation is adequate, the airway usually needs no intervention, and cardiovascular function is typically maintained. (A reflex withdrawal to pain is NOT a purposeful response.)"
+      ]
   },
   {
     id: "p_080",
@@ -1779,20 +1779,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "hard",
     reference: "Miller's Anesthesia, Ch. 30",
-    question: "An anesthesiologist providing moderate sedation must be prepared for the possibility that the patient drifts deeper than intended. Which principle best reflects the standard of safe sedation practice?",
+    question: "A provider giving moderate sedation must plan for the patient drifting deeper than intended. Which principle should guide preparation?",
     choices: [
-      "Sedation depth is fixed once dosing is chosen, so deeper-than-intended sedation cannot occur",
-      "Only the proceduralist, not the anesthesia provider, is responsible for managing oversedation",
-      "Sedation exists on a continuum, so the provider must be able to rescue from the next deeper level",
-      "Reversal agents alone are sufficient, so airway and ventilation skills are not strictly required"
-    ],
-    correct: 2,
+            "Because reversal agents reliably restore ventilation, advanced airway skills are an optional backup",
+            "Because sedation is a continuum, the provider must be able to rescue a patient from one level deeper than intended",
+            "Because sedation depth is set by the initial dose, drifting to a deeper level does not occur with careful dosing",
+            "Because the proceduralist directs the case, responsibility for oversedation rests with them, not the sedation provider"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. Sedation depth is not fixed; individual patient responses vary, and a given dose can produce deeper sedation than intended.",
-      "Incorrect. The provider administering sedation is responsible for monitoring depth and managing complications, including oversedation.",
-      "Correct. Because sedation is a continuum rather than a set of discrete states, a patient may unintentionally pass into a deeper level than planned. The accepted standard is that any provider delivering a given level of sedation must possess the skills to rescue a patient who drifts one level deeper, including managing the airway and supporting ventilation and circulation.",
-      "Incorrect. Reversal agents do not substitute for airway and ventilation management; not all sedatives are reversible, and rescue depends on these core skills."
-    ]
+            "Incorrect. Not all sedatives have reversal agents, reversal is neither instantaneous nor complete, and it does not substitute for airway/ventilation rescue skills — so treating airway skills as optional is unsafe.",
+            "Correct. Sedation is a CONTINUUM and individual responses vary, so a patient given moderate sedation can unpredictably reach deep sedation or general anesthesia. The guiding principle is that whoever administers sedation must be able to RESCUE a patient from one level DEEPER than intended — a moderate-sedation provider must be able to manage the airway and ventilation of a patient who becomes deeply sedated.",
+            "Incorrect. Depth is not fixed by the initial dose; because of variable response and drug interactions, deeper-than-intended sedation can and does occur despite careful dosing.",
+            "Incorrect. The provider administering sedation is responsible for monitoring and rescuing the patient; this cannot be delegated to the proceduralist."
+        ]
   },
   {
     id: "p_081",
@@ -1836,26 +1836,26 @@ const QUESTION_BANK = [
       "Incorrect. With four positive Apfel criteria, classifying her as one-risk-factor would dramatically underestimate her likelihood of PONV and lead to under-treatment."
     ]
   },
-  {
-    id: "p_083",
-    topic: "principles",
-    subtopic: "admin_general",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Airway Complications Chapter",
-    question: "An otherwise healthy 22-year-old male athlete develops severe laryngospasm during emergence from general anesthesia after appendectomy. After succinylcholine and bag-mask ventilation resolve the laryngospasm, he develops pink frothy sputum, bilateral crackles, and SpO2 of 86 percent on 100 percent oxygen. A chest X-ray shows diffuse bilateral pulmonary edema with normal heart size. The MOST likely diagnosis is:",
-    choices: [
-      "Negative pressure (post-obstructive) pulmonary edema",
-      "Aspiration pneumonitis from gastric contents",
-      "Transfusion-related acute lung injury",
-      "Acute decompensated systolic heart failure"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Negative pressure pulmonary edema occurs when forceful inspiratory effort against an obstructed upper airway (most commonly laryngospasm in young, muscular patients) generates very high negative intrathoracic pressures, increasing venous return and pulmonary capillary transudation. Onset is typically within minutes of relief of obstruction, with hypoxemia, pink frothy sputum, and bilateral infiltrates with a normal-sized heart. Treatment is supportive: oxygen, PEEP or CPAP, and diuresis if needed; the condition usually resolves within 24 hours.",
-      "Incorrect. Aspiration would typically demonstrate a unilateral or segmental infiltrate (most often right lower lobe), a history of regurgitation or aspiration, and a different time course. Bilateral diffuse edema after laryngospasm is more characteristic of negative pressure pulmonary edema.",
-      "Incorrect. TRALI requires a recent transfusion, which is not described here. It also typically presents with a different clinical picture (fever, hypotension) within six hours of transfusion.",
-      "Incorrect. Acute heart failure would usually show cardiomegaly on chest X-ray, evidence of left atrial hypertension, and a context of underlying cardiac disease, not the post-laryngospasm scenario described."
-    ]
+    {
+      id: "p_083",
+      topic: "principles",
+      subtopic: "admin_general",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Airway Complications Chapter",
+      question: "A healthy 22-year-old male athlete develops severe laryngospasm on emergence; soon after it is relieved he becomes hypoxemic with pink frothy secretions and diffuse bilateral infiltrates. What is the MOST likely cause?",
+      choices: [
+        "Flash pulmonary edema from acute left ventricular systolic dysfunction on emergence",
+        "Aspiration pneumonitis from silent regurgitation of gastric contents during the spasm",
+        "Transfusion-related acute lung injury from intraoperative blood products administered",
+        "Negative-pressure pulmonary edema from forceful inspiration against a closed glottis"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Acute LV systolic failure would be unusual in a healthy 22-year-old athlete and does not fit the laryngospasm trigger; the mechanism here is the large negative intrathoracic pressure, not pump failure.",
+        "Incorrect. Aspiration is possible but less likely given the classic trigger (forceful effort against a closed glottis) and immediate post-obstruction onset; aspiration usually follows witnessed regurgitation and often localizes rather than causing this uniform picture.",
+        "Incorrect. TRALI relates to blood-product transfusion within ~6 hours; there is no transfusion in this scenario.",
+        "Correct. NEGATIVE-PRESSURE (post-obstructive) PULMONARY EDEMA classically occurs in young, muscular patients who generate large negative intrathoracic pressures inspiring against an obstructed (laryngospasm) airway. The markedly negative pressure increases venous return and transcapillary fluid flux, producing rapid-onset edema (pink frothy secretions, bilateral infiltrates) shortly after the obstruction is relieved. It is usually self-limited with oxygen ± CPAP and supportive care."
+      ]
   },
   {
     id: "p_084",
@@ -1899,26 +1899,26 @@ const QUESTION_BANK = [
       "Incorrect. Ramsay 6 describes a patient who is unresponsive to any stimulus, including painful stimulation, which is much deeper than described."
     ]
   },
-  {
-    id: "p_086",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Airway Management Chapter",
-    question: "A patient becomes apneic during procedural sedation, and the team observes upper airway obstruction with snoring respirations. Which initial airway maneuver is MOST effective for opening the airway?",
-    choices: [
-      "Jaw thrust performed with bilateral upward pressure at the angle of the mandible",
-      "Chin lift alone, performed with one finger under the chin",
-      "Cricoid pressure to compress the upper airway open",
-      "Trendelenburg positioning of the entire patient on the procedure bed"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Jaw thrust applied at the angle of the mandible elevates the mandible and base of the tongue away from the posterior pharynx and is the most effective non-invasive maneuver to relieve obstruction caused by soft-tissue collapse. It can also be performed while maintaining cervical spine precautions, unlike head tilt-chin lift.",
-      "Incorrect. Chin lift alone is less effective than jaw thrust at displacing the base of the tongue forward, particularly in unconscious or obese patients.",
-      "Incorrect. Cricoid pressure does not relieve upper airway obstruction caused by soft-tissue collapse; it is intended to compress the esophagus to reduce gastric regurgitation during rapid sequence induction (a use whose effectiveness is debated).",
-      "Incorrect. Trendelenburg positioning does not directly relieve obstruction at the level of the pharynx and may worsen aspiration risk."
-    ]
+    {
+      id: "p_086",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Airway Management Chapter",
+      question: "A patient becomes apneic during procedural sedation with upper-airway obstruction and snoring respirations. Which maneuver is MOST effective as the immediate first response to relieve the obstruction?",
+      choices: [
+        "Applying cricoid pressure to open the collapsed upper airway",
+        "Chin lift performed with a single finger under the point of the chin",
+        "Turning the head to the side to let the tongue fall away from the pharynx",
+        "Jaw thrust with bilateral upward pressure at the angles of the mandible"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Cricoid pressure is applied to reduce passive regurgitation risk; it does NOT open the airway and can actually worsen airway patency and ventilation.",
+        "Incorrect. A chin lift can help mild obstruction but is less effective than a jaw thrust for significant tongue-based obstruction; it is a reasonable adjunct, not the best immediate maneuver here.",
+        "Incorrect. Simply turning the head does not reliably relieve pharyngeal soft-tissue obstruction and is not the recommended maneuver.",
+        "Correct. Snoring/obstruction during sedation is usually soft-tissue (tongue) collapse against the pharynx. A JAW THRUST — bilateral upward force at the mandibular angles — most effectively lifts the tongue and soft tissues off the posterior pharynx and opens the airway, and it can be combined with an oral/nasal airway and CPAP. It is generally more effective than a chin lift for significant obstruction."
+      ]
   },
   {
     id: "p_087",
@@ -1941,47 +1941,47 @@ const QUESTION_BANK = [
       "Correct. Dexmedetomidine is a centrally acting alpha-2 agonist that produces sedation resembling natural non-REM sleep with relatively preserved respiration. This profile is attractive in patients with OSA, severe pulmonary disease, or anticipated difficult airways. The principal disadvantages are bradycardia, hypotension (sometimes preceded by transient hypertension during a loading dose), and slower onset of sedation compared with propofol."
     ]
   },
-  {
-    id: "p_088",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "medium",
-    reference: "ASA NPO Guidelines; ASA Practice Guidelines for Moderate Procedural Sedation",
-    question: "A healthy adult patient is scheduled for an elective procedure that will require moderate procedural sedation. Which statement BEST describes the recommended preprocedural fasting guidelines for this patient?",
-    choices: [
-      "Fasting guidelines do not apply to moderate procedural sedation because protective reflexes are preserved",
-      "Fasting times are shorter than for general anesthesia (1 hour clear liquids, 4 hours solids)",
-      "Fasting times should follow the standard ASA guidelines used for general anesthesia",
-      "Only clear liquid restriction is needed because the airway will not be instrumented routinely"
-    ],
-    correct: 2,
-    explanations: [
-      "Incorrect. Patients undergoing moderate sedation may unintentionally progress to deep sedation or general anesthesia, with loss of protective airway reflexes. Fasting guidelines are still recommended.",
-      "Incorrect. ASA fasting recommendations for elective procedures using sedation are the same as for general anesthesia, not shorter.",
-      "Correct. The ASA recommends that elective procedures involving any level of sedation, including moderate procedural sedation, follow the standard preprocedural fasting recommendations used for general anesthesia: typically at least 2 hours after clear liquids, 4 hours after breast milk, 6 hours after a light meal or non-human milk, and 8 hours after a heavy or fatty meal. The rationale is unintended progression to deeper sedation with potential loss of protective reflexes.",
-      "Incorrect. The fasting recommendation covers both clear liquids and solids. Limiting only clear-liquid intake while ignoring solids does not align with ASA guidelines."
-    ]
+    {
+      id: "p_088",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "medium",
+      reference: "ASA NPO Guidelines; ASA Practice Guidelines for Moderate Procedural Sedation",
+      question: "Which statement BEST describes preprocedure fasting for elective moderate procedural sedation in a healthy adult?",
+      choices: [
+        "Only clear-liquid restriction is needed because the airway is not routinely instrumented",
+        "Fasting is unnecessary because protective airway reflexes are preserved in moderate sedation",
+        "A shortened schedule applies: about 1 hour for clear liquids and 4 hours for a light meal",
+        "Standard ASA fasting guidance (e.g., ~2 h clear liquids, ~6 h light meal) should be applied"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Fasting is not limited to clear liquids only; the full standard guidance applies because the patient may deepen and require airway management.",
+        "Incorrect. Reflexes are variably preserved and can be lost if sedation deepens; fasting is still recommended to reduce aspiration risk.",
+        "Incorrect. There is no separate 'shortened' fasting schedule for moderate sedation; the standard anesthesia fasting intervals apply.",
+        "Correct. Because moderate sedation can unintentionally deepen (the continuum), elective sedation should follow the STANDARD ASA fasting guidelines used for anesthesia — roughly 2 hours for clear liquids, 4 hours for breast milk, 6 hours for a light meal/formula/non-human milk, and 8 hours for fatty/fried foods or a heavy meal. This preserves a margin of safety should the patient progress to deep sedation or need airway rescue."
+      ]
   },
-  {
-    id: "p_089",
-    topic: "principles",
-    subtopic: "admin_sedation",
-    difficulty: "hard",
-    reference: "ASA Standards for Basic Anesthetic Monitoring; ASA Moderate Sedation Guidelines",
-    question: "During a procedure under moderate sedation, which monitoring modality is REQUIRED by current ASA standards to assess ventilation in all patients unless contraindicated by the procedure or equipment?",
-    choices: [
-      "Continuous monitoring of exhaled carbon dioxide (capnography)",
-      "Arterial blood gas measurement every 30 minutes during the case",
-      "Intermittent visual observation of chest wall rise alone is acceptable",
-      "Transcutaneous CO2 monitoring with a dedicated electrode probe"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Current ASA monitoring standards require continuous evaluation of ventilation during all anesthesia care, including moderate procedural sedation. Capnography (continuous monitoring for the presence of exhaled CO2) is required for moderate and deep sedation unless precluded or invalidated by the nature of the patient, procedure, or equipment. Capnography detects hypoventilation and apnea earlier than pulse oximetry alone, particularly in patients receiving supplemental oxygen.",
-      "Incorrect. Routine arterial blood gas measurements are not required during procedural sedation. Continuous non-invasive monitoring of ventilation is required.",
-      "Incorrect. Visual observation of chest rise is a useful adjunct but is no longer sufficient by itself for moderate sedation. Capnography (and oxygenation) monitoring are required.",
-      "Incorrect. Transcutaneous CO2 monitoring is sometimes used in specific settings but is not the required standard. End-tidal capnography is the modality specified by ASA."
-    ]
+    {
+      id: "p_089",
+      topic: "principles",
+      subtopic: "admin_sedation",
+      difficulty: "medium",
+      reference: "ASA Standards for Basic Anesthetic Monitoring; ASA Moderate Sedation Guidelines",
+      question: "During moderate procedural sedation, which is the standard-of-care method for continuously assessing the adequacy of VENTILATION?",
+      choices: [
+        "Periodic arterial blood gas sampling to track the patient's ventilation trend",
+        "Continuous pulse oximetry, which reflects ventilation adequacy breath to breath",
+        "Intermittent visual observation of chest-wall movement by the sedation provider",
+        "Continuous capnography (monitoring exhaled CO₂) in addition to clinical observation"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Arterial blood gases are intermittent and invasive; they do not provide the continuous, real-time ventilation monitoring that capnography does.",
+        "Incorrect. Pulse oximetry measures OXYGENATION, not ventilation; on supplemental oxygen it can remain normal well after ventilation has failed, so it is not the ventilation monitor.",
+        "Incorrect. Intermittent visual observation alone is insufficient and is not a substitute for continuous capnographic monitoring of ventilation during sedation.",
+        "Correct. Current standards call for CAPNOGRAPHY (continuous monitoring of exhaled CO₂) to assess ventilation during moderate/deep sedation, because it detects hypoventilation and apnea earlier than oximetry — especially with supplemental oxygen, which delays desaturation. It supplements, and does not replace, clinical observation and oxygenation monitoring."
+      ]
   },
   {
     id: "p_090",
@@ -2025,68 +2025,68 @@ const QUESTION_BANK = [
       "Incorrect. Tidal volume of 4 mL/kg is below lung-protective targets and may produce inadequate minute ventilation. The primary issue is expiratory time, not tidal volume."
     ]
   },
-  {
-    id: "p_092",
-    topic: "principles",
-    subtopic: "admin_ventilation",
-    difficulty: "hard",
-    reference: "ASA Difficult Airway Algorithm",
-    question: "A patient is induced for elective surgery and an initial attempt at orotracheal intubation with a Macintosh blade is unsuccessful, with a Cormack-Lehane grade 4 view. Mask ventilation is initially difficult but becomes adequate with a two-person technique and oral airway. According to the ASA difficult airway algorithm, the MOST appropriate next step is:",
-    choices: [
-      "Repeat direct laryngoscopy with the same blade after head repositioning only",
-      "Proceed immediately to emergent cricothyroidotomy with a scalpel approach",
-      "Awaken the patient and reschedule the procedure on a different operative day",
-      "Optimize the next intubation attempt with a different blade or video laryngoscope"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. Repeating the same approach with only minor repositioning risks airway trauma and multiple failed attempts, which is associated with worse outcomes. Each attempt should be optimized differently.",
-      "Incorrect. Cricothyroidotomy is reserved for the cannot-intubate-cannot-ventilate (or cannot-oxygenate) emergency. Since mask ventilation is now adequate, the situation has not yet reached the emergency surgical airway pathway.",
-      "Incorrect. While awakening may be appropriate later in the algorithm, when ventilation has become adequate and the surgery is elective, an optimized second attempt is reasonable. Awakening is a strong consideration if additional attempts fail.",
-      "Correct. With ventilation now adequate after a failed intubation, the ASA algorithm allows a limited number of optimized intubation attempts. Optimization includes changing operator, blade type, blade size, video laryngoscopy, an introducer or bougie, an alternate airway device, repositioning, and external laryngeal manipulation. Continued failure mandates calling for help and considering awakening the patient, supraglottic device rescue, or invasive airway access as the algorithm dictates."
-    ]
+    {
+      id: "p_092",
+      topic: "principles",
+      subtopic: "admin_ventilation",
+      difficulty: "medium",
+      reference: "ASA Difficult Airway Algorithm",
+      question: "After induction, a first orotracheal intubation attempt with a Macintosh blade fails, but the patient is easy to mask-ventilate with good SpO₂. What is the MOST appropriate next step?",
+      choices: [
+        "Abandon the airway, wake the patient, and reschedule the case for another day",
+        "Repeat direct laryngoscopy with the identical blade and the same approach without any change",
+        "Proceed immediately to surgical cricothyroidotomy given the failed first attempt",
+        "Make an optimized second attempt: reposition and change to a different blade or video device"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Waking the patient is a legitimate option for some failed airways, but with easy mask ventilation and a first attempt only, an optimized second attempt is the appropriate next step before abandoning.",
+        "Incorrect. Repeating the exact same technique without any change is likely to fail again and wastes a limited number of attempts; something must be optimized between attempts.",
+        "Incorrect. Cricothyroidotomy is reserved for a 'cannot intubate, cannot oxygenate' emergency. This patient oxygenates well by mask, so an invasive airway is not appropriate.",
+        "Correct. With a failed first attempt but ADEQUATE oxygenation via mask ventilation, the difficult-airway algorithm calls for a LIMITED number of OPTIMIZED further attempts — improve position, external laryngeal manipulation, a different blade or a video laryngoscope, a bougie, or a more experienced operator — while maintaining oxygenation between attempts. You are not in a 'cannot intubate, cannot oxygenate' situation, so escalation to a surgical airway is not indicated."
+      ]
   },
-  {
-    id: "p_093",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "medium",
-    reference: "ASA Practice Advisory for the Prevention of Perioperative Peripheral Neuropathies",
-    question: "A 70-year-old man undergoes a 6-hour open abdominal procedure with both arms abducted on padded arm boards. Postoperatively he reports numbness and weakness on the lateral aspect of one upper arm and inability to abduct the shoulder. Which positioning factor MOST likely contributed to this nerve injury?",
-    choices: [
-      "Arm abducted to more than 90 degrees from the body axis on the arm board",
-      "Forearm placed in pronation rather than in supination on the arm board",
-      "Use of foam padding rather than gel padding under the patient's elbow",
-      "Slight Trendelenburg position during the procedure for surgical exposure"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Brachial plexus injury is most commonly associated with arm abduction beyond 90 degrees, excessive lateral head rotation away from the abducted arm, posterior shoulder displacement, and prolonged duration of these positions. The classical clinical pattern (lateral arm numbness with deltoid weakness) suggests upper trunk or axillary nerve involvement. Limiting abduction to less than 90 degrees and ensuring the forearm and elbow are well padded reduces risk.",
-      "Incorrect. Forearm supination is generally favored to reduce pressure over the ulnar groove (ulnar neuropathy), but is not the primary mechanism of brachial plexus injury. Brachial plexus stretch is more related to abduction angle and head rotation.",
-      "Incorrect. The type of padding (foam vs gel) has been studied but is less important than the geometry of positioning. Brachial plexus injury is primarily a stretch injury, not a compression-only injury.",
-      "Incorrect. Trendelenburg can contribute to brachial plexus stretch by causing the shoulder to bear weight against the shoulder braces, but this is generally a problem when braces are used to prevent sliding rather than the patient simply being tilted. The dominant mechanism here is arm abduction beyond 90 degrees."
-    ]
+    {
+      id: "p_093",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "medium",
+      reference: "ASA Practice Advisory for the Prevention of Perioperative Peripheral Neuropathies",
+      question: "A 70-year-old man undergoes a 6-hour open abdominal procedure with both arms abducted on padded arm boards. Postoperatively he reports numbness and weakness on the lateral aspect of one upper arm and inability to abduct the shoulder. Which positioning factor MOST likely contributed to this nerve injury?",
+      choices: [
+        "Slight Trendelenburg position during the procedure for surgical exposure",
+        "Forearm placed in pronation rather than in supination on the arm board",
+        "Use of foam padding rather than gel padding under the patient's elbow",
+        "Arm abducted to more than 90 degrees from the body axis on the arm board"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Trendelenburg can contribute to brachial plexus stretch by causing the shoulder to bear weight against the shoulder braces, but this is generally a problem when braces are used to prevent sliding rather than the patient simply being tilted. The dominant mechanism here is arm abduction beyond 90 degrees.",
+        "Incorrect. Forearm supination is generally favored to reduce pressure over the ulnar groove (ulnar neuropathy), but is not the primary mechanism of brachial plexus injury. Brachial plexus stretch is more related to abduction angle and head rotation.",
+        "Incorrect. The type of padding (foam vs gel) has been studied but is less important than the geometry of positioning. Brachial plexus injury is primarily a stretch injury, not a compression-only injury.",
+        "Correct. Brachial plexus injury is most commonly associated with arm abduction beyond 90 degrees, excessive lateral head rotation away from the abducted arm, posterior shoulder displacement, and prolonged duration of these positions. The classical clinical pattern (lateral arm numbness with deltoid weakness) suggests upper trunk or axillary nerve involvement. Limiting abduction to less than 90 degrees and ensuring the forearm and elbow are well padded reduces risk."
+      ]
   },
-  {
-    id: "p_094",
-    topic: "principles",
-    subtopic: "admin_positioning",
-    difficulty: "hard",
-    reference: "ASA Practice Advisory for Perioperative Visual Loss; APSF guidelines",
-    question: "A patient undergoes prone spinal fusion lasting 9 hours with estimated blood loss of 2,500 mL. He is resuscitated with crystalloid and packed red blood cells to maintain MAP 65 mm Hg. Postoperatively he reports painless vision loss in one eye with no light perception and a relative afferent pupillary defect. Funduscopic exam shows a pale optic disc. The MOST likely cause is:",
-    choices: [
-      "Central retinal artery occlusion from direct globe pressure during prone positioning",
-      "Posterior ischemic optic neuropathy related to prolonged prone surgery",
-      "Acute angle-closure glaucoma triggered by prone positioning effects",
-      "Cortical blindness from intraoperative posterior cerebral artery hypoperfusion"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. Central retinal artery occlusion from direct globe pressure usually presents with retinal pallor, a cherry-red spot at the macula on funduscopy, and often signs of facial or periorbital pressure-related injury. The finding described (pale disc, no cherry-red spot) is more consistent with optic nerve ischemia.",
-      "Correct. Postoperative visual loss in prone spine surgery is most commonly caused by posterior ischemic optic neuropathy. Risk factors include prolonged prone positioning, large blood loss, large volumes of crystalloid resuscitation, and male sex. Clinical findings include painless vision loss, often bilateral, with a relative afferent pupillary defect; the optic disc may appear normal early and then become pale. Risk reduction strategies include limiting head dependency, staged surgery for high-risk cases, balanced fluid resuscitation including colloid or blood as appropriate, and avoidance of direct globe pressure.",
-      "Incorrect. Acute angle-closure glaucoma typically presents with severe eye pain, headache, nausea, halos around lights, and a red eye, not the painless vision loss described.",
-      "Incorrect. Cortical blindness from posterior circulation hypoperfusion typically produces bilateral vision loss with preserved pupillary reflexes (no RAPD) and intact ocular structures on funduscopic exam. The findings here localize to the optic nerve, not the cortex."
-    ]
+    {
+      id: "p_094",
+      topic: "principles",
+      subtopic: "admin_positioning",
+      difficulty: "hard",
+      reference: "ASA Practice Advisory for Perioperative Visual Loss; APSF guidelines",
+      question: "A patient undergoes prone spine surgery on a horseshoe headrest. Postoperatively there is UNILATERAL vision loss with a cherry-red macula, an afferent pupillary defect, and periorbital swelling on that side; the contralateral eye is normal. Which mechanism BEST explains this pattern?",
+      choices: [
+        "Posterior ischemic optic neuropathy from prolonged prone positioning and blood loss",
+        "Cortical blindness from posterior cerebral artery hypoperfusion",
+        "Acute angle-closure glaucoma precipitated by prone positioning",
+        "Central retinal artery occlusion from external compression of the globe by the headrest"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Ischemic optic neuropathy is the most common cause of perioperative visual loss after prone spine surgery, but it is typically bilateral, spares the external eye, and does not produce a cherry-red macula. The unilateral cherry-red spot and periorbital signs here point elsewhere.",
+        "Incorrect. Cortical blindness is bilateral, spares the pupillary light reflex, and shows a normal fundus — inconsistent with a unilateral afferent pupillary defect and cherry-red macula.",
+        "Incorrect. Acute angle-closure glaucoma causes a painful red eye with a mid-dilated fixed pupil and high intraocular pressure, not a cherry-red macula from retinal ischemia.",
+        "Correct. A cherry-red macula, unilateral afferent pupillary defect, and periorbital swelling after prone positioning on a horseshoe headrest indicate central retinal artery occlusion from external pressure on the globe. This is why the eyes must be checked frequently and kept free of any pressure during prone cases."
+      ]
   },
   {
     id: "p_095",
@@ -2109,26 +2109,26 @@ const QUESTION_BANK = [
       "Correct. Lower-extremity (well-leg) compartment syndrome is a serious complication of prolonged lithotomy positioning, particularly with leg elevation in stirrups for more than 4 to 5 hours. Hypoperfusion at the leg level during elevation, combined with subsequent reperfusion when the legs are lowered, causes muscle injury and compartment swelling. Classic findings are severe pain out of proportion to exam, pain on passive stretch, and a tense compartment; loss of pulses is a late finding. Treatment is emergent fasciotomy. Prevention includes periodic lowering of the legs during long cases."
     ]
   },
-  {
-    id: "p_096",
-    topic: "principles",
-    subtopic: "admin_temperature",
-    difficulty: "medium",
-    reference: "Miller's Anesthesia, Thermoregulation Chapter",
-    question: "An anesthesiologist plans to minimize the redistribution hypothermia that typically occurs in the first hour after induction. Which intervention has the STRONGEST evidence for prevention?",
-    choices: [
-      "Pre-warming the patient with a forced-air warmer for 30 to 60 minutes before induction",
-      "Pre-medicating with intramuscular meperidine to suppress shivering before induction",
-      "Increasing operating room ambient temperature to 25 degrees C for the entire case",
-      "Using a fluid warmer set to 41 degrees C for all maintenance IV fluids administered"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Redistribution hypothermia results from vasodilation that allows warm core blood to mix with cooler peripheral blood after induction. Pre-warming the patient before induction (typically with a forced-air warmer for 30 to 60 minutes) raises peripheral tissue temperature, reducing the core-to-peripheral temperature gradient and blunting redistribution. This is the single most effective measure for limiting the initial drop in core temperature after induction.",
-      "Incorrect. Meperidine reduces shivering threshold and can treat shivering, but it does not prevent redistribution hypothermia. It does not warm the peripheral tissues.",
-      "Incorrect. Raising ambient OR temperature helps reduce ongoing heat loss but is uncomfortable for staff and is not as effective as patient-directed pre-warming at preventing the initial redistribution phase.",
-      "Incorrect. Warming intravenous fluids helps prevent ongoing heat loss but does not address redistribution, since fluid volume is small relative to peripheral tissue mass and is delivered after induction."
-    ]
+    {
+      id: "p_096",
+      topic: "principles",
+      subtopic: "admin_temperature",
+      difficulty: "medium",
+      reference: "Miller's Anesthesia, Thermoregulation Chapter",
+      question: "An anesthesiologist plans to minimize the redistribution hypothermia that typically occurs in the first hour after induction. Which intervention has the STRONGEST evidence for prevention?",
+      choices: [
+        "Using a fluid warmer set to 41 degrees C for all maintenance IV fluids administered",
+        "Pre-medicating with intramuscular meperidine to suppress shivering before induction",
+        "Increasing operating room ambient temperature to 25 degrees C for the entire case",
+        "Pre-warming the patient with a forced-air warmer for 30 to 60 minutes before induction"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Warming intravenous fluids helps prevent ongoing heat loss but does not address redistribution, since fluid volume is small relative to peripheral tissue mass and is delivered after induction.",
+        "Incorrect. Meperidine reduces shivering threshold and can treat shivering, but it does not prevent redistribution hypothermia. It does not warm the peripheral tissues.",
+        "Incorrect. Raising ambient OR temperature helps reduce ongoing heat loss but is uncomfortable for staff and is not as effective as patient-directed pre-warming at preventing the initial redistribution phase.",
+        "Correct. Redistribution hypothermia results from vasodilation that allows warm core blood to mix with cooler peripheral blood after induction. Pre-warming the patient before induction (typically with a forced-air warmer for 30 to 60 minutes) raises peripheral tissue temperature, reducing the core-to-peripheral temperature gradient and blunting redistribution. This is the single most effective measure for limiting the initial drop in core temperature after induction."
+      ]
   },
   {
     id: "p_097",
@@ -2172,26 +2172,26 @@ const QUESTION_BANK = [
       "Correct. Mild hypothermia (core temperature 34 to 36 degrees C) prolongs the duration of non-depolarizing neuromuscular blockers by approximately 60 percent (vecuronium) and to varying degrees for others, by both reducing hepatic/renal clearance and reducing pharmacodynamic activity. Hypothermia also reduces MAC of inhalational agents (by about 5 percent per degree below 37 degrees C), slows wake-up, and impairs platelet function and coagulation enzyme kinetics."
     ]
   },
-  {
-    id: "p_099",
-    topic: "principles",
-    subtopic: "admin_temperature",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Malignant Hyperthermia Differential",
-    question: "A patient under general anesthesia with sevoflurane develops a core temperature rise from 36.5 to 38.8 degrees C over 90 minutes, with tachycardia, mildly elevated end-tidal CO2 (45 mm Hg), and stable blood pressure. There is no jaw rigidity or peaked T-waves. Which factor BEST supports an alternative diagnosis OVER malignant hyperthermia?",
-    choices: [
-      "Gradual onset and only modest rise in end-tidal CO2 without rigidity or acidosis",
-      "Use of a volatile anesthetic agent like sevoflurane during the procedure period",
-      "Tachycardia developing simultaneously with the rise in core body temperature",
-      "Stable blood pressure without simultaneous hypotension during the temperature rise"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Malignant hyperthermia classically presents with rapidly rising end-tidal CO2 (often dramatically out of proportion to the temperature rise), unexplained tachycardia, masseter or generalized muscle rigidity, mixed metabolic and respiratory acidosis, hyperkalemia, and a rising core temperature (which is often a late sign). The gradual presentation described, with only modest end-tidal CO2 elevation and no rigidity or acidosis, points more toward overwarming or another differential (sepsis, thyroid storm, neuroleptic malignant syndrome, transfusion reaction). The CLINICAL absence of hypermetabolic features is what most strongly argues against MH.",
-      "Incorrect. Volatile anesthetics are a known trigger for MH in susceptible individuals, so their presence supports rather than rules out the diagnosis.",
-      "Incorrect. Tachycardia is one of the cardinal early signs of MH and is also nonspecific. It does not argue against MH.",
-      "Incorrect. Blood pressure may be variable in MH and many other causes of hyperthermia. Stability does not strongly distinguish among them."
-    ]
+    {
+      id: "p_099",
+      topic: "principles",
+      subtopic: "admin_temperature",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Malignant Hyperthermia Differential",
+      question: "A patient under general anesthesia with sevoflurane develops a core temperature rise from 36.5 to 38.8 degrees C over 90 minutes, with tachycardia, mildly elevated end-tidal CO2 (45 mm Hg), and stable blood pressure. There is no jaw rigidity or peaked T-waves. Which factor BEST supports an alternative diagnosis OVER malignant hyperthermia?",
+      choices: [
+        "Stable blood pressure without simultaneous hypotension during the temperature rise",
+        "Use of a volatile anesthetic agent like sevoflurane during the procedure period",
+        "Tachycardia developing simultaneously with the rise in core body temperature",
+        "Gradual onset and only modest rise in end-tidal CO2 without rigidity or acidosis"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Blood pressure may be variable in MH and many other causes of hyperthermia. Stability does not strongly distinguish among them.",
+        "Incorrect. Volatile anesthetics are a known trigger for MH in susceptible individuals, so their presence supports rather than rules out the diagnosis.",
+        "Incorrect. Tachycardia is one of the cardinal early signs of MH and is also nonspecific. It does not argue against MH.",
+        "Correct. Malignant hyperthermia classically presents with rapidly rising end-tidal CO2 (often dramatically out of proportion to the temperature rise), unexplained tachycardia, masseter or generalized muscle rigidity, mixed metabolic and respiratory acidosis, hyperkalemia, and a rising core temperature (which is often a late sign). The gradual presentation described, with only modest end-tidal CO2 elevation and no rigidity or acidosis, points more toward overwarming or another differential (sepsis, thyroid storm, neuroleptic malignant syndrome, transfusion reaction). The CLINICAL absence of hypermetabolic features is what most strongly argues against MH."
+      ]
   },
   {
     id: "p_100",
@@ -2214,68 +2214,68 @@ const QUESTION_BANK = [
       "Incorrect. Strict normothermia at 37 degrees C alone is not the guideline; what is recommended is a constant target between 32 and 36, with avoidance of fever beyond 24 hours."
     ]
   },
-  {
-    id: "p_101",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "medium",
-    reference: "SCIP-VTE Guidelines; American College of Chest Physicians Perioperative VTE Guidelines",
-    question: "A 65-year-old patient with no contraindications to anticoagulation is scheduled for an elective total hip arthroplasty. Which combination of perioperative venous thromboembolism prophylaxis is MOST consistent with current SCIP and ACCP guidelines?",
-    choices: [
-      "Aspirin 81 mg alone for at least 14 days postoperatively with no other prophylaxis",
-      "Mechanical compression plus pharmacologic prophylaxis (LMWH or equivalent) preoperatively",
-      "Pharmacologic prophylaxis alone, started only on postoperative day three after surgery",
-      "Inferior vena cava filter placement preoperatively in all hip arthroplasty patients"
-    ],
-    correct: 1,
-    explanations: [
-      "Incorrect. Aspirin alone is one option in some protocols, but combining mechanical (intermittent pneumatic compression) with pharmacologic prophylaxis is more strongly recommended for high-risk orthopedic procedures.",
-      "Correct. SCIP-VTE measures and ACCP guidelines for major orthopedic surgery recommend appropriate VTE prophylaxis ordered preoperatively and initiated in the perioperative period. For total hip arthroplasty, accepted regimens include low-molecular-weight heparin, fondaparinux, apixaban or rivaroxaban, warfarin, or aspirin, generally combined with mechanical prophylaxis (intermittent pneumatic compression). Duration is at least 10 to 14 days and often extended to 35 days post-op for hip surgery.",
-      "Incorrect. Initiation of pharmacologic prophylaxis is usually within 24 hours postoperatively (or even preoperatively for some regimens), not on postoperative day three. Delaying to day three increases VTE risk.",
-      "Incorrect. Inferior vena cava filters are reserved for patients with active VTE who cannot tolerate anticoagulation; they are not standard prophylaxis for elective hip arthroplasty."
-    ]
+    {
+      id: "p_101",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "medium",
+      reference: "SCIP-VTE Guidelines; American College of Chest Physicians Perioperative VTE Guidelines",
+      question: "A 65-year-old with no contraindication to anticoagulation is scheduled for elective total hip arthroplasty. Which VTE prophylaxis strategy is MOST appropriate?",
+      choices: [
+        "Routine preoperative inferior vena cava filter placement for all hip arthroplasty patients",
+        "Aspirin 81 mg alone for two weeks with no mechanical prophylaxis at any point",
+        "Pharmacologic prophylaxis alone, first started on postoperative day three",
+        "Combined mechanical compression plus pharmacologic prophylaxis (e.g., LMWH) perioperatively"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. IVC filters are reserved for patients who cannot be anticoagulated or have specific indications; they are not routine prophylaxis for arthroplasty.",
+        "Incorrect. While aspirin is used in some THA pathways, aspirin alone with no mechanical prophylaxis is not the most appropriate comprehensive strategy for this high-risk procedure in a patient who can receive anticoagulation.",
+        "Incorrect. Delaying all pharmacologic prophylaxis until postoperative day three leaves the highest-risk early window unprotected; prophylaxis is generally started perioperatively with mechanical measures.",
+        "Correct. Total hip arthroplasty is a HIGH VTE-risk procedure. For a patient without contraindication, guidelines support pharmacologic prophylaxis (LMWH, a direct oral anticoagulant, or in selected pathways aspirin) COMBINED with mechanical prophylaxis (intermittent pneumatic compression), begun perioperatively and continued for an extended period after surgery. Combining modalities gives the best risk reduction."
+      ]
   },
-  {
-    id: "p_102",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "hard",
-    reference: "SCIP-Inf-1/2 Guidelines; ASHP Antimicrobial Prophylaxis",
-    question: "A patient is undergoing a long abdominal procedure with cefazolin given as surgical prophylaxis. The case has been ongoing for 4 hours and the estimated blood loss is now 1,200 mL. Per current surgical antibiotic prophylaxis guidelines, the MOST appropriate management of antimicrobial dosing is to:",
-    choices: [
-      "Re-dose cefazolin because of duration exceeding two half-lives and significant blood loss",
-      "Continue without re-dosing because the initial prophylactic dose covers the entire case",
-      "Switch to broader-spectrum vancomycin to prevent emerging resistant infections",
-      "Re-dose only if visible contamination of the surgical field has occurred during the case"
-    ],
-    correct: 0,
-    explanations: [
-      "Correct. Surgical antibiotic prophylaxis guidelines recommend intraoperative re-dosing when the case duration exceeds two half-lives of the antibiotic (for cefazolin, that is roughly every 4 hours) OR when there is significant blood loss (commonly stated as more than 1,500 mL, though many institutions re-dose at lower thresholds). Both of these conditions are met or being approached in this scenario, supporting re-dosing.",
-      "Incorrect. A single preoperative dose is not adequate for cases of long duration. The principle of re-dosing for time and blood loss is well established.",
-      "Incorrect. Switching to vancomycin without indication broadens the spectrum unnecessarily, increases C. difficile risk, and is not consistent with appropriate antibiotic stewardship.",
-      "Incorrect. Visible contamination of the field would change the management toward treatment rather than prophylaxis. The trigger for re-dosing is time and blood loss, not visible contamination."
-    ]
+    {
+      id: "p_102",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "medium",
+      reference: "SCIP-Inf-1/2 Guidelines; ASHP Antimicrobial Prophylaxis",
+      question: "A long abdominal case with cefazolin prophylaxis has run 4 hours (two half-lives) with about 2 L blood loss. Regarding intraoperative antibiotic redosing, what is the MOST appropriate action?",
+      choices: [
+        "Switch to vancomycin now to cover potentially emerging resistant organisms",
+        "Do not redose, because the single preoperative dose provides coverage for the whole case",
+        "Redose only if visible gross contamination of the surgical field has occurred",
+        "Redose cefazolin, because prolonged duration and major blood loss lower tissue drug levels"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Switching to vancomycin does not address the pharmacokinetic need to maintain levels and is not indicated merely because of case duration; the correct action is to redose the appropriate agent.",
+        "Incorrect. A single preoperative dose does not maintain effective levels through a prolonged case; redosing by time interval and blood loss is required.",
+        "Incorrect. Redosing is driven by pharmacokinetics (elapsed half-lives, blood loss), not by whether visible contamination occurred.",
+        "Correct. Intraoperative REDOSING of a prophylactic antibiotic is indicated when the case exceeds about two half-lives of the drug (for cefazolin, roughly every 4 hours) or when there is major blood loss (commonly cited >1.5 L) — both of which lower tissue/serum concentrations below effective levels. This case meets both criteria, so cefazolin should be redosed to maintain adequate tissue levels through wound closure."
+      ]
   },
-  {
-    id: "p_103",
-    topic: "principles",
-    subtopic: "admin_qi",
-    difficulty: "medium",
-    reference: "SCIP-Inf-6 (predecessor); CDC Guideline for the Prevention of Surgical Site Infection",
-    question: "A patient is scheduled for an elective abdominal procedure. The preoperative team is preparing for hair removal of the surgical site. According to current SCIP and CDC guidance, the MOST appropriate method is to:",
-    choices: [
-      "Use a single-use disposable razor immediately before surgery for shortest interval",
-      "Use a permanent stainless-steel razor that is sterilized between uses for cost reasons",
-      "Avoid all hair removal regardless of how dense the hair is at the operative site",
-      "Use clippers or depilatory cream as close to the operative time as practical when needed"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. Razors cause microscopic skin trauma that increases the risk of surgical site infection. They are no longer recommended.",
-      "Incorrect. Razors of any kind are not recommended, regardless of sterilization, because of skin trauma.",
-      "Incorrect. Hair removal is sometimes needed when hair interferes with the planned incision or wound dressing. The guideline is not to avoid all hair removal, but to use clippers when removal is necessary.",
-      "Correct. When hair removal is necessary, current CDC and SCIP-derived guidance recommends using clippers (or depilatory agents) immediately before surgery rather than razors, which cause microabrasions that increase SSI risk. Hair removal should be performed only when needed; sites that do not interfere with the surgical incision do not require removal."
-    ]
+    {
+      id: "p_103",
+      topic: "principles",
+      subtopic: "admin_qi",
+      difficulty: "medium",
+      reference: "SCIP-Inf-6 (predecessor); CDC Guideline for the Prevention of Surgical Site Infection",
+      question: "For surgical-site hair removal before an elective abdominal procedure, which practice BEST reduces surgical site infection risk?",
+      choices: [
+        "Always remove all hair from a wide area regardless of whether it interferes with the field",
+        "Shave the site with a disposable razor immediately before incision for the closest shave",
+        "Shave the night before with a razor so the skin has time to settle before surgery",
+        "Remove hair with clippers (or depilatory) close to surgery, only if removal is necessary"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Routine wide hair removal is not recommended; hair should be removed only when it interferes, and with clippers rather than razors.",
+        "Incorrect. RAZOR shaving — even immediately before surgery — creates micro-abrasions that raise infection risk and is discouraged in favor of clipping.",
+        "Incorrect. Shaving the night before is worse: razor micro-injuries plus more time for bacterial colonization increase SSI risk.",
+        "Correct. When hair removal is needed, CLIPPERS (or a depilatory) used as close to the operative time as practical are preferred, because razors cause microscopic skin abrasions that increase SSI risk. Often the best practice is to remove hair ONLY if it interferes with the procedure."
+      ]
   },
   {
     id: "p_104",
@@ -2340,26 +2340,26 @@ const QUESTION_BANK = [
       "Incorrect. Using 3 mL/kg/hr would significantly overestimate the maintenance fluid requirement compared with the 4-2-1 rule and could lead to volume overload over a long case."
     ]
   },
-  {
-    id: "p_107",
-    topic: "principles",
-    subtopic: "fluids",
-    difficulty: "hard",
-    reference: "Miller's Anesthesia, Blood Management Chapter",
-    question: "A 70 kg adult patient has an estimated blood volume of 5,000 mL and a preoperative hemoglobin of 14 g/dL. The team plans to allow hemoglobin to drift down to 8 g/dL before considering transfusion. What is the approximate allowable blood loss (ABL)?",
-    choices: [
-      "1,000 mL based on the difference between starting and target hemoglobin only",
-      "1,700 mL using a fixed estimate of 25 percent of total estimated blood volume",
-      "2,500 mL based on roughly half of the patient's total estimated blood volume",
-      "2,150 mL using the standard ABL formula based on initial and target hemoglobin"
-    ],
-    correct: 3,
-    explanations: [
-      "Incorrect. 1,000 mL is an underestimate. The simple difference in hemoglobin without scaling to blood volume does not yield the ABL.",
-      "Incorrect. Twenty-five percent of EBV is not the formula. ABL is calculated from the patient-specific change in hemoglobin relative to baseline.",
-      "Incorrect. Allowing half of total blood volume to be lost is excessive and not consistent with the standard formula or with safe transfusion practice.",
-      "Correct. The standard formula is ABL = EBV x (Hb_initial - Hb_target) / Hb_average. Using the mean of the two hemoglobins (or initial, depending on convention): 5,000 x (14 - 8) / 11 ~ 2,727 mL using mean Hb of 11, or 5,000 x (14 - 8) / 14 ~ 2,143 mL using initial Hb. The answer of approximately 2,150 mL reflects the initial-Hb-in-denominator version. Either calculation yields the same general range; the principle is that ABL is proportional to EBV and to the fractional drop in hemoglobin."
-    ]
+    {
+      id: "p_107",
+      topic: "principles",
+      subtopic: "fluids",
+      difficulty: "hard",
+      reference: "Miller's Anesthesia, Blood Management Chapter",
+      question: "A 70 kg patient (EBV 5,000 mL) starts with hemoglobin 14 g/dL; the transfusion threshold is set at 8 g/dL, giving a maximum allowable blood loss of roughly 2,150 mL. Two hours in, measured loss is ~1,800 mL, the field is diffusely oozing, and the patient is hemodynamically stable. Which action is MOST appropriate?",
+      choices: [
+        "Disregard the estimate and transfuse only if the patient becomes hypotensive or tachycardic",
+        "Transfuse one unit of red cells now, because 1,800 mL of loss mandates immediate transfusion",
+        "Continue without checking hemoglobin until the calculated 2,150 mL limit is exactly reached",
+        "Send a current hemoglobin and prepare blood, since losses are near the calculated allowable limit"
+      ],
+      correct: 3,
+      explanations: [
+        "Incorrect. Waiting for hypotension/tachycardia is dangerously late in an actively bleeding patient; those are insensitive, delayed signs. The estimate is used precisely to act before decompensation.",
+        "Incorrect. A fixed volume of loss does not by itself mandate transfusion; the decision rests on the actual hemoglobin and the patient's status, not a raw milliliter count.",
+        "Incorrect. Waiting until the estimated limit is 'exactly reached' before checking anything is unsafe — the estimate has error, and you should verify hemoglobin and prepare in advance.",
+        "Correct. The MABL estimate is a PLANNING tool, not a hard trigger. With measured loss (~1,800 mL) approaching the calculated allowable (~2,150 mL) and ongoing oozing, the appropriate step is to obtain a CURRENT hemoglobin (the estimate is only an approximation) and ENSURE BLOOD IS AVAILABLE, so a transfusion decision can be made on actual data before crossing the threshold. This anticipates the need rather than reacting late."
+      ]
   },
   {
     id: "p_108",
@@ -2472,20 +2472,20 @@ const QUESTION_BANK = [
     subtopic: "preop",
     difficulty: "easy",
     reference: "Miller's Anesthesia, Airway Assessment",
-    question: "During a preoperative airway exam, the patient opens the mouth and the soft palate, fauces, and base of the uvula are visible, but not the tonsillar pillars. This corresponds to which Mallampati class?",
+    question: "On a preoperative airway exam the patient opens the mouth and the soft palate, fauces, and most of the uvula are visible, but the tonsillar pillars are not. Which Mallampati class is this?",
     choices: [
-      "Mallampati Class I (soft palate, fauces, uvula, and pillars all visible)",
-      "Mallampati Class IV (only the hard palate is visible on examination)",
-      "Mallampati Class II (soft palate, fauces, and most of the uvula are visible)",
-      "Mallampati Class III (only the soft palate and base of the uvula are visible)"
-    ],
-    correct: 2,
+            "Class I",
+            "Class II",
+            "Class III",
+            "Class IV"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. Class I requires visualization of the tonsillar PILLARS (in addition to soft palate, fauces, and uvula). The pillars are not visible here.",
-      "Incorrect. Class IV is when only the hard palate is visible. This patient can see the soft palate and uvula base.",
-      "Correct. The modified Mallampati classification assesses the oropharyngeal structures visible with the patient seated, mouth maximally open, and tongue protruded. Class I: soft palate, fauces, entire uvula, and tonsillar pillars visible. Class II: soft palate, fauces, and most of the uvula visible (pillars hidden). Class III: only the soft palate and the base of the uvula visible. Class IV: only the hard palate visible (soft palate not seen). Higher classes (III and IV) are associated with increased risk of difficult laryngoscopy and intubation. The Mallampati score is one of several predictors and should be combined with others (thyromental distance, mouth opening, neck mobility).",
-      "Incorrect. Class III is when only the soft palate and base of the uvula are visible. Here, more of the uvula is seen, consistent with Class II."
-    ]
+            "Incorrect. Class I is when the soft palate, fauces, uvula, AND tonsillar pillars are all visible.",
+            "Correct. Mallampati CLASS II is when the soft palate, fauces, and (most of) the uvula are visible, but the tonsillar pillars are NOT. (Class I additionally shows the pillars.)",
+            "Incorrect. Class III is when only the soft palate and the BASE of the uvula are visible.",
+            "Incorrect. Class IV is when only the hard palate is visible (soft palate not seen)."
+        ]
   },
   {
     id: "p_114",
@@ -2556,41 +2556,41 @@ const QUESTION_BANK = [
     subtopic: "admin_general",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Extubation",
-    question: "An anesthesiologist is deciding between awake and deep extubation at the end of a case. Which patient factor MOST favors an AWAKE extubation rather than a deep extubation?",
+    question: "At the end of a case, which patient factor MOST favors an AWAKE (rather than deep) extubation?",
     choices: [
-      "A patient with reactive airway disease in whom coughing on the tube should be minimized",
-      "A patient undergoing a procedure where coughing/bucking could disrupt a delicate surgical repair",
-      "A patient at high risk for aspiration or with a known difficult airway requiring intact reflexes",
-      "A pediatric patient with no risk factors undergoing routine elective myringotomy surgery"
-    ],
-    correct: 2,
+            "A high aspiration risk or a known difficult airway that may require reintubation",
+            "Reactive airway disease in whom coughing/bucking on the tube should be minimized",
+            "Delicate middle-ear or ophthalmic surgery where coughing could disrupt the repair",
+            "A healthy child after routine myringotomy with no airway risk factors"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Patients with reactive airway disease are often candidates for DEEP extubation to avoid coughing and bronchospasm triggered by the tube (provided no other contraindication).",
-      "Incorrect. When coughing or bucking could disrupt a delicate repair (such as some ophthalmic, ENT, or neurosurgical procedures), DEEP extubation may be preferred to provide a smooth emergence.",
-      "Correct. AWAKE extubation is preferred when the patient is at HIGH RISK FOR ASPIRATION (full stomach, GERD, obesity, pregnancy) or has a DIFFICULT AIRWAY, because intact airway reflexes and full consciousness provide the best airway protection and the ability to maintain a patent airway. Awake extubation criteria include: following commands, adequate spontaneous tidal volumes, intact protective reflexes, full reversal of neuromuscular blockade (TOF ratio greater than 0.9), hemodynamic stability, and adequate oxygenation/ventilation. Deep extubation (removing the tube while the patient is still deeply anesthetized) avoids coughing but requires the patient to NOT be at risk for aspiration or difficult re-intubation.",
-      "Incorrect. A routine pediatric patient may be a candidate for either technique; this scenario does not specifically favor awake extubation over deep."
-    ]
+            "Correct. AWAKE extubation is favored when the airway must be protected until reflexes fully return — a HIGH ASPIRATION RISK (e.g., full stomach, obesity, reflux) or a DIFFICULT AIRWAY where reintubation could be hard. Extubating awake ensures intact protective reflexes and the ability to maintain/reintubate the airway if needed.",
+            "Incorrect. Reactive airway disease is a classic reason to favor DEEP extubation, to avoid coughing/bronchospasm triggered by the tube during a light plane.",
+            "Incorrect. When coughing/bucking could disrupt a delicate repair (middle ear, eye, some plastics), DEEP extubation is often preferred — the opposite of this question's answer.",
+            "Incorrect. A healthy child with no airway risk after a quick case is a setting where deep extubation may be chosen; it does not specifically favor awake extubation."
+        ]
   },
   {
     id: "p_118",
     topic: "principles",
     subtopic: "admin_general",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "Miller's Anesthesia, Enhanced Recovery After Surgery (ERAS)",
-    question: "Enhanced Recovery After Surgery (ERAS) protocols aim to improve perioperative outcomes. Which set of interventions is MOST consistent with ERAS principles?",
+    question: "Which set of interventions is MOST consistent with an Enhanced Recovery After Surgery (ERAS) protocol?",
     choices: [
-      "Routine prolonged preoperative fasting, liberal opioid use, and routine nasogastric tube placement",
-      "Mandatory mechanical bowel preparation, bed rest until postoperative day 3, and delayed feeding",
-      "Routine use of long-acting benzodiazepine premedication and high-dose perioperative opioids",
-      "Carbohydrate loading, multimodal opioid-sparing analgesia, early mobilization, and early enteral nutrition"
-    ],
-    correct: 3,
+            "Preoperative carbohydrate loading, opioid-sparing multimodal analgesia, and early feeding",
+            "Prolonged preoperative fasting, liberal opioid analgesia, and routine nasogastric drainage tubes",
+            "Mandatory mechanical bowel preparation, bed rest to day 3, and delayed oral intake",
+            "Routine long-acting benzodiazepine premedication and liberal fixed-volume fluid loading"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. ERAS protocols AVOID prolonged fasting (encouraging carbohydrate drinks up to 2 hours preop), MINIMIZE opioids (multimodal analgesia), and avoid routine NG tubes.",
-      "Incorrect. ERAS protocols AVOID routine mechanical bowel prep, encourage EARLY mobilization (not bed rest), and promote EARLY feeding (not delayed).",
-      "Incorrect. ERAS protocols avoid long-acting sedative premedication (which delays recovery) and emphasize opioid-SPARING strategies.",
-      "Correct. ERAS protocols are evidence-based, multidisciplinary perioperative care pathways designed to reduce surgical stress, accelerate recovery, and reduce complications. Key elements include: preoperative counseling and carbohydrate loading (avoiding prolonged fasting), avoidance of routine bowel prep, multimodal OPIOID-SPARING analgesia (acetaminophen, NSAIDs, regional techniques, gabapentinoids), goal-directed fluid therapy (euvolemia, avoiding fluid overload), maintenance of normothermia, PONV prophylaxis, early removal of catheters/drains, EARLY MOBILIZATION, and EARLY ENTERAL NUTRITION. ERAS has been shown to reduce length of stay and complications across many surgical specialties (especially colorectal surgery)."
-    ]
+            "Correct. ERAS bundles evidence-based steps that reduce the surgical stress response and speed recovery: preoperative CARBOHYDRATE LOADING (avoiding prolonged fasting), MULTIMODAL OPIOID-SPARING analgesia, goal-directed fluid therapy, early MOBILIZATION, and early oral FEEDING, along with minimizing drains/tubes and PONV prophylaxis.",
+            "Incorrect. Prolonged fasting, opioid-heavy analgesia, and routine NG drainage are traditional practices that ERAS specifically moves AWAY from.",
+            "Incorrect. Routine bowel prep, prolonged bed rest, and delayed feeding are contrary to ERAS principles, which favor early mobilization and feeding.",
+            "Incorrect. Routine long-acting benzodiazepine premedication and liberal fixed fluid loading are discouraged in ERAS, which favors avoiding sedative premedication and using goal-directed fluids."
+        ]
   },
   {
     id: "p_119",
@@ -2598,20 +2598,20 @@ const QUESTION_BANK = [
     subtopic: "admin_ventilation",
     difficulty: "easy",
     reference: "Cormack-Lehane Laryngoscopy Classification",
-    question: "During direct laryngoscopy, the anesthesiologist visualizes only the epiglottis, with no view of the glottic opening or vocal cords. This corresponds to which Cormack-Lehane grade?",
+    question: "During direct laryngoscopy only the epiglottis is seen, with no view of the glottic opening or vocal cords. What is the Cormack–Lehane grade?",
     choices: [
-      "Grade I (most of the glottic opening and vocal cords are visible)",
-      "Grade III (only the epiglottis is visible; no part of the glottis is seen)",
-      "Grade II (only the posterior portion of the glottis or arytenoids is visible)",
-      "Grade IV (neither the glottis nor the epiglottis is visible, only soft palate)"
-    ],
-    correct: 1,
+            "Grade I",
+            "Grade II",
+            "Grade III",
+            "Grade IV"
+        ],
+    correct: 2,
     explanations: [
-      "Incorrect. Grade I is a full or nearly full view of the glottic opening and vocal cords — an easy intubation view.",
-      "Correct. The Cormack-Lehane classification grades the laryngoscopic view: Grade I = most of the glottis (vocal cords) visible; Grade II = only the posterior portion of the glottis or just the arytenoids visible (IIa partial cords, IIb only arytenoids); Grade III = only the EPIGLOTTIS visible, no glottic structures (a difficult view often requiring adjuncts like a bougie); Grade IV = neither glottis nor epiglottis visible (only soft palate), the most difficult view. Higher grades (III and IV) correlate with difficult intubation and may require alternative techniques (video laryngoscopy, bougie, fiberoptic intubation).",
-      "Incorrect. Grade II shows the posterior glottis or arytenoids. In this case, no part of the glottis is visible, only the epiglottis (Grade III).",
-      "Incorrect. Grade IV is when neither the glottis NOR the epiglottis is visible. Here, the epiglottis IS seen, making it Grade III."
-    ]
+            "Incorrect. Grade I is a full view of most of the glottic opening and vocal cords.",
+            "Incorrect. Grade II is a partial view — only the posterior glottis or arytenoids are seen.",
+            "Correct. Cormack–Lehane GRADE III is when only the EPIGLOTTIS is visible and no part of the glottic opening/cords can be seen — a marker of a difficult laryngoscopic view.",
+            "Incorrect. Grade IV is when neither the glottis NOR the epiglottis is visible (only soft palate)."
+        ]
   },
   {
     id: "p_120",
@@ -2661,41 +2661,41 @@ const QUESTION_BANK = [
     subtopic: "admin_ventilation",
     difficulty: "easy",
     reference: "Miller's Anesthesia, Supplemental Oxygen Devices",
-    question: "A patient in the PACU is placed on a standard nasal cannula at 2 L/min. Approximately what fraction of inspired oxygen (FiO2) does this typically deliver?",
+    question: "A PACU patient is on a standard nasal cannula at 2 L/min. Approximately what FiO₂ does this provide?",
     choices: [
-      "Approximately 90 to 100 percent FiO2 at a flow of 2 L/min through nasal cannula",
-      "Approximately 28 percent FiO2 (low-flow device, ~4 percent increase per L/min above room air)",
-      "Exactly 50 percent FiO2 regardless of the patient's minute ventilation or breathing pattern",
-      "Approximately 21 percent FiO2 (equivalent to room air with no supplemental oxygen)"
-    ],
-    correct: 1,
+            "About 28% (roughly a 4% rise per L/min above room air)",
+            "About 50%, held constant regardless of the patient's breathing",
+            "About 90–100%, similar to a non-rebreather mask",
+            "About 21%, equivalent to room air with no added oxygen"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. 90 to 100 percent FiO2 is delivered by a non-rebreather mask or high-flow nasal cannula, not a standard 2 L/min nasal cannula.",
-      "Correct. A standard nasal cannula is a LOW-FLOW oxygen device. As a rough estimate, FiO2 increases approximately 4 percent for each L/min of flow above room air: 1 L/min ~24 percent, 2 L/min ~28 percent, 3 L/min ~32 percent, 4 L/min ~36 percent, up to about 44 percent at 6 L/min. The actual delivered FiO2 varies with the patient's tidal volume, respiratory rate, and inspiratory flow (since room air is entrained around the nasal prongs). Higher flows are poorly tolerated due to mucosal drying. Other devices: simple face mask (~35-50 percent at 5-10 L/min), non-rebreather mask (~60-90 percent), Venturi mask (precise FiO2 from 24-50 percent), and high-flow nasal cannula (up to ~100 percent at high flows with PEEP-like effect).",
-      "Incorrect. A nasal cannula does not deliver a fixed FiO2; the delivered concentration varies with the patient's breathing pattern. 50 percent is not typical at 2 L/min.",
-      "Incorrect. 21 percent is room air. A nasal cannula at 2 L/min delivers supplemental oxygen above room air (about 28 percent)."
-    ]
+            "Correct. A nasal cannula is a low-flow device delivering roughly a 4% FiO₂ increase per L/min above room air (21%): about 24% at 1 L/min, ~28% at 2 L/min, ~32% at 3 L/min, and so on. The actual FiO₂ varies with the patient's inspiratory flow and breathing pattern.",
+            "Incorrect. A nasal cannula does not deliver a fixed 50%; its FiO₂ is low and varies with the patient's ventilation.",
+            "Incorrect. 90–100% requires a high-flow/reservoir system such as a non-rebreather, not a 2 L/min cannula.",
+            "Incorrect. At 2 L/min the cannula raises FiO₂ above room air to roughly 28%, not 21%."
+        ]
   },
   {
     id: "p_123",
     topic: "principles",
     subtopic: "admin_ventilation",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "ASA Difficult Airway Algorithm",
-    question: "An anesthesiologist encounters a 'cannot intubate, cannot ventilate' (CICV) situation after induction. According to the ASA Difficult Airway Algorithm, which is the appropriate EMERGENCY action when supraglottic airway placement and mask ventilation have both failed?",
+    question: "After induction you encounter a 'cannot intubate, cannot ventilate/oxygenate' situation with falling saturation despite optimal mask and supraglottic attempts. According to the ASA difficult-airway algorithm, what is the appropriate action?",
     choices: [
-      "Continue attempting direct laryngoscopy repeatedly until the trachea is successfully intubated",
-      "Awaken the patient and postpone the case, regardless of oxygen saturation or clinical urgency",
-      "Administer additional neuromuscular blocker to improve intubating conditions before re-attempting",
-      "Proceed to EMERGENCY INVASIVE AIRWAY ACCESS (cricothyrotomy or surgical airway) without delay"
-    ],
-    correct: 3,
+            "Proceed without delay to emergency invasive airway access (e.g., cricothyrotomy)",
+            "Continue repeated direct laryngoscopy attempts until the trachea is finally intubated",
+            "Give additional neuromuscular blocker to improve conditions for another intubation try",
+            "Wake the patient and postpone the case irrespective of the oxygen saturation"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Repeated laryngoscopy attempts in a CICV situation waste critical time, cause airway trauma and edema, and risk fatal hypoxia. Limiting attempts and escalating is key.",
-      "Incorrect. Awakening the patient is an option earlier in the algorithm (when ventilation is still adequate), but in a true CICV emergency with desaturation, there is no time to awaken the patient — invasive access is required immediately.",
-      "Incorrect. More neuromuscular blocker does not address the inability to ventilate or intubate and would not help in a CICV emergency. (Though paralysis can sometimes improve mask ventilation, in a confirmed CICV situation with failed SGA, invasive access is the priority.)",
-      "Correct. In a 'cannot intubate, cannot ventilate' (CICV) emergency, after attempts at intubation, mask ventilation, and supraglottic airway placement have all FAILED and the patient is becoming hypoxic, the ASA Difficult Airway Algorithm directs the practitioner to proceed WITHOUT DELAY to EMERGENCY INVASIVE AIRWAY ACCESS. This is most commonly a cricothyrotomy (surgical or needle/cannula with jet ventilation), or other invasive techniques. Time is critical because irreversible hypoxic brain injury occurs within minutes. The algorithm emphasizes calling for help early, limiting intubation attempts (to avoid trauma), maintaining oxygenation throughout, and having a pre-formulated airway strategy."
-    ]
+            "Correct. In a true CANNOT-INTUBATE, CANNOT-OXYGENATE emergency after supraglottic/mask rescue has failed, the algorithm mandates immediate EMERGENCY INVASIVE AIRWAY ACCESS (cricothyrotomy/surgical airway) to prevent hypoxic injury. Time is critical; further non-invasive attempts waste it.",
+            "Incorrect. Repeating laryngoscopy in a CICO emergency wastes precious time while the patient desaturates; you must move to an invasive airway.",
+            "Incorrect. More neuromuscular blocker does not solve inability to oxygenate and delays the life-saving invasive airway.",
+            "Incorrect. 'Wake the patient' applies to non-emergent failed intubations with maintained oxygenation; in a CICO emergency there is no time — an invasive airway is required now."
+        ]
   },
   {
     id: "p_124",
@@ -2724,20 +2724,20 @@ const QUESTION_BANK = [
     subtopic: "admin_positioning",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Patient Positioning",
-    question: "A patient is positioned supine for a long abdominal procedure. Which physiologic change is MOST characteristic of the supine position under general anesthesia?",
+    question: "Compared with the upright position, which physiologic change is MOST characteristic of moving a patient to the supine position under anesthesia?",
     choices: [
-      "A marked increase in functional residual capacity (FRC) compared with the upright position",
-      "A decrease in functional residual capacity from cephalad displacement of the diaphragm by abdominal contents",
-      "A significant increase in systemic vascular resistance from venous pooling in the legs",
-      "A profound decrease in venous return to the heart due to gravitational pooling in the lower body"
-    ],
-    correct: 1,
+            "A decrease in functional residual capacity as the diaphragm is displaced cephalad",
+            "An increase in functional residual capacity as the chest wall expands",
+            "A large rise in systemic vascular resistance from lower-limb venous pooling",
+            "A marked fall in venous return as blood pools in the dependent legs"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. FRC DECREASES (not increases) in the supine position compared with upright, because the abdominal contents push the diaphragm cephalad.",
-      "Correct. In the supine position, the abdominal contents displace the diaphragm cephalad (toward the head), reducing functional residual capacity (FRC). General anesthesia and neuromuscular blockade further reduce FRC. This predisposes to atelectasis, ventilation/perfusion mismatch, and reduced oxygen reserve (faster desaturation during apnea). The effect is exaggerated in obese patients, pregnancy, and with Trendelenburg positioning. Venous return is generally well maintained or improved in the supine position (compared with upright). Other supine considerations: pressure points (occiput, sacrum, heels) require padding, and aortocaval compression can occur in late pregnancy (requiring left uterine displacement).",
-      "Incorrect. SVR does not significantly increase in the supine position; venous pooling in the legs is reduced (not increased) compared with standing.",
-      "Incorrect. Venous return is generally maintained or improved in the supine position compared with the upright position, because there is less gravitational pooling in the dependent extremities."
-    ]
+            "Correct. Supine positioning displaces the abdominal contents and diaphragm CEPHALAD, reducing FUNCTIONAL RESIDUAL CAPACITY. This (worsened by anesthesia and paralysis) promotes atelectasis and reduces oxygen reserve — a key reason supine, anesthetized patients desaturate more readily.",
+            "Incorrect. FRC DECREASES supine (diaphragm pushed cephalad), it does not increase; FRC is higher in the upright position.",
+            "Incorrect. Supine positioning does not cause a large rise in SVR from leg pooling; if anything venous return improves compared with standing.",
+            "Incorrect. Venous return tends to INCREASE supine (legs at heart level) relative to upright; a marked fall from dependent pooling describes upright/standing, not supine."
+        ]
   },
   {
     id: "p_126",
@@ -2787,20 +2787,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "easy",
     reference: "ASA Continuum of Depth of Sedation",
-    question: "According to the ASA continuum of depth of sedation, which level is defined by purposeful response to verbal or light tactile stimulation, with NO intervention required to maintain a patent airway and spontaneous ventilation adequate?",
+    question: "On the ASA continuum of depth of sedation, which level is defined by a purposeful response to verbal or light tactile stimulation, with adequate spontaneous ventilation?",
     choices: [
-      "Minimal sedation (anxiolysis), in which the patient responds normally to verbal commands",
-      "Moderate sedation/analgesia ('conscious sedation'), with purposeful response to verbal/tactile stimulation",
-      "Deep sedation/analgesia, in which the patient responds only after repeated or painful stimulation",
-      "General anesthesia, in which the patient is unarousable even with painful stimulation entirely"
-    ],
+            "Minimal sedation (anxiolysis), responding normally to commands",
+            "Moderate sedation/analgesia ('conscious sedation')",
+            "Deep sedation/analgesia, roused only by repeated or painful stimuli",
+            "General anesthesia, unarousable even to painful stimulation applied"
+        ],
     correct: 1,
     explanations: [
-      "Incorrect. Minimal sedation (anxiolysis) is when the patient responds NORMALLY to verbal commands; cognitive function may be impaired but airway, ventilation, and cardiovascular function are unaffected. The described level (purposeful response to verbal/tactile stimulation) is moderate sedation.",
-      "Correct. Moderate sedation/analgesia (formerly 'conscious sedation') is defined as a drug-induced depression of consciousness during which patients respond PURPOSEFULLY to verbal commands, either alone or accompanied by light tactile stimulation. No interventions are required to maintain a patent airway, and spontaneous ventilation is adequate; cardiovascular function is usually maintained. The ASA continuum: (1) Minimal sedation (anxiolysis) - normal response to verbal commands; (2) Moderate sedation - purposeful response to verbal/tactile stimulation; (3) Deep sedation - purposeful response only after repeated or painful stimulation, may need airway assistance; (4) General anesthesia - unarousable even with painful stimulation, often requiring airway and ventilation support. Because sedation is a continuum, providers must be able to rescue patients from a level deeper than intended.",
-      "Incorrect. Deep sedation requires repeated or PAINFUL stimulation to elicit a response and may require airway support, which is deeper than the level described.",
-      "Incorrect. General anesthesia renders the patient unarousable even to painful stimulation, which is deeper than the described level."
-    ]
+            "Incorrect. Minimal sedation (anxiolysis) leaves the patient responding NORMALLY to verbal commands, awake with only anxiolysis.",
+            "Correct. MODERATE sedation/analgesia ('conscious sedation') is defined by a PURPOSEFUL response to verbal or light tactile stimulation, with adequate spontaneous ventilation and usually no airway intervention needed.",
+            "Incorrect. In deep sedation the patient responds only after REPEATED or PAINFUL stimulation and may need airway support.",
+            "Incorrect. Under general anesthesia the patient is unarousable even to painful stimulation."
+        ]
   },
   {
     id: "p_129",
@@ -2808,20 +2808,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "easy",
     reference: "Modified Ramsay Sedation Scale",
-    question: "The modified Ramsay Sedation Scale is used to assess depth of sedation. On this scale, what does a HIGHER score (e.g., 5 or 6) indicate?",
+    question: "On the modified Ramsay Sedation Scale, what does a HIGHER score (e.g., 5–6) indicate?",
     choices: [
-      "A more AWAKE and anxious or agitated patient with a heightened response to stimulation",
-      "An optimal awake and calm state, which is always the goal of procedural sedation in all patients",
-      "A more DEEPLY sedated patient who responds sluggishly or not at all to stimulation (deeper sedation)",
-      "A patient experiencing a paradoxical reaction to the sedative medication being administered"
-    ],
-    correct: 2,
+            "A more deeply sedated patient who responds sluggishly or not at all to stimulation",
+            "A more awake, anxious, or agitated patient with heightened responsiveness",
+            "The ideal calm, cooperative target that is the goal for every sedation case",
+            "A paradoxical reaction to the sedative rather than a level of sedation depth"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. A higher Ramsay score indicates DEEPER sedation, not a more awake or agitated state. Lower scores (1) indicate the awake/anxious end.",
-      "Incorrect. The 'optimal' calm awake state is a lower score (such as Ramsay 2); higher scores indicate progressively deeper sedation, not an awake state.",
-      "Correct. The modified Ramsay Sedation Scale ranges from 1 to 6, with HIGHER scores indicating DEEPER sedation: 1 = anxious, agitated, or restless; 2 = cooperative, oriented, and tranquil (often the target for awake patients); 3 = responds only to commands; 4 = brisk response to light glabellar tap or loud auditory stimulus; 5 = sluggish response to stimulus; 6 = no response to stimulus (deepest). It is a simple bedside tool to titrate sedation. The goal level depends on the procedure; over-sedation (scores 5-6) risks airway compromise and respiratory depression.",
-      "Incorrect. The Ramsay scale measures the level of sedation, not whether a reaction is paradoxical. A paradoxical reaction (agitation from a sedative) would be assessed separately."
-    ]
+            "Correct. On the Ramsay scale higher numbers mean DEEPER sedation — a score of 5–6 reflects a sluggish or absent response to stimulation. (Lower scores indicate awake/anxious or agitated states.)",
+            "Incorrect. An awake, anxious, or agitated patient corresponds to the LOWER Ramsay scores, not higher.",
+            "Incorrect. The Ramsay scale describes depth; a single 'ideal' score is not universal, and higher numbers specifically denote deep sedation, not a target for all cases.",
+            "Incorrect. The scale grades sedation depth, not paradoxical drug reactions."
+        ]
   },
   {
     id: "p_130",
@@ -2831,18 +2831,18 @@ const QUESTION_BANK = [
     reference: "ASA Position on Monitored Anesthesia Care",
     question: "Which statement BEST distinguishes Monitored Anesthesia Care (MAC) from moderate ('conscious') sedation?",
     choices: [
-      "MAC always requires endotracheal intubation, whereas moderate sedation never uses an airway device",
-      "MAC and moderate sedation are identical terms describing exactly the same clinical service and depth",
-      "MAC is always lighter than moderate sedation and can never progress to general anesthesia depth",
-      "MAC is an anesthesia-provider service with the ability to rescue and deepen to general anesthesia if needed"
-    ],
-    correct: 3,
+            "MAC is an anesthesia-professional service prepared to rescue and convert to general anesthesia",
+            "MAC always requires an endotracheal tube, whereas moderate sedation never uses an airway device",
+            "MAC is by definition lighter than moderate sedation and cannot progress to general anesthesia",
+            "MAC and moderate sedation are fully interchangeable terms for the identical clinical service"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. MAC does not require endotracheal intubation; it is a service in which an anesthesia provider monitors and manages a patient who may be receiving sedation. Intubation is not inherent to MAC.",
-      "Incorrect. MAC and moderate sedation are NOT identical. Moderate sedation is defined by the depth of sedation (a level on the continuum), whereas MAC is a specific anesthesia service.",
-      "Incorrect. MAC is not always lighter; in fact, a key feature of MAC is that the anesthesia provider can deepen the anesthetic (potentially to general anesthesia) as the clinical situation demands.",
-      "Correct. Monitored Anesthesia Care (MAC) is a specific ANESTHESIA SERVICE provided by a qualified anesthesia professional, in which the provider is prepared and qualified to RESCUE a patient's airway and convert to general anesthesia if needed. MAC is defined by WHO provides the care and the capability to manage any depth, NOT by a fixed level of sedation (the patient may range from awake to deep sedation/general anesthesia). In contrast, MODERATE sedation is defined by the DEPTH of sedation (purposeful response to verbal/tactile stimulation) and is often provided by non-anesthesiologists. A central safety principle is that the provider must always be able to rescue a patient who becomes more deeply sedated than intended."
-    ]
+            "Correct. MAC is defined by the PROVIDER and capability, not a fixed depth: an anesthesia professional continuously monitors the patient, may titrate sedation across any depth, and is prepared to RESCUE the airway and convert to general anesthesia if needed. Moderate sedation, by contrast, targets a specific lighter depth and may be delivered by non-anesthesia personnel with rescue expected only from one level deeper.",
+            "Incorrect. MAC does not require an endotracheal tube; depth varies and the airway is managed as needed.",
+            "Incorrect. MAC is not defined as 'lighter'; it can range to deep sedation/general anesthesia, which is precisely why an anesthesia provider is present.",
+            "Incorrect. They are not the same: MAC denotes an anesthesia-provider service with full rescue capability, distinct from moderate sedation."
+        ]
   },
   {
     id: "p_131",
@@ -2911,22 +2911,22 @@ const QUESTION_BANK = [
     id: "p_134",
     topic: "principles",
     subtopic: "admin_qi",
-    difficulty: "easy",
+    difficulty: "medium",
     reference: "Surgical Care Improvement Project (SCIP) Guidelines",
-    question: "Per the Surgical Care Improvement Project (SCIP) guidelines, prophylactic antibiotics for most surgical procedures should be administered within what time window relative to surgical incision?",
+    question: "SCIP prophylaxis guidance allows most antibiotics within 60 minutes before incision, but permits a wider 2-hour window for certain agents. Which agents require that longer window, and why?",
     choices: [
-      "Within 1 hour before surgical incision (within 2 hours for vancomycin or fluoroquinolones)",
-      "Within 4 hours after the surgical incision is made during the procedure",
-      "At least 24 hours before the scheduled surgical incision to ensure adequate tissue levels",
-      "Only after the surgical incision is closed, to reduce intraoperative drug interactions"
-    ],
+            "Vancomycin and fluoroquinolones, because they must be infused slowly over about an hour",
+            "Cefazolin and cefuroxime, because cephalosporins are cleared too rapidly to give earlier",
+            "Metronidazole and clindamycin, because they cause hypotension if given near incision",
+            "Aminoglycosides and penicillins, because they require a test dose before administration"
+        ],
     correct: 0,
     explanations: [
-      "Correct. SCIP guidelines specify that prophylactic antibiotics should be administered within 1 HOUR BEFORE surgical incision (within 2 hours for agents requiring longer infusion times, such as vancomycin and fluoroquinolones). This timing ensures adequate tissue and serum drug concentrations at the time of incision when contamination risk is highest. Other SCIP antibiotic measures include selecting an appropriate prophylactic antibiotic for the specific procedure and discontinuing prophylactic antibiotics within 24 hours after surgery (48 hours for cardiac surgery). Redosing intraoperatively is needed for long procedures or significant blood loss. Proper antibiotic prophylaxis reduces surgical site infections.",
-      "Incorrect. Antibiotics given after incision do not establish protective tissue levels at the time of contamination. They should be given BEFORE incision.",
-      "Incorrect. 24 hours before is far too early; the drug would be substantially eliminated before incision. The window is within 1 hour before incision.",
-      "Incorrect. Prophylactic antibiotics must be given BEFORE incision to be effective, not after closure."
-    ]
+            "Correct. VANCOMYCIN and FLUOROQUINOLONES are allowed to start within 120 minutes before incision because they must be infused SLOWLY (vancomycin over ~60 minutes to avoid infusion reactions such as 'red man' syndrome/hypotension; fluoroquinolones over ~60 minutes). The longer window accommodates the required slow infusion so levels are adequate by incision.",
+            "Incorrect. Cephalosporins like cefazolin use the standard 60-minute window; they are not the agents needing the extended window.",
+            "Incorrect. The 2-hour window for vancomycin/fluoroquinolones is about slow infusion time, not hypotension from metronidazole/clindamycin.",
+            "Incorrect. The extended window is not about test dosing; it exists because vancomycin and fluoroquinolones must be infused over ~60 minutes."
+        ]
   },
   {
     id: "p_135",
@@ -2955,20 +2955,20 @@ const QUESTION_BANK = [
     subtopic: "admin_qi",
     difficulty: "medium",
     reference: "The Joint Commission; ASA Closed Claims",
-    question: "In the context of perioperative quality and safety, which event is BEST classified as a 'sentinel event' as defined by The Joint Commission?",
+    question: "Which perioperative event is BEST classified as a 'sentinel event' as defined by The Joint Commission?",
     choices: [
-      "A brief, self-limited episode of intraoperative hypotension that resolves with a fluid bolus",
-      "An expected degree of postoperative pain managed routinely with standard multimodal analgesia",
-      "Wrong-site surgery resulting in unexpected patient harm, requiring immediate investigation and response",
-      "A minor medication dosing adjustment made and corrected before the drug was administered"
-    ],
-    correct: 2,
+            "Wrong-site surgery, an unexpected occurrence involving serious patient harm",
+            "A brief episode of intraoperative hypotension that resolves with a fluid bolus",
+            "Expected postoperative pain that is controlled with standard multimodal analgesia",
+            "A medication dose caught and corrected before it ever reached the patient (a near miss)"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. A transient, self-limited episode of hypotension that resolves with routine treatment is a common intraoperative event, not a sentinel event.",
-      "Incorrect. Expected postoperative pain managed with standard analgesia is a normal part of recovery, not a sentinel event.",
-      "Correct. A SENTINEL EVENT (as defined by The Joint Commission) is a patient safety event that results in death, permanent harm, or severe temporary harm requiring intervention to sustain life, NOT primarily related to the natural course of the patient's illness. Classic examples include WRONG-SITE, wrong-procedure, or wrong-patient surgery; unintended retention of a foreign object; surgical fire; hemolytic transfusion reaction from ABO incompatibility; and maternal death related to labor/delivery. Sentinel events require immediate investigation (root cause analysis) and a corrective action plan. The term signals the need for immediate review and response. The ASA Closed Claims Project separately analyzes malpractice claims to identify patterns of injury and improve safety.",
-      "Incorrect. A medication adjustment caught and corrected before reaching the patient is a 'near miss' (no harm occurred), not a sentinel event (which involves actual serious harm)."
-    ]
+            "Correct. A SENTINEL EVENT is a patient-safety event that reaches the patient and results in death, permanent harm, or severe temporary harm — it signals the need for immediate investigation and response. WRONG-SITE SURGERY is a classic example and is a 'never event.'",
+            "Incorrect. Transient hypotension that resolves with routine treatment is an expected, managed intraoperative variation, not a sentinel event.",
+            "Incorrect. Expected postoperative pain managed with standard analgesia is an anticipated part of recovery, not a safety event.",
+            "Incorrect. An error intercepted BEFORE reaching the patient is a 'near miss' (close call). It should be reported and learned from, but by definition it did not reach the patient and is not a sentinel event."
+        ]
   },
   {
     id: "p_137",
@@ -2997,20 +2997,20 @@ const QUESTION_BANK = [
     subtopic: "fluids",
     difficulty: "easy",
     reference: "Miller's Anesthesia, Body Fluid Compartments",
-    question: "In a typical adult, total body water (TBW) accounts for approximately what fraction of body weight, and how is it distributed between compartments?",
+    question: "In a typical adult, total body water (TBW) is approximately what fraction of body weight, and how is it distributed?",
     choices: [
-      "About 60 percent of body weight, with roughly two-thirds intracellular and one-third extracellular",
-      "About 20 percent of body weight, distributed entirely within the intravascular compartment alone",
-      "About 90 percent of body weight, with the majority located in the extracellular fluid space",
-      "About 40 percent of body weight, divided equally between plasma and interstitial fluid spaces"
-    ],
+            "About 60%, with roughly two-thirds intracellular and one-third extracellular",
+            "About 20%, located almost entirely within the intravascular compartment",
+            "About 90%, with the majority held in the extracellular fluid space",
+            "About 40%, divided equally between plasma and interstitial fluid"
+        ],
     correct: 0,
     explanations: [
-      "Correct. Total body water (TBW) is approximately 60 percent of body weight in an average adult man (closer to 50 percent in women and the elderly due to higher fat content, and higher, ~70-75 percent, in neonates). TBW is divided into INTRACELLULAR fluid (about two-thirds of TBW, ~40 percent of body weight) and EXTRACELLULAR fluid (about one-third of TBW, ~20 percent of body weight). The extracellular fluid is further divided into interstitial fluid (~three-quarters of ECF, ~15 percent of body weight) and plasma/intravascular fluid (~one-quarter of ECF, ~5 percent of body weight). These compartment relationships explain the distribution of administered fluids (e.g., isotonic crystalloids distribute throughout the ECF, so only ~1/4 to 1/3 remains intravascular).",
-      "Incorrect. 20 percent of body weight is approximately the EXTRACELLULAR fluid volume, not total body water. And fluid is not confined to the intravascular space (which is only ~5 percent of body weight).",
-      "Incorrect. 90 percent is far too high for TBW. The majority of body water is INTRACELLULAR, not extracellular.",
-      "Incorrect. TBW is about 60 percent (not 40 percent) of body weight, and the majority is intracellular, not split between plasma and interstitial fluid."
-    ]
+            "Correct. TBW is about 60% of body weight in a typical adult male (somewhat less in females and the elderly), distributed roughly TWO-THIRDS intracellular and ONE-THIRD extracellular; the extracellular portion is further split into interstitial (~3/4) and plasma (~1/4).",
+            "Incorrect. 20% is far too low, and TBW is not confined to the intravascular space.",
+            "Incorrect. 90% overstates TBW; it is about 60% of body weight.",
+            "Incorrect. 40% understates TBW, and the distribution is not an equal plasma/interstitial split."
+        ]
   },
   {
     id: "p_139",
@@ -3018,41 +3018,41 @@ const QUESTION_BANK = [
     subtopic: "fluids",
     difficulty: "medium",
     reference: "Miller's Anesthesia, Crystalloids versus Colloids",
-    question: "An anesthesiologist is choosing between crystalloid and colloid solutions for volume resuscitation. Which statement BEST distinguishes crystalloids from colloids?",
+    question: "Which statement BEST distinguishes crystalloid from colloid solutions?",
     choices: [
-      "Crystalloids contain large molecules that remain intravascular; colloids are electrolyte solutions",
-      "Crystalloids and colloids are clinically identical, with no difference in volume of distribution",
-      "Colloids should always be used instead of crystalloids because they reduce mortality in all patients",
-      "Crystalloids are electrolyte solutions filling the extracellular space; colloids stay intravascular longer"
-    ],
-    correct: 3,
+            "Crystalloids are electrolyte solutions that fill the extracellular space; colloids hold large molecules intravascularly",
+            "Crystalloids contain large oncotic molecules that stay intravascular; colloids are simple electrolyte solutions",
+            "Crystalloids and colloids are clinically identical in volume effect and tissue distribution per liter infused each time",
+            "Colloids should replace crystalloids in every resuscitation because they consistently and reliably reduce patient mortality"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. This option reverses the definitions. Crystalloids are electrolyte solutions; colloids contain large molecules.",
-      "Incorrect. Crystalloids and colloids differ significantly in their volume of distribution and intravascular persistence.",
-      "Incorrect. Colloids have not been shown to reduce mortality compared with crystalloids in most settings, and some carry specific risks. They are not universally preferred.",
-      "Correct. CRYSTALLOIDS (normal saline, lactated Ringer's, Plasma-Lyte) are solutions of water and electrolytes (and sometimes glucose) that freely cross capillary membranes and distribute throughout the extracellular space. Because only about one-quarter to one-third of an infused crystalloid stays intravascular, roughly 3 times the volume of estimated blood loss is replaced with crystalloid. COLLOIDS (albumin, hydroxyethyl starch, dextrans, gelatins) contain large molecules that remain in the intravascular space longer, exerting oncotic pressure and expanding plasma volume more efficiently per unit volume. However, colloids are more expensive, and some (hydroxyethyl starches) have been associated with renal injury and coagulopathy. Large trials have generally NOT shown a mortality benefit of colloids over crystalloids for most resuscitation, so balanced crystalloids are commonly first-line."
-    ]
+            "Correct. CRYSTALLOIDS are electrolyte (salt) solutions (e.g., normal saline, lactated Ringer's) that distribute across the whole extracellular space, so only a fraction stays intravascular. COLLOIDS contain large molecules (e.g., albumin, starches) that are retained in the vasculature longer (with an intact barrier), producing greater and more sustained plasma-volume expansion per liter.",
+            "Incorrect. This reverses the definitions — it is COLLOIDS that contain the large oncotic molecules, and crystalloids that are the electrolyte solutions.",
+            "Incorrect. They are not identical: per liter, colloids expand plasma volume more and stay intravascular longer than crystalloids.",
+            "Incorrect. Colloids do not reliably reduce mortality, and some (certain starches) carry risks (AKI, coagulopathy); they are not preferred 'in all cases.'"
+        ]
   },
   {
     id: "p_140",
     topic: "principles",
     subtopic: "fluids",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "Miller's Anesthesia, Fluid Tonicity",
-    question: "A patient receives a large volume of a HYPOTONIC fluid (such as 0.45 percent saline). Which physiologic effect is MOST expected from infusing a hypotonic solution?",
+    question: "A patient receives a large volume of a HYPOTONIC fluid (e.g., 0.45% saline). Which physiologic effect is MOST expected?",
     choices: [
-      "Net movement of water OUT of cells into the extracellular space, causing cellular dehydration",
-      "Pure expansion of the intravascular compartment only, with no movement of water across cell membranes",
-      "Net movement of water INTO cells (cellular swelling), as water shifts toward the lower-osmolality compartment",
-      "An immediate large increase in serum sodium concentration due to the saline content of the fluid"
-    ],
-    correct: 2,
+            "Net movement of water INTO cells, causing cellular swelling as water follows the osmotic gradient",
+            "Net movement of water OUT of cells into the extracellular space, causing cellular shrinkage",
+            "Pure expansion of the intravascular compartment with essentially no transcellular water shift",
+            "A rapid rise in serum sodium concentration because of the sodium content of the fluid"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Hypotonic fluids cause water to move INTO cells (cellular swelling), not out of cells. Water moving OUT of cells occurs with HYPERtonic fluids.",
-      "Incorrect. Hypotonic fluids do not stay intravascular; they lower extracellular osmolality and drive water into cells. Only a fraction remains intravascular.",
-      "Correct. Infusing a HYPOTONIC fluid (osmolality lower than plasma, such as 0.45 percent saline or D5W after the glucose is metabolized) lowers the osmolality of the extracellular fluid. Water then moves down its osmotic gradient INTO the relatively higher-osmolality intracellular compartment, causing CELLULAR SWELLING. This is potentially dangerous in the brain (risk of cerebral edema), especially with rapid administration or in patients with existing hyponatremia. In contrast, ISOTONIC fluids (0.9 percent saline, lactated Ringer's) stay in the extracellular space without major water shifts, and HYPERTONIC fluids (3 percent saline) draw water OUT of cells into the extracellular space (used to reduce cerebral edema and treat severe symptomatic hyponatremia, with careful slow correction to avoid osmotic demyelination).",
-      "Incorrect. A hypotonic saline solution by definition has a LOWER sodium concentration than plasma, so large volumes tend to LOWER (or dilute) serum sodium, not increase it."
-    ]
+            "Correct. A hypotonic fluid LOWERS extracellular osmolality, so water moves DOWN its osmotic gradient INTO cells, causing cellular SWELLING. Given in large volume this can cause hyponatremia and, importantly, cerebral edema — which is why hypotonic fluids are used cautiously, especially with intracranial pathology.",
+            "Incorrect. Water moving OUT of cells (shrinkage) is what a HYPERtonic fluid causes; a hypotonic fluid does the opposite.",
+            "Incorrect. Because it is hypotonic, the fluid does not stay intravascular — water shifts across cell membranes into cells, so it is not pure intravascular expansion.",
+            "Incorrect. A hypotonic (half-normal) fluid tends to LOWER serum sodium by dilution, not raise it."
+        ]
   },
   {
     id: "p_141",
@@ -3060,20 +3060,20 @@ const QUESTION_BANK = [
     subtopic: "preop",
     difficulty: "easy",
     reference: "Latex Allergy",
-    question: "Which group of patients is at the HIGHEST risk for latex allergy, an important preoperative consideration?",
+    question: "Which group is at the HIGHEST risk for latex allergy, an important preoperative consideration?",
     choices: [
-      "Patients with repeated latex exposure, such as those with spina bifida or many prior surgeries",
-      "Only patients who have never once been exposed to any latex-containing product in their life",
-      "Patients are at equal, negligible risk regardless of history, so latex allergy never needs screening",
-      "Only newborn infants in the first hour of life, and no other patient population at any age"
-    ],
+            "Patients with repeated latex exposure, such as those with spina bifida or many prior surgeries",
+            "Patients with essentially no prior healthcare or latex exposure of any kind at all",
+            "All patients equally, since latex allergy is unrelated to exposure history",
+            "Only newborn infants in the first hours of life, with no other group considered at risk"
+        ],
     correct: 0,
     explanations: [
-      "Correct. LATEX ALLERGY is an important preoperative consideration because reactions can range from contact dermatitis to life-threatening intraoperative ANAPHYLAXIS. The HIGHEST-risk groups are those with REPEATED/intense latex EXPOSURE, classically patients with SPINA BIFIDA (myelomeningocele) and those who have had MULTIPLE SURGERIES or procedures (e.g., chronic bladder catheterization), as well as HEALTHCARE/rubber-industry WORKERS and patients with certain fruit cross-reactivities (banana, avocado, kiwi, chestnut). Identification preoperatively allows preparation of a LATEX-FREE environment (latex-free gloves, equipment, and supplies), often scheduling the case FIRST in the day to minimize airborne latex, and having anaphylaxis treatment ready. A careful allergy history is part of the preoperative evaluation.",
-      "Incorrect. Risk comes from repeated EXPOSURE; never-exposed patients are not the high-risk group.",
-      "Incorrect. Risk is NOT equal across patients; certain groups (e.g., spina bifida) are clearly higher risk, so history matters.",
-      "Incorrect. Latex allergy risk relates to cumulative exposure over time, not to being a newborn."
-    ]
+            "Correct. Latex allergy risk rises with REPEATED latex EXPOSURE. Classic high-risk groups include patients with spina bifida or urogenital anomalies, those with multiple prior surgeries/procedures, and healthcare workers; a history of certain fruit allergies (banana, avocado, kiwi) is also associated.",
+            "Incorrect. Minimal prior exposure lowers, not raises, sensitization risk.",
+            "Incorrect. Risk is clearly related to cumulative exposure, so it is not equal across all patients.",
+            "Incorrect. Newborns are not the defining high-risk group; repeated-exposure populations are."
+        ]
   },
   {
     id: "p_142",
@@ -3081,20 +3081,20 @@ const QUESTION_BANK = [
     subtopic: "preop",
     difficulty: "easy",
     reference: "Perioperative Stress-Dose Steroids",
-    question: "A patient on long-term high-dose corticosteroid therapy is having major surgery. Why might 'stress-dose' steroids be given perioperatively?",
+    question: "A patient on long-term high-dose corticosteroids is having major surgery. Why might perioperative 'stress-dose' steroids be considered?",
     choices: [
-      "Because chronic steroids cause uncontrollable hypertension that only more steroids can lower safely",
-      "Because chronic steroids suppress the HPA axis, impairing the normal cortisol stress response",
-      "Because steroids are potent neuromuscular blockers needed to provide surgical muscle relaxation",
-      "Because steroids are given purely to sweeten the IV fluids and improve their taste for the patient"
-    ],
-    correct: 1,
+            "Because chronic steroids suppress the HPA axis, impairing the normal cortisol stress response",
+            "Because corticosteroids act as potent neuromuscular blockers needed for surgical relaxation",
+            "Because chronic steroids cause hypertension that responds only to additional steroid dosing",
+            "Because steroids are added purely to improve the palatability of intravenous fluids"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Chronic steroids are not given to control hypertension, and that is not the rationale for stress dosing.",
-      "Correct. Chronic administration of CORTICOSTEROIDS suppresses the HYPOTHALAMIC-PITUITARY-ADRENAL (HPA) AXIS, so the adrenal glands may be unable to mount the normal increase in CORTISOL needed to meet the physiologic STRESS of major surgery. Inadequate cortisol can lead to perioperative ADRENAL INSUFFICIENCY/crisis (refractory hypotension, hemodynamic instability). For patients on significant doses for sufficient duration, supplemental perioperative ('STRESS-DOSE') glucocorticoids may be given, scaled to the magnitude of surgical stress, to prevent this. The decision considers the dose, duration, and recency of steroid use and the type/length of surgery; minor procedures in low-risk patients may not require it.",
-      "Incorrect. Steroids are not neuromuscular blockers (although some relaxants are aminosteroids, that is unrelated).",
-      "Incorrect. This is not a real rationale; stress dosing addresses suppressed adrenal cortisol response."
-    ]
+            "Correct. Chronic exogenous corticosteroids suppress the HYPOTHALAMIC-PITUITARY-ADRENAL (HPA) axis, so the adrenal glands may not mount the normal cortisol surge needed to meet surgical stress. Supplemental ('stress-dose') steroids are considered to prevent adrenal insufficiency/hypotension, guided by steroid dose, duration, and surgical magnitude.",
+            "Incorrect. Corticosteroids are not neuromuscular blockers; that is a different drug class.",
+            "Incorrect. The rationale is adrenal suppression, not treatment of steroid-induced hypertension.",
+            "Incorrect. This is not a real reason; the concern is HPA-axis suppression and adrenal insufficiency."
+        ]
   },
   {
     id: "p_143",
@@ -3146,39 +3146,39 @@ const QUESTION_BANK = [
     reference: "Emergence Delirium",
     question: "Emergence delirium (emergence agitation) is BEST described as:",
     choices: [
-      "Acute confusion, agitation, or disorientation occurring as a patient wakes from general anesthesia",
-      "A permanent loss of all memory that always follows every general anesthetic in adult patients",
-      "A deliberate technique of keeping the patient agitated to speed their discharge from recovery",
-      "A type of surgical incision used specifically to gain rapid access to the abdominal cavity"
-    ],
+            "Acute confusion, agitation, or disorientation as a patient wakes from general anesthesia",
+            "A permanent loss of all memory that predictably follows every general anesthetic",
+            "A deliberate technique of keeping the patient agitated to hasten PACU discharge",
+            "A type of surgical incision used to gain rapid access to the abdomen"
+        ],
     correct: 0,
     explanations: [
-      "Correct. EMERGENCE DELIRIUM (emergence agitation) is a state of acute CONFUSION, AGITATION, disorientation, and sometimes inconsolable or combative behavior occurring as a patient EMERGES/WAKES from general anesthesia, typically in the early recovery period. It is MORE COMMON in CHILDREN (especially preschoolers, classically after rapid emergence from sevoflurane) and in older adults, and risk factors include certain volatile agents, rapid emergence, pain, a full bladder, hypoxia or other physiologic disturbances, preoperative anxiety, and certain procedures (e.g., ENT/ophthalmic). Management starts by RULING OUT and treating reversible causes (notably HYPOXEMIA, hypercarbia, hypotension/hypoglycemia, pain, and bladder distension), providing a calm reassuring environment and safety, and using pharmacologic measures when needed (e.g., treating pain, or agents such as dexmedetomidine/propofol). It is usually self-limited but requires attention to patient safety and to excluding dangerous causes such as hypoxia.",
-      "Incorrect. Emergence delirium is a transient acute confusional state, not a permanent universal memory loss.",
-      "Incorrect. It is an undesirable complication, not a deliberate technique.",
-      "Incorrect. It is a neurologic/behavioral state on waking, not a surgical incision."
-    ]
+            "Correct. EMERGENCE DELIRIUM is acute confusion, agitation, or disorientation occurring as a patient emerges from general anesthesia. It is more common in children and after certain agents/procedures and is usually self-limited but requires ensuring the patient does not harm themselves and excluding causes such as hypoxia, pain, or a full bladder.",
+            "Incorrect. It is a transient wake-up phenomenon, not permanent amnesia, and it does not follow every anesthetic.",
+            "Incorrect. It is an unwanted event, not a deliberate technique.",
+            "Incorrect. It is a neurologic/behavioral phenomenon, not a surgical incision."
+        ]
   },
   {
     id: "p_146",
     topic: "principles",
     subtopic: "admin_general",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "Intraoperative Anaphylaxis",
-    question: "During anesthesia, a patient suddenly develops severe hypotension, bronchospasm, and a diffuse rash. Which is the MOST appropriate FIRST-line drug for this anaphylactic reaction?",
+    question: "During anesthesia a patient abruptly develops severe hypotension, bronchospasm, and a diffuse rash consistent with anaphylaxis. Which is the MOST appropriate FIRST-line pharmacologic treatment?",
     choices: [
-      "A slow infusion of a beta-blocker to bring the heart rate down and stabilize the patient",
-      "Epinephrine, which is the first-line drug for anaphylaxis",
-      "A large dose of an inhaled volatile anesthetic to deepen anesthesia and stop the reaction",
-      "Oral antihistamines given as the sole and definitive treatment for the collapsing patient"
-    ],
-    correct: 1,
+            "Intramuscular or IV epinephrine, titrated to restore blood pressure and relieve bronchospasm",
+            "An IV H1-antihistamine such as diphenhydramine as the primary definitive treatment",
+            "IV corticosteroids (e.g., hydrocortisone) given immediately as the main acute therapy",
+            "An inhaled beta-2 agonist alone (e.g., albuterol) to reverse the airway and circulatory collapse"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. A beta-blocker is inappropriate and harmful in anaphylactic shock (which often involves compensatory tachycardia); it is not the treatment.",
-      "Correct. Suspected intraoperative ANAPHYLAXIS (an immediate hypersensitivity reaction) classically presents with sudden CARDIOVASCULAR COLLAPSE/HYPOTENSION, BRONCHOSPASM (raised airway pressures/wheeze), and cutaneous signs (flushing, urticaria, edema) — though under drapes the skin signs may be missed and hypotension/bronchospasm may dominate. The FIRST-LINE, life-saving drug is EPINEPHRINE (titrated IV in the anesthetized/monitored patient, or IM), which addresses the pathophysiology via alpha-1 vasoconstriction, beta-1 inotropy/chronotropy, and beta-2 bronchodilation and mast-cell stabilization. Essential concurrent steps: STOP the likely trigger (common culprits include neuromuscular blocking drugs, antibiotics, latex, and chlorhexidine), call for help, give 100 percent oxygen and secure the airway/ventilation, and provide aggressive IV FLUID resuscitation. Adjuncts (antihistamines, corticosteroids, bronchodilators) are SECONDARY and do not replace epinephrine; later tryptase levels and allergy referral help confirm and identify the agent.",
-      "Incorrect. Deepening with volatile agent does not treat anaphylaxis and would worsen hypotension; epinephrine and fluids are needed.",
-      "Incorrect. Oral antihistamines are far too slow and are only an adjunct; epinephrine is first-line."
-    ]
+            "Correct. EPINEPHRINE is the first-line, life-saving drug in anaphylaxis. Its alpha effect restores blood pressure (vasoconstriction, reduced mucosal edema) and its beta effects relieve bronchospasm and support the heart, while also stabilizing mast cells. It is given promptly (IM, or IV in small titrated boluses/infusion in the monitored anesthetized patient) alongside stopping the trigger, IV fluids, and 100% oxygen.",
+            "Incorrect. Antihistamines are SECOND-line adjuncts that may ease urticaria/itch but do not reverse the airway or cardiovascular collapse; they are not the primary treatment.",
+            "Incorrect. Corticosteroids are adjuncts thought to reduce biphasic/late reactions; they have a delayed onset and do NOT treat the acute collapse — epinephrine does.",
+            "Incorrect. An inhaled beta-2 agonist can help residual bronchospasm as an adjunct but does not treat the hypotension/shock; epinephrine is the required first-line drug."
+        ]
   },
   {
     id: "p_147",
@@ -3186,20 +3186,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "easy",
     reference: "Capnography During Sedation",
-    question: "Why is capnography (end-tidal CO2 monitoring) valuable during moderate or deep sedation?",
+    question: "Why is capnography valuable during moderate or deep sedation?",
     choices: [
-      "It directly measures the patient's blood pressure without the need for a cuff or arterial line",
-      "It is used to warm and humidify the oxygen being delivered to the sedated patient's airway",
-      "It detects hypoventilation or apnea earlier than pulse oximetry, allowing prompt intervention",
-      "It has no proven role in sedation and is recommended only during general anesthesia with intubation"
-    ],
-    correct: 2,
+            "It detects hypoventilation or apnea earlier than pulse oximetry does",
+            "It directly measures blood pressure continuously without the need for a cuff",
+            "It warms and humidifies the oxygen being delivered to the sedated patient",
+            "It measures the depth of anesthesia and helps predict intraoperative awareness"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Capnography measures exhaled CO2/ventilation, not blood pressure.",
-      "Incorrect. Capnography is a monitor; it does not warm or humidify gases.",
-      "Correct. CAPNOGRAPHY continuously measures EXHALED (end-tidal) CARBON DIOXIDE and provides a breath-by-breath indication of VENTILATION. During moderate/deep sedation, sedatives and opioids can cause HYPOVENTILATION or APNEA, and capnography DETECTS these changes EARLIER than pulse oximetry — especially when the patient is receiving SUPPLEMENTAL OXYGEN, because oxygenation (and thus the oximeter reading) can be maintained for a time even as ventilation fails, delaying the drop in saturation. Earlier recognition allows PROMPT intervention (stimulation, airway maneuvers, reducing sedation, assisting ventilation) before significant hypoxemia occurs. For this reason, capnography is recommended for monitoring ventilation during moderate and deep sedation, in addition to pulse oximetry and other monitors.",
-      "Incorrect. Capnography has a clear, recommended role during sedation, not only during general anesthesia."
-    ]
+            "Correct. Capnography monitors ventilation breath-by-breath, so it detects HYPOVENTILATION or APNEA EARLIER than pulse oximetry — especially with supplemental oxygen, which delays desaturation. This early warning allows prompt intervention before hypoxemia develops.",
+            "Incorrect. Capnography measures exhaled CO₂/ventilation, not blood pressure.",
+            "Incorrect. Warming/humidifying gases is unrelated to capnography's monitoring function.",
+            "Incorrect. Depth-of-anesthesia/awareness is assessed with processed EEG, not capnography."
+        ]
   },
   {
     id: "p_148",
@@ -3209,18 +3209,18 @@ const QUESTION_BANK = [
     reference: "Minimal Sedation (Anxiolysis)",
     question: "Which statement BEST characterizes 'minimal sedation' (anxiolysis)?",
     choices: [
-      "The patient is unarousable to painful stimulation and requires controlled mechanical ventilation",
-      "The patient responds only after repeated or painful stimulation, with possibly impaired ventilation",
-      "The patient is fully paralyzed but completely awake and able to feel everything during the procedure",
-      "The patient responds normally to verbal commands, with airway and ventilation unaffected"
-    ],
-    correct: 3,
+            "The patient responds normally to verbal commands, with airway and ventilation unaffected",
+            "The patient responds only after repeated or painful stimulation and may need airway help",
+            "The patient is unarousable to painful stimulation and requires mechanical ventilation",
+            "The patient is fully paralyzed yet completely awake and able to feel the procedure"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Being unarousable to pain with a need for ventilatory support describes general anesthesia, not minimal sedation.",
-      "Incorrect. Responding only to repeated/painful stimulation describes DEEP sedation, not minimal sedation.",
-      "Incorrect. Minimal sedation does not involve paralysis.",
-      "Correct. MINIMAL SEDATION (ANXIOLYSIS) is the lightest level on the sedation continuum: the patient responds NORMALLY to VERBAL commands, and although cognitive function and coordination may be modestly impaired, AIRWAY reflexes, spontaneous VENTILATION, and cardiovascular function are UNAFFECTED. It is the level produced by, for example, low-dose anxiolytics. It is distinguished from moderate sedation (purposeful response to verbal/light tactile stimulation), deep sedation (purposeful response only to repeated/painful stimulation, with possible ventilatory impairment), and general anesthesia (unarousable). Because depth can progress unintentionally, providers must still monitor the patient and be prepared to manage a deeper-than-intended level."
-    ]
+            "Correct. MINIMAL sedation (anxiolysis) is a drug-induced state in which the patient responds NORMALLY to verbal commands. Cognitive function/coordination may be impaired, but airway, ventilation, and cardiovascular function are UNAFFECTED.",
+            "Incorrect. Responding only to repeated/painful stimulation describes DEEP sedation, not minimal.",
+            "Incorrect. Being unarousable with mechanical ventilation describes general anesthesia.",
+            "Incorrect. 'Awake but paralyzed' describes accidental awareness with paralysis, not a sedation level."
+        ]
   },
   {
     id: "p_149",
@@ -3228,20 +3228,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "medium",
     reference: "Reversal of Over-Sedation",
-    question: "A patient becomes over-sedated and hypoventilates after receiving an opioid and a benzodiazepine for sedation. Which reversal agents specifically target these drugs?",
+    question: "A patient hypoventilates after receiving an opioid plus a benzodiazepine for sedation. Which reversal agents specifically antagonize these two drugs?",
     choices: [
-      "Atropine reverses the opioid, and epinephrine reverses the benzodiazepine, restoring breathing",
-      "Naloxone reverses the opioid, and flumazenil reverses the benzodiazepine",
-      "Dantrolene reverses both the opioid and the benzodiazepine within a few seconds of injection",
-      "There are no reversal agents; the only option is to wait for the drugs to wear off completely"
-    ],
-    correct: 1,
+            "Naloxone for the opioid and flumazenil for the benzodiazepine",
+            "Atropine for the opioid and epinephrine for the benzodiazepine",
+            "Neostigmine for the opioid and sugammadex for the benzodiazepine",
+            "Dantrolene for both, given together to reverse the sedatives rapidly"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Atropine and epinephrine are not reversal agents for opioids or benzodiazepines.",
-      "Correct. The specific antagonists are NALOXONE for OPIOIDS (a competitive opioid-receptor antagonist that reverses opioid-induced respiratory depression and sedation) and FLUMAZENIL for BENZODIAZEPINES (a competitive antagonist at the benzodiazepine site of the GABA-A receptor). Both are titrated to effect. Important cautions: because these antagonists are often SHORTER-acting than the agonists they reverse, RESEDATION/recurrent respiratory depression can occur, requiring continued monitoring (and sometimes repeat dosing). Naloxone can precipitate acute withdrawal and pain in opioid-dependent patients; flumazenil can precipitate SEIZURES (especially in patients chronically on benzodiazepines or with mixed/TCA overdose). Meanwhile, the priority remains SUPPORTIVE care — oxygen, airway maneuvers, and assisted ventilation — while the reversal agent takes effect.",
-      "Incorrect. Dantrolene treats malignant hyperthermia; it does not reverse opioids or benzodiazepines.",
-      "Incorrect. Specific reversal agents (naloxone, flumazenil) do exist for these drug classes."
-    ]
+            "Correct. NALOXONE is the opioid antagonist and FLUMAZENIL is the benzodiazepine antagonist. Both are titrated carefully — naloxone can precipitate pain/withdrawal and has a short duration (risk of resedation); flumazenil can precipitate seizures in chronic benzodiazepine users. Supporting ventilation/oxygenation remains the priority alongside any reversal.",
+            "Incorrect. Atropine (an antimuscarinic) and epinephrine do not reverse opioids or benzodiazepines.",
+            "Incorrect. Neostigmine/sugammadex reverse neuromuscular blockade, not opioids or benzodiazepines.",
+            "Incorrect. Dantrolene treats malignant hyperthermia; it does not reverse opioids or benzodiazepines."
+        ]
   },
   {
     id: "p_150",
@@ -3249,20 +3249,20 @@ const QUESTION_BANK = [
     subtopic: "admin_sedation",
     difficulty: "medium",
     reference: "Recovery and Discharge After Sedation",
-    question: "Before discharging a patient who received procedural sedation, which is an appropriate recovery criterion?",
+    question: "Which is an appropriate recovery criterion before discharging a patient who received procedural sedation?",
     choices: [
-      "The patient may be discharged immediately after the procedure regardless of their level of consciousness",
-      "The patient should return to near-baseline mental status and stable vital signs with a protected airway",
-      "The patient must remain deeply sedated and unresponsive for several hours before any discharge",
-      "Discharge depends only on the proceduralist's schedule, not on the patient's clinical recovery status"
-    ],
-    correct: 1,
+            "Return to near-baseline mental status with stable vital signs and a protected airway",
+            "Discharge immediately after the procedure regardless of the level of consciousness",
+            "The patient should remain deeply sedated and unresponsive for several hours first",
+            "Discharge timed only to the proceduralist's schedule, independent of clinical status"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Immediate discharge regardless of consciousness is unsafe; the patient must adequately recover first.",
-      "Correct. After procedural sedation, patients are monitored in recovery until they meet DISCHARGE CRITERIA, which include returning to NEAR-BASELINE mental status (awake/oriented or back to baseline for that patient), STABLE VITAL SIGNS and adequate oxygenation on room air (or baseline), a PATENT/PROTECTED AIRWAY with intact protective reflexes, adequate pain and nausea control, and (for outpatients) a responsible adult escort. Standardized scoring tools (e.g., the modified Aldrete or specific post-anesthesia discharge scoring systems) are often used to objectify readiness. A key concern is RESEDATION — particularly if reversal agents (naloxone/flumazenil) were used, since they may wear off before the longer-acting sedatives — so an adequate observation period is required. These criteria protect against airway compromise and falls after discharge.",
-      "Incorrect. Patients should be RECOVERING (not kept deeply sedated); prolonged forced sedation is not a discharge criterion.",
-      "Incorrect. Discharge must be based on the patient's clinical recovery, not scheduling convenience."
-    ]
+            "Correct. Safe discharge after sedation requires the patient to have returned to NEAR-BASELINE mental status, with stable vital signs, adequate/spontaneous ventilation and a protected airway, controlled pain and nausea, and (for outpatients) a responsible escort. Standardized criteria/scores are commonly used.",
+            "Incorrect. Immediate discharge without confirming recovery risks residual sedation, airway compromise, and resedation.",
+            "Incorrect. Remaining deeply sedated is the opposite of a discharge criterion; recovery toward baseline is required.",
+            "Incorrect. Discharge is based on the patient's clinical recovery, not scheduling convenience."
+        ]
   },
   {
     id: "p_151",
@@ -3272,18 +3272,18 @@ const QUESTION_BANK = [
     reference: "Oropharyngeal vs Nasopharyngeal Airways",
     question: "What is a key difference between an oropharyngeal airway (OPA) and a nasopharyngeal airway (NPA)?",
     choices: [
-      "An OPA can trigger gagging in a conscious patient; an NPA is better tolerated when reflexes are intact",
-      "An OPA is inserted into the trachea past the cords, while an NPA is placed surgically in the neck",
-      "Both devices are endotracheal tubes that fully protect the airway from aspiration of gastric contents",
-      "An NPA must never be lubricated, and an OPA is the preferred device in a basilar skull fracture"
-    ],
+            "An OPA tends to trigger gagging in a conscious patient; an NPA is better tolerated",
+            "An OPA is inserted past the vocal cords into the trachea, while an NPA is placed surgically",
+            "Both are endotracheal tubes that fully protect the lower airway from any aspiration",
+            "An NPA must never be lubricated, and it is the preferred device with a basilar skull fracture"
+        ],
     correct: 0,
     explanations: [
-      "Correct. Both the OROPHARYNGEAL AIRWAY (OPA) and the NASOPHARYNGEAL AIRWAY (NPA) are basic airway ADJUNCTS that relieve soft-tissue (tongue) obstruction by creating a passage to the pharynx; neither protects against aspiration. A key practical difference is tolerance based on consciousness: an OPA stimulates the posterior pharynx and can provoke GAGGING, retching, or laryngospasm in a patient with intact airway reflexes, so it is best reserved for deeply unconscious/anesthetized patients; an NPA is generally BETTER TOLERATED in patients with INTACT reflexes (lighter planes of consciousness). The NPA is lubricated and inserted through the nostril, and it is used cautiously/avoided with suspected BASILAR SKULL FRACTURE or significant coagulopathy/nasal pathology. Both are sized appropriately to avoid worsening obstruction.",
-      "Incorrect. Neither device enters the trachea or is placed surgically; both sit in the pharynx.",
-      "Incorrect. Neither is an endotracheal tube, and neither protects against aspiration.",
-      "Incorrect. The NPA is lubricated before insertion, and it is the NPA (not OPA) that is cautioned in basilar skull fracture — an OPA would be used there instead, not the NPA."
-    ]
+            "Correct. An OPA sits in the oropharynx and can trigger GAGGING, retching, or laryngospasm in a patient with intact airway reflexes, so it is best used in the deeply obtunded/unconscious. An NPA is generally better TOLERATED in patients with intact or partially intact reflexes. Neither protects against aspiration.",
+            "Incorrect. Neither device enters the trachea; both are simple pharyngeal airways, and the NPA is not placed surgically.",
+            "Incorrect. OPAs and NPAs are not endotracheal tubes and do not protect the airway from aspiration.",
+            "Incorrect. NPAs SHOULD be lubricated, and they are relatively contraindicated (not preferred) with suspected basilar skull fracture."
+        ]
   },
   {
     id: "p_152",
@@ -3310,43 +3310,43 @@ const QUESTION_BANK = [
     id: "p_153",
     topic: "principles",
     subtopic: "admin_ventilation",
-    difficulty: "medium",
+    difficulty: "hard",
     reference: "Endotracheal Tube Cuff Pressure",
-    question: "Why is endotracheal tube cuff pressure monitored and kept relatively low (e.g., below about 30 cm H2O)?",
+    question: "During a long case the ETT cuff requires a measured 34 cm H₂O to just seal a small leak. Ventilation is adequate and there is no evidence of aspiration. What is the MOST appropriate management?",
     choices: [
-      "Excessive cuff pressure can impair tracheal mucosal perfusion, risking ischemic injury",
-      "Higher cuff pressure is always better and should be maximized to guarantee a perfect seal",
-      "The cuff pressure directly determines the inspired oxygen concentration delivered to the lungs",
-      "Cuff pressure has no clinical effect whatsoever and is monitored only out of habit and tradition"
-    ],
+            "Accept the mildly elevated pressure, document it, and recheck it periodically",
+            "Exchange the tube for a larger size to obtain a seal at a lower measured cuff pressure",
+            "Inflate the cuff well above 34 cm H₂O until absolutely no air leak can be detected",
+            "Deflate below 25 cm H₂O for mucosal safety even though this reintroduces a leak"
+        ],
     correct: 0,
     explanations: [
-      "Correct. The endotracheal tube CUFF seals the trachea to allow positive-pressure ventilation and reduce aspiration around the tube. Modern cuffs are HIGH-VOLUME, LOW-PRESSURE. If CUFF PRESSURE is EXCESSIVE (a commonly cited threshold is to keep it below roughly 20-30 cm H2O), it can exceed the TRACHEAL CAPILLARY PERFUSION pressure and impair MUCOSAL BLOOD FLOW, causing ischemia and, over time, complications such as mucosal injury, ulceration, tracheal stenosis, or (rarely) tracheoesophageal fistula. Conversely, too LOW a pressure risks an inadequate seal, air leak, and aspiration. Cuff pressure can rise during a case (e.g., nitrous oxide diffusing into an air-filled cuff), so it is monitored/adjusted (e.g., with a manometer).",
-      "Incorrect. Maximizing cuff pressure risks tracheal mucosal ischemia; higher is not better.",
-      "Incorrect. Cuff pressure does not determine inspired oxygen concentration.",
-      "Incorrect. Cuff pressure has real clinical consequences (mucosal perfusion, seal, aspiration); it is monitored for good reason."
-    ]
+            "Correct. A cuff pressure modestly above the usual 20–30 cm H₂O ceiling, in a patient who is ventilating well without aspiration, is a MINOR, MONITORABLE issue. The judicious action is to ACCEPT it, document it, and recheck (reducing it if the leak later resolves). Any intervention here carries more risk than the slightly high pressure itself.",
+            "Incorrect (the trap). Although a larger tube would in theory seal at a lower pressure, EXCHANGING a functioning airway mid-case is far riskier than a mildly elevated cuff pressure — it risks losing the airway, failed reintubation, and aspiration. You do not trade a working tube for a number.",
+            "Incorrect. Inflating well beyond 34 cm H₂O drives cuff pressure into the ischemic range (exceeding tracheal capillary perfusion pressure), risking real mucosal injury to chase a perfect seal that is not clinically needed.",
+            "Incorrect. Deflating below 25 cm H₂O to 'protect the mucosa' reintroduces a leak and raises aspiration/ventilation-loss risk; fixing the number by creating a new problem is not appropriate."
+        ]
   },
   {
     id: "p_154",
     topic: "principles",
     subtopic: "admin_ventilation",
-    difficulty: "medium",
+    difficulty: "easy",
     reference: "Preoxygenation",
     question: "What is the purpose of preoxygenation (denitrogenation) before induction of anesthesia?",
     choices: [
-      "To deliberately lower the patient's oxygen reserves so that intubation must be performed faster",
-      "To completely eliminate the need for any airway management or ventilation after induction",
-      "To fill the lungs' functional residual capacity with oxygen, prolonging safe apnea time",
-      "To warm the inspired gases to body temperature, which is its only real physiologic purpose"
-    ],
-    correct: 2,
+            "To fill the functional residual capacity with oxygen, prolonging safe apnea time",
+            "To deliberately lower the patient's oxygen reserves so that intubation is performed more quickly",
+            "To eliminate the need for any airway management or ventilation after induction",
+            "To warm the inspired gases to body temperature as its main physiologic effect"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Preoxygenation INCREASES (not lowers) oxygen reserves.",
-      "Incorrect. Preoxygenation does not remove the need for airway management; it buys time.",
-      "Correct. PREOXYGENATION (DENITROGENATION) involves having the patient breathe a HIGH concentration of oxygen (ideally 100 percent via a well-sealed mask) before induction, which washes NITROGEN out of the lungs and FILLS the FUNCTIONAL RESIDUAL CAPACITY (FRC) with OXYGEN. This creates an oxygen RESERVOIR that PROLONGS the SAFE APNEA time — the period after induction/paralysis during which the patient can tolerate apnea (e.g., during laryngoscopy/intubation) before oxygen saturation falls. It is especially important when rapid desaturation is anticipated (obesity, pregnancy, children, critical illness) or when a difficult airway or rapid sequence induction is planned. Effective preoxygenation is judged by a high end-tidal oxygen fraction.",
-      "Incorrect. Preoxygenation is about creating an oxygen reservoir, not warming gases."
-    ]
+            "Correct. Preoxygenation replaces the nitrogen in the lungs' FUNCTIONAL RESIDUAL CAPACITY with OXYGEN, creating an oxygen reservoir. This prolongs the time to desaturation during the apneic period of induction/intubation — critical safety margin, especially in patients who desaturate quickly (obese, pregnant, pediatric, critically ill).",
+            "Incorrect. Preoxygenation INCREASES, not lowers, oxygen reserves.",
+            "Incorrect. It buys apneic time but does not remove the need for airway management/ventilation.",
+            "Incorrect. Warming gases is not the purpose; building an oxygen reservoir in the FRC is."
+        ]
   },
   {
     id: "p_155",
@@ -3356,18 +3356,18 @@ const QUESTION_BANK = [
     reference: "Arm Positioning and the Brachial Plexus",
     question: "When positioning an anesthetized patient's arm on an arm board, why is abduction generally limited to less than 90 degrees?",
     choices: [
-      "To make it easier for the surgeon to reach across the patient's body during the operation",
-      "Because any abduction at all will immediately dislocate the patient's shoulder under anesthesia",
-      "To reduce stretch on the brachial plexus and lower the risk of a brachial plexus injury",
-      "Because the blood pressure cuff cannot function if the arm is abducted beyond 90 degrees"
-    ],
-    correct: 2,
+            "To reduce stretch on the brachial plexus and lower the risk of a plexus injury",
+            "To make it easier for the surgeon to reach across the patient during the case",
+            "Because any abduction at all immediately dislocates the shoulder under anesthesia",
+            "Because a blood pressure cuff cannot function if the arm is abducted at all"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Surgical access is not the reason for the abduction limit; nerve protection is.",
-      "Incorrect. Modest abduction does not dislocate the shoulder; the concern is nerve stretch.",
-      "Correct. The BRACHIAL PLEXUS is relatively fixed at the neck and axilla and is vulnerable to STRETCH injury with arm positioning. Limiting arm ABDUCTION to LESS THAN 90 degrees on the arm board (and avoiding posterior shoulder sag, excessive external rotation, and lateral head rotation away from the arm) reduces TENSION/STRETCH on the plexus and lowers the risk of a BRACHIAL PLEXUS INJURY. Additional protective measures include keeping the forearm neutral/supinated and padding the elbow (to protect the ulnar nerve), padding all pressure points, and keeping the head in a neutral position. Because anesthetized patients cannot report discomfort, careful positioning and periodic checks are essential, particularly during long cases and in patients at higher risk.",
-      "Incorrect. Arm abduction does not disable the blood pressure cuff; the limit exists to protect the brachial plexus."
-    ]
+            "Correct. Abducting the arm beyond 90° STRETCHES the BRACHIAL PLEXUS (and can compress it against the humeral head/clavicle), increasing the risk of a positioning-related plexus injury. Keeping abduction <90°, with the forearm supinated/neutral and padding, reduces this risk.",
+            "Incorrect. Surgeon access is not the reason; the limit protects the brachial plexus.",
+            "Incorrect. Abduction within limits does not dislocate the shoulder; it is nerve stretch that is the concern.",
+            "Incorrect. Cuff function is not the rationale for the abduction limit."
+        ]
   },
   {
     id: "p_156",
@@ -3375,20 +3375,20 @@ const QUESTION_BANK = [
     subtopic: "admin_positioning",
     difficulty: "easy",
     reference: "Prone Positioning",
-    question: "When a patient is placed in the prone position for surgery, which precaution is especially important?",
+    question: "When a patient is placed prone for surgery, which precaution is especially important?",
     choices: [
-      "Leave the endotracheal tube completely unsecured so it can move freely with the patient",
-      "Apply firm continuous pressure directly on both eyes to keep the head from moving at all",
-      "Compress the abdomen as tightly as possible to splint the diaphragm and reduce breathing",
-      "Protect the eyes and face from pressure, and keep the abdomen free to allow chest expansion"
-    ],
-    correct: 3,
+            "Protect the eyes/face from pressure and keep the abdomen free to allow chest movement",
+            "Leave the endotracheal tube unsecured so it can move freely during positioning",
+            "Apply firm continuous pressure on both eyes to keep the head from shifting",
+            "Compress the abdomen tightly to splint the diaphragm and limit chest movement"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. The endotracheal tube must be securely fixed before turning prone, not left loose.",
-      "Incorrect. Direct pressure on the eyes is harmful and must be AVOIDED in the prone position.",
-      "Incorrect. The abdomen should be FREE (not compressed) to allow diaphragm movement and avoid raising venous pressure.",
-      "Correct. PRONE positioning requires specific precautions. The EYES and FACE must be protected from PRESSURE (using appropriate head support/padding and frequent checks) because direct ocular pressure can contribute to ischemic optic injury/postoperative VISION LOSS, a feared complication of prolonged prone surgery; pressure points (forehead, chin, nose, breasts, genitalia, knees, elbows) are padded. The ABDOMEN should hang FREE (using bolsters/a frame) so that abdominal contents do not push up the diaphragm — this preserves chest/diaphragm excursion and lung COMPLIANCE and avoids raising intra-abdominal/epidural venous pressure (which can increase bleeding). The airway/endotracheal tube must be SECURELY fixed and its position confirmed before and after turning, because re-securing the airway prone is difficult. The neck is kept neutral, and lines/monitors are checked after positioning."
-    ]
+            "Correct. Prone positioning demands scrupulous PROTECTION of the eyes and face from pressure (risk of ischemic optic neuropathy/corneal injury) and keeping the ABDOMEN FREE (chest/pelvic bolsters) so the diaphragm can move — this preserves ventilation and avoids raising abdominal/epidural venous pressure and bleeding.",
+            "Incorrect. The tube must be secured especially well before/after turning prone, since airway access is limited once prone.",
+            "Incorrect. Direct pressure on the eyes is dangerous (central retinal artery occlusion, ION) and must be avoided.",
+            "Incorrect. The abdomen should be FREE, not compressed; compression impairs ventilation and increases venous bleeding."
+        ]
   },
   {
     id: "p_157",
@@ -3398,18 +3398,18 @@ const QUESTION_BANK = [
     reference: "Padding Pressure Points",
     question: "Why are bony prominences and pressure points padded when positioning an anesthetized patient?",
     choices: [
-      "To make the operating table look neater and more organized for the surgical team",
-      "Because padding is required only for patients who are awake and can feel discomfort",
-      "To increase the patient's core body temperature by insulating the exposed skin",
-      "To prevent pressure injuries and nerve compression in a patient who cannot reposition"
-    ],
-    correct: 3,
+            "To prevent pressure injuries and nerve compression in a patient who cannot reposition",
+            "To make the operating table look neater for the surgical team",
+            "Because padding is needed only for awake patients who are able to feel and report discomfort",
+            "To raise the patient's core temperature by insulating the skin"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Padding is for patient safety, not table appearance.",
-      "Incorrect. Anesthetized patients especially need padding precisely because they CANNOT feel discomfort or reposition.",
-      "Incorrect. Padding pressure points is about injury prevention, not primarily warming.",
-      "Correct. Under anesthesia, patients lose the protective ability to sense discomfort and to shift position, so sustained PRESSURE over BONY PROMINENCES and superficial nerves can cause harm. PADDING pressure points (heels, sacrum, elbows, occiput, etc.) and protecting superficial peripheral nerves (e.g., ulnar at the elbow, common peroneal at the fibular head, brachial plexus) helps PREVENT PRESSURE INJURIES (pressure ulcers, soft-tissue and muscle ischemia) and PERIPHERAL NERVE COMPRESSION/injury. Along with maintaining neutral joint positions, avoiding excessive stretch (e.g., limiting arm abduction), and periodic checks during long cases, padding is a core principle of safe positioning. Patients at higher risk include those who are thin or obese, diabetic, or having prolonged procedures."
-    ]
+            "Correct. An anesthetized patient cannot feel discomfort or shift position, so sustained pressure over bony prominences and superficial nerves can cause PRESSURE INJURIES and NERVE COMPRESSION (e.g., ulnar, peroneal). Padding distributes pressure and protects vulnerable nerves and skin during long, motionless cases.",
+            "Incorrect. Padding is a safety measure, not a cosmetic one.",
+            "Incorrect. Anesthetized patients need padding MORE than awake patients, precisely because they cannot feel or move.",
+            "Incorrect. Padding is for pressure/nerve protection, not warming."
+        ]
   },
   {
     id: "p_158",
@@ -3480,41 +3480,41 @@ const QUESTION_BANK = [
     subtopic: "admin_temperature",
     difficulty: "easy",
     reference: "Postoperative Shivering",
-    question: "Postoperative shivering (e.g., on emergence from anesthesia) is undesirable mainly because it:",
+    question: "Postoperative shivering on emergence is undesirable mainly because it:",
     choices: [
-      "Substantially increases oxygen consumption and metabolic demand, stressing the heart and lungs",
-      "Permanently lowers the patient's core temperature far below any survivable physiologic level",
-      "Is a definitive and specific sign that the patient is experiencing malignant hyperthermia",
-      "Completely eliminates the patient's ability to feel any postoperative surgical pain at all"
-    ],
+            "Substantially increases oxygen consumption and metabolic demand, stressing the heart",
+            "Permanently lowers the patient's core temperature below any survivable physiologic level",
+            "Is a specific, definitive sign of malignant hyperthermia",
+            "Eliminates the patient's ability to feel any postoperative pain"
+        ],
     correct: 0,
     explanations: [
-      "Correct. SHIVERING (common on emergence, often related to intraoperative HYPOTHERMIA, though non-thermoregulatory shivering also occurs) is undesirable mainly because it markedly INCREASES OXYGEN CONSUMPTION and metabolic CO2 production (sometimes cited as several-fold), raising METABOLIC DEMAND and cardiac/respiratory work. This can be harmful, especially in patients with limited cardiac or pulmonary reserve (precipitating myocardial ischemia or hypoxemia), and it is uncomfortable, may raise intraocular/intracranial pressure, and can interfere with monitoring. Management includes active WARMING (forced-air, warmed fluids) to treat the underlying hypothermia and, when needed, pharmacologic treatment (meperidine is classically effective; other agents are also used) plus supplemental oxygen. Preventing intraoperative hypothermia (maintaining normothermia) reduces postoperative shivering.",
-      "Incorrect. Shivering is a heat-GENERATING response and does not drive core temperature to unsurvivable lows; it reflects/raises metabolic activity.",
-      "Incorrect. Shivering is not specific for malignant hyperthermia (MH involves a hypermetabolic crisis with rising end-tidal CO2, rigidity, and hyperthermia).",
-      "Incorrect. Shivering does not abolish pain perception."
-    ]
+            "Correct. Shivering can raise OXYGEN CONSUMPTION and metabolic/CO₂ production markedly (by as much as 2–5×), increasing cardiac and respiratory demand — poorly tolerated in patients with limited cardiac or pulmonary reserve. It is also uncomfortable and can raise intraocular/intracranial pressure. Treatment includes warming and agents such as meperidine.",
+            "Incorrect. Shivering is a thermoregulatory response, not a cause of permanent lethal hypothermia.",
+            "Incorrect. Shivering is nonspecific and is NOT diagnostic of malignant hyperthermia.",
+            "Incorrect. Shivering does not abolish pain perception."
+        ]
   },
   {
     id: "p_162",
     topic: "principles",
     subtopic: "admin_temperature",
-    difficulty: "hard",
+    difficulty: "easy",
     reference: "Thermoregulation Under Anesthesia",
-    question: "How does general anesthesia affect the body's thermoregulatory control?",
+    question: "How does general anesthesia affect central thermoregulatory control?",
     choices: [
-      "It sharpens thermoregulation, making patients defend their core temperature better than when awake",
-      "It has no effect on thermoregulation; anesthetized patients regulate temperature exactly as when awake",
-      "It causes uncontrolled fever by directly resetting the hypothalamic set point much higher than normal",
-      "It impairs central thermoregulation, widening the interthreshold range so patients become poikilothermic"
-    ],
-    correct: 3,
+            "It widens the interthreshold range, so cold/heat defenses trigger only after larger deviations",
+            "It sharpens thermoregulation, so patients defend core temperature more tightly than when awake",
+            "It resets the hypothalamic set point upward, directly causing a controlled fever",
+            "It has essentially no effect; anesthetized patients thermoregulate exactly as they do when awake"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Anesthesia IMPAIRS (does not sharpen) thermoregulation.",
-      "Incorrect. Anesthesia clearly DOES impair thermoregulation; patients do not regulate as when awake.",
-      "Incorrect. General anesthesia does not reset the set point to cause fever; it widens the thresholds and impairs defenses (predisposing to hypothermia).",
-      "Correct. General anesthetics IMPAIR the body's central (hypothalamic) THERMOREGULATION. Normally, tightly spaced thresholds trigger defenses (vasoconstriction, shivering against cold; sweating, vasodilation against heat) that keep core temperature within a narrow range. Anesthesia markedly WIDENS the INTERTHRESHOLD RANGE (the temperature range over which NO thermoregulatory response occurs) — roughly tenfold — by raising the sweating threshold and, more importantly, LOWERING the vasoconstriction and shivering thresholds. As a result, the patient behaves essentially POIKILOTHERMIC over a wide range, passively drifting toward the ambient/redistribution-determined temperature without defending core temperature until it falls (or rises) substantially. This impaired regulation, combined with redistribution and environmental heat loss, is why active warming and temperature monitoring are needed."
-    ]
+            "Correct. General anesthetics IMPAIR central thermoregulation by WIDENING the interthreshold range (the temperature span between the cold-response threshold, e.g., vasoconstriction/shivering, and the warm-response threshold, e.g., sweating) from ~0.2°C to several degrees. Within this widened range no defenses are activated, so patients passively drift toward ambient temperature — a key reason perioperative hypothermia is common.",
+            "Incorrect. Anesthesia BLUNTS, not sharpens, thermoregulation; defenses are triggered later, not sooner.",
+            "Incorrect. Anesthesia does not reset the set point to cause fever; it impairs the responses around the set point.",
+            "Incorrect. Anesthesia clearly impairs thermoregulation (widened interthreshold range), so patients do not regulate as they do awake."
+        ]
   },
   {
     id: "p_163",
@@ -3543,20 +3543,20 @@ const QUESTION_BANK = [
     subtopic: "admin_qi",
     difficulty: "easy",
     reference: "Perioperative Glucose Control",
-    question: "Perioperative glycemic (glucose) control is recommended as a quality measure primarily because:",
+    question: "Perioperative glycemic control is recommended as a quality measure primarily because:",
     choices: [
-      "Tight glucose control eliminates the need for any antibiotic prophylaxis before surgery",
-      "Uncontrolled hyperglycemia is associated with higher surgical-site infection and complication rates",
-      "High blood glucose directly prevents all blood clotting, causing uncontrollable surgical bleeding",
-      "Glucose levels have no relationship to outcomes and are measured only for billing purposes"
-    ],
-    correct: 1,
+            "Uncontrolled hyperglycemia is associated with more surgical-site infections and worse outcomes",
+            "Tight glucose control removes the need for antibiotic prophylaxis before surgery",
+            "High blood glucose prevents all clotting, causing uncontrollable bleeding",
+            "Glucose levels have no relationship to surgical outcomes and are tracked only for billing purposes"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. Glucose control does not replace antibiotic prophylaxis; both are separate measures.",
-      "Correct. PERIOPERATIVE GLYCEMIC CONTROL is a recognized quality measure (e.g., part of SCIP) because UNCONTROLLED HYPERGLYCEMIA is associated with worse surgical outcomes, notably increased SURGICAL-SITE INFECTIONS (hyperglycemia impairs neutrophil/immune function and wound healing), as well as other complications, and (especially in cardiac surgery) increased morbidity. The goal is to maintain blood glucose within a reasonable target range, AVOIDING both significant hyperglycemia and dangerous HYPOGLYCEMIA (overly tight control carries hypoglycemia risk). This applies to diabetic and many nondiabetic surgical patients (surgical stress raises glucose). Management uses monitoring and insulin as needed.",
-      "Incorrect. Hyperglycemia does not block clotting or cause bleeding; the concern is infection/complications.",
-      "Incorrect. Glucose levels DO relate to outcomes; control is a genuine quality measure, not just billing."
-    ]
+            "Correct. HYPERGLYCEMIA impairs neutrophil/immune function and is associated with increased SURGICAL-SITE INFECTIONS and worse perioperative outcomes; conversely, overly tight control risks hypoglycemia. Guidelines therefore target a moderate glucose range (commonly <180 mg/dL) rather than very tight control.",
+            "Incorrect. Glucose control complements, but does not replace, antibiotic prophylaxis.",
+            "Incorrect. Hyperglycemia does not prevent clotting; the concern is infection and outcomes.",
+            "Incorrect. Glucose clearly relates to outcomes (infection risk), not merely billing."
+        ]
   },
   {
     id: "p_165",
@@ -3566,39 +3566,39 @@ const QUESTION_BANK = [
     reference: "ASA Closed Claims Project",
     question: "What is the ASA Closed Claims Project?",
     choices: [
-      "A structured analysis of closed malpractice claims to identify patterns and improve anesthesia safety",
-      "A billing system that closes out insurance claims after each anesthetic is fully completed",
-      "A list of surgeons who are no longer permitted to practice anesthesia anywhere in the country",
-      "A device used to physically close the anesthesia breathing circuit at the end of a procedure"
-    ],
+            "A structured analysis of closed malpractice claims to find injury patterns and improve safety",
+            "A billing system that closes out insurance claims after each anesthetic",
+            "A registry of practitioners who are barred from practicing anesthesia anywhere in the country",
+            "A device used to close the anesthesia breathing circuit at case end"
+        ],
     correct: 0,
     explanations: [
-      "Correct. The ASA CLOSED CLAIMS PROJECT is a structured, retrospective ANALYSIS of CLOSED (resolved) anesthesia-related malpractice/liability CLAIMS. Trained reviewers examine the records of settled or adjudicated claims to identify recurring PATTERNS of injury and their associated factors (e.g., adverse respiratory events such as inadequate ventilation, esophageal intubation, and difficult intubation; cardiovascular events; nerve injuries; awareness; medication errors). The goal is to learn from adverse outcomes and drive SAFETY IMPROVEMENTS, contributing to advances such as the widespread adoption of pulse oximetry and capnography and the development of the difficult-airway algorithm. It is a quality/patient-safety initiative, not a billing or disciplinary system. (A limitation is that it reflects only claims, not overall incidence.)",
-      "Incorrect. It is a safety analysis, not an insurance/billing system.",
-      "Incorrect. It is not a registry of barred practitioners.",
-      "Incorrect. It is not a piece of equipment."
-    ]
+            "Correct. The ASA CLOSED CLAIMS PROJECT is a structured, in-depth review of CLOSED (settled/adjudicated) anesthesia malpractice claims. By analyzing patterns of injury and contributing factors, it has driven major safety improvements (e.g., recognition of adverse respiratory/airway events, promoting pulse oximetry and capnography).",
+            "Incorrect. It is a patient-safety research project, not a billing system.",
+            "Incorrect. It is not a list of barred practitioners.",
+            "Incorrect. It is not a piece of breathing-circuit equipment."
+        ]
   },
   {
     id: "p_166",
     topic: "principles",
     subtopic: "admin_qi",
-    difficulty: "hard",
+    difficulty: "easy",
     reference: "Swiss Cheese Model of Error",
     question: "The 'Swiss cheese model' of accident causation, applied to patient safety, illustrates that:",
     choices: [
-      "A single individual's mistake is always the sole and complete cause of any adverse event",
-      "Patient harm is purely random and cannot be reduced by any systems-based safety measures",
-      "Harm results when weaknesses in multiple layers of defense momentarily line up",
-      "Adding any safety checks always increases errors, so all checks should simply be removed"
-    ],
-    correct: 2,
+            "Harm occurs when weaknesses in multiple layers of defense momentarily align to let error through",
+            "A single individual's mistake is the sole and complete cause of essentially any adverse event",
+            "Patient harm is fundamentally random and cannot be reduced by any systems-based safety design",
+            "Adding safety checks reliably increases errors, so redundant checks should be removed"
+        ],
+    correct: 0,
     explanations: [
-      "Incorrect. The model specifically argues AGAINST attributing harm to a single individual; it emphasizes system/latent factors.",
-      "Incorrect. The model shows harm is NOT purely random and that strengthening defenses reduces it.",
-      "Correct. The SWISS CHEESE MODEL (Reason) depicts a system's defenses as successive slices of cheese, each with HOLES representing weaknesses — some ACTIVE failures (frontline errors) and many LATENT conditions (design, staffing, fatigue, poor processes). Normally a hole in one layer is caught by another layer; an accident/patient HARM occurs only when the HOLES in MULTIPLE LAYERS momentarily ALIGN, allowing a hazard to pass through all defenses. The key safety insight is a SYSTEMS approach: most adverse events result from multiple contributing factors and latent weaknesses rather than a single person's failing, so improvement focuses on strengthening multiple layers of defense (checklists, redundancy, forcing functions, better design) and on a just culture — consistent with tools like root cause analysis and the Universal Protocol.",
-      "Incorrect. Well-designed safety checks/redundancy reduce errors; the model supports adding effective defenses, not removing them."
-    ]
+            "Correct. In the SWISS CHEESE model, each safety barrier (protocols, checklists, alarms, human vigilance) is a slice with 'holes' (latent weaknesses). Most errors are stopped by some layer, but harm reaches the patient when the holes in successive layers momentarily LINE UP. It reframes adverse events as system/latent-condition failures rather than a single person's fault, motivating multiple overlapping defenses.",
+            "Incorrect. The model specifically moves AWAY from single-person blame toward layered system failures.",
+            "Incorrect. The model implies harm is largely preventable by strengthening layers/closing holes, not that it is random.",
+            "Incorrect. The model supports MULTIPLE overlapping defenses; it does not argue for removing checks."
+        ]
   },
   {
     id: "p_167",
@@ -3606,20 +3606,20 @@ const QUESTION_BANK = [
     subtopic: "fluids",
     difficulty: "easy",
     reference: "Crystalloids vs Colloids",
-    question: "Which statement BEST distinguishes crystalloid from colloid intravenous fluids?",
+    question: "Compared with a colloid, giving a crystalloid to achieve the same intravascular volume expansion generally requires:",
     choices: [
-      "Crystalloids (saline, lactated Ringer's) contain electrolytes/small solutes; colloids have larger molecules",
-      "Crystalloids are always whole blood products, while colloids are simply plain sterile water",
-      "Colloids contain only electrolytes and water, whereas crystalloids contain large protein molecules",
-      "Crystalloids and colloids are identical in composition and behave exactly the same in the body"
-    ],
+            "A larger infused volume, because much of the crystalloid redistributes into the interstitium",
+            "A smaller infused volume, because crystalloid stays intravascular better than colloid",
+            "The same infused volume, because both expand plasma equally per liter",
+            "No fluid at all, because crystalloids act primarily by an osmotic pull from cells"
+        ],
     correct: 0,
     explanations: [
-      "Correct. CRYSTALLOIDS are solutions of water with ELECTROLYTES and other SMALL solutes (e.g., NORMAL SALINE, LACTATED RINGER'S/balanced salt solutions, dextrose-containing fluids); they distribute across the extracellular space, so a relatively large volume is needed to expand the intravascular compartment and the effect is shorter-lived. COLLOIDS contain LARGER molecules (e.g., albumin, or synthetic agents like hydroxyethyl starch and gelatins) that exert oncotic pressure and tend to remain in the intravascular space longer, expanding plasma volume more efficiently per volume given. Trade-offs: crystalloids are inexpensive and widely used for maintenance and resuscitation but can cause edema in large volumes (and large amounts of normal saline can cause hyperchloremic acidosis); colloids are costlier and carry specific risks (e.g., certain starches have been associated with renal injury/coagulopathy, and albumin is expensive). The choice depends on the clinical situation.",
-      "Incorrect. Crystalloids are not whole blood, and colloids are not plain water.",
-      "Incorrect. This reverses the definitions: colloids contain the large molecules, and crystalloids contain electrolytes/small solutes.",
-      "Incorrect. Crystalloids and colloids differ in composition and in how they distribute/persist in the body."
-    ]
+            "Correct. Because crystalloid distributes across the whole extracellular space (only ~1/4–1/3 stays intravascular), a LARGER volume of crystalloid is needed to match the intravascular expansion of a given colloid volume (roughly 2–3:1). The trade-off is more interstitial fluid/edema with large crystalloid volumes versus the cost/potential adverse effects of colloids.",
+            "Incorrect. Crystalloid does NOT stay intravascular better; it redistributes, so more is needed, not less.",
+            "Incorrect. Per liter, colloid expands plasma more than crystalloid, so equal volumes are not equivalent.",
+            "Incorrect. Isotonic crystalloid does not act by osmotic pull from cells; fluid is still required for resuscitation."
+        ]
   },
   {
     id: "p_168",
@@ -4680,22 +4680,22 @@ const QUESTION_BANK = [
     id: "ph_048",
     topic: "physiology",
     subtopic: "hem_pathophys",
-    difficulty: "hard",
+    difficulty: "medium",
     reference: "Stoelting's Anesthesia and Co-Existing Disease, Ch. 24",
-    question: "A patient with known sickle cell disease is scheduled for general anesthesia. Which intraoperative condition is most likely to precipitate erythrocyte sickling and a vaso-occlusive event?",
+    question: "A patient with sickle cell disease undergoes general anesthesia. Which single intraoperative management decision is MOST likely to precipitate erythrocyte sickling and a vaso-occlusive event?",
     choices: [
-      "Mild hyperventilation that produces a respiratory alkalosis intraoperatively",
-      "Maintenance of normothermia with generous isotonic fluid administration",
-      "A transfusion given to keep the hemoglobin concentration near normal",
-      "Mild hypothermia combined with hypoxemia, acidosis, and dehydration"
-    ],
-    correct: 3,
+            "Targeting a PaCO₂ near 35 mmHg with controlled ventilation",
+            "Using a prolonged pneumatic limb tourniquet during the procedure",
+            "Warming the patient to maintain core temperature at 36.5°C",
+            "Transfusing to reduce the proportion of hemoglobin S before surgery"
+        ],
+    correct: 1,
     explanations: [
-      "Incorrect. A mild respiratory alkalosis is not a sickling trigger; it is acidosis, not alkalosis, that shifts the equilibrium toward deoxygenated hemoglobin S.",
-      "Incorrect. Normothermia and good hydration are protective measures that reduce sickling risk rather than provoke a vaso-occlusive event.",
-      "Incorrect. Appropriate transfusion that lowers the proportion of hemoglobin S is part of risk reduction, not a precipitant of vaso-occlusion.",
-      "Correct. Sickling is promoted by hypoxemia, acidosis, hypothermia, dehydration, and venous stasis, all of which favor deoxygenation of hemoglobin S and red cell aggregation. Anesthetic management focuses on avoiding these triggers through oxygenation, warmth, hydration, and pain control."
-    ]
+            "Incorrect. A PaCO₂ near 35 mmHg (normocapnia to very mild reduction) does not provoke sickling; marked hypoventilation with hypercapnia/acidosis and hypoxemia would. Maintaining normal ventilation and oxygenation is protective.",
+            "Correct. A prolonged pneumatic tourniquet produces regional STASIS, HYPOXIA, and ACIDOSIS distal to the cuff — precisely the microenvironment that favors deoxygenation and polymerization of hemoglobin S and thus sickling and vaso-occlusion. Tourniquets are therefore used with caution (and often avoided) in sickle cell disease; when unavoidable, careful exsanguination, limited duration, and maintaining oxygenation/normothermia/hydration are recommended.",
+            "Incorrect. Maintaining normothermia is PROTECTIVE. Hypothermia causes vasoconstriction and stasis that promote sickling, so keeping the patient warm reduces risk.",
+            "Incorrect. Reducing the fraction of hemoglobin S by appropriate transfusion is a risk-REDUCING strategy, not a trigger for vaso-occlusion."
+        ]
   },
   {
     id: "ph_049",
